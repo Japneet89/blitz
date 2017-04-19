@@ -2012,7 +2012,7 @@
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
 					ZjBcZnMyNCBcY2YyIFx1cDAgQW1hem9uIFBy
-					b2R1Y3RcCkFkdmVydGl6aW5nIFwKQVBJfQ==
+					b2R1Y3RcCkFkdmVydGlzaW5nIFwKQVBJfQ==
 					</data>
 					<key>className</key>
 					<string>Rectangle</string>
@@ -2381,7 +2381,7 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFRvb2xzIEludmVudG9y
+					ZjBcZnMyMiBcY2YyIFRvb2xzIEludmVudG9y
 					eSAmXApSZWNvbWVuZGF0aW9ucyBDYWNoZX0=
 					</data>
 					<key>className</key>
@@ -3161,7 +3161,7 @@
 			<key>scaleImage</key>
 			<true/>
 			<key>scrollCenterPoint</key>
-			<string>{539.5, 396}</string>
+			<string>{528, 396}</string>
 			<key>stroke1Color</key>
 			<string></string>
 			<key>stroke1Enabled</key>
@@ -3343,8 +3343,8 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFx1cDAgYXR0cmlidXRl
-					OiBUeXBlfQ==
+					ZjBcZnMyNCBcY2YyIGF0dHJpYnV0ZTogVHlw
+					ZX0=
 					</data>
 					<key>attributedText2Data</key>
 					<data>
@@ -3360,8 +3360,8 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFx1cDAgcGVyZm9ybV9t
-					YXRjaCgpfQ==
+					ZjBcZnMyNCBcY2YyIHBlcmZvcm1fbWF0Y2go
+					KX0=
 					</data>
 					<key>attributedText3Data</key>
 					<data>
@@ -3520,8 +3520,8 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFx1cDAgYXR0cmlidXRl
-					OiBUeXBlfQ==
+					ZjBcZnMyNCBcY2YyIGF0dHJpYnV0ZTogVHlw
+					ZX0=
 					</data>
 					<key>attributedText2Data</key>
 					<data>
@@ -3537,8 +3537,7 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFx1cDAgdmFsaWRhdGUo
-					KX0=
+					ZjBcZnMyNCBcY2YyIHZhbGlkYXRlKCl9
 					</data>
 					<key>attributedText3Data</key>
 					<data>
@@ -3697,8 +3696,7 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHBhcnRpZ2h0ZW5mYWN0b3IwCgpcZjBc
-					ZnMyNCBcY2YyIFx1cDAgYXR0cmlidXRlOiBU
-					eXBlfQ==
+					ZnMyNCBcY2YyIGF0dHJpYnV0ZTogVHlwZX0=
 					</data>
 					<key>attributedText2Data</key>
 					<data>
@@ -3714,8 +3712,7 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHBhcnRpZ2h0ZW5mYWN0b3IwCgpcZjBc
-					ZnMyNCBcY2YyIFx1cDAgZ2VuX3JlcG9ydCgp
-					fQ==
+					ZnMyNCBcY2YyIGdlbl9yZXBvcnQoKX0=
 					</data>
 					<key>attributedText3Data</key>
 					<data>
@@ -3873,8 +3870,8 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFx1cDAgYXR0cmlidXRl
-					OiBUeXBlfQ==
+					ZjBcZnMyNCBcY2YyIGF0dHJpYnV0ZTogVHlw
+					ZX0=
 					</data>
 					<key>attributedText2Data</key>
 					<data>
@@ -3890,8 +3887,7 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMyNCBcY2YyIFx1cDAgbWF0Y2hfdGV4
-					dHMoKX0=
+					ZjBcZnMyNCBcY2YyIG1hdGNoX3RleHRzKCl9
 					</data>
 					<key>attributedText3Data</key>
 					<data>
@@ -4590,8 +4586,8 @@
 					MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2
 					MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1
 					cmFsXHFjXHBhcnRpZ2h0ZW5mYWN0b3IwCgpc
-					ZjBcZnMzMiBcY2YyIFx1cDAgSW52b2tlZCBi
-					eSBcCjRkYXQgd2ViYXBwfQ==
+					ZjBcZnMzMiBcY2YyIEludm9rZWQgYnkgXAo0
+					ZGF0IHdlYmFwcH0=
 					</data>
 					<key>className</key>
 					<string>ResizeText</string>
@@ -5273,7 +5269,7 @@
 							MFxwYXJkaXJuYXR1cmFs
 							XHFjXHBhcnRpZ2h0ZW5m
 							YWN0b3IwCgpcZjBcYlxm
-							czMyIFxjZjIgXHVsIFx1
+							czMwIFxjZjIgXHVsIFx1
 							bGMyIE1MIE1vZHVsZTog
 							U2VxdWVuY2UgRGlhZ3Jh
 							bX0=
@@ -6700,7 +6696,7 @@
 							<key>flipped</key>
 							<false/>
 							<key>frame</key>
-							<string>{{401, 336}, {140, 139}}</string>
+							<string>{{401, 336}, {119, 122}}</string>
 							<key>hidden</key>
 							<false/>
 							<key>identifier</key>
@@ -6808,8 +6804,8 @@
 							MFxwYXJkaXJuYXR1cmFs
 							XHFjXHBhcnRpZ2h0ZW5m
 							YWN0b3IwCgpcZjBcZnMy
-							OCBcY2YyIFx1cDAgdmFs
-							aWRhdGUgaW5wdXRzfQ==
+							OCBcY2YyIHZhbGlkYXRl
+							IGlucHV0c30=
 							</data>
 							<key>className</key>
 							<string>ResizeText</string>
@@ -7799,7 +7795,7 @@
 			<key>scaleImage</key>
 			<true/>
 			<key>scrollCenterPoint</key>
-			<string>{539.5, 352}</string>
+			<string>{528, 352}</string>
 			<key>stroke1Color</key>
 			<string></string>
 			<key>stroke1Enabled</key>
