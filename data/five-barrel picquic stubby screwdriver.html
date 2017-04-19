@@ -1,0 +1,49 @@
+﻿/* **********Unsigned URL********** */
+http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemSearch&SubscriptionId=AKIAILMBKWFE4D6QDNWA&AssociateTag=benderapps-20&SearchIndex=All&Keywords=five-barrel picquic stubby screwdriver&ResponseGroup=EditorialReview,ItemAttributes
+
+/* **********Signed URL********** */
+http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAILMBKWFE4D6QDNWA&AssociateTag=benderapps-20&Keywords=five-barrel%20picquic%20stubby%20screwdriver&Operation=ItemSearch&ResponseGroup=EditorialReview%2CItemAttributes&SearchIndex=All&Service=AWSECommerceService&Timestamp=2017-04-19T19%3A29%3A03.000Z&Signature=0Dm3en8x7HRoIMYVg02kXwJld7WcnqM8xDhosjtcmvE%3D
+
+/* **********Response********** */
+<?xml version="1.0" ?>
+<ItemSearchResponse
+    xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"></Header>
+        </HTTPHeaders>
+        <RequestId>68747a8b-83f6-424d-b66d-770c2935563c</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAILMBKWFE4D6QDNWA"></Argument>
+            <Argument Name="AssociateTag" Value="benderapps-20"></Argument>
+            <Argument Name="Keywords" Value="five-barrel picquic stubby screwdriver"></Argument>
+            <Argument Name="Operation" Value="ItemSearch"></Argument>
+            <Argument Name="ResponseGroup" Value="EditorialReview,ItemAttributes"></Argument>
+            <Argument Name="SearchIndex" Value="All"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Timestamp" Value="2017-04-19T19:29:03.000Z"></Argument>
+            <Argument Name="Signature" Value="0Dm3en8x7HRoIMYVg02kXwJld7WcnqM8xDhosjtcmvE="></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0516613670000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+                <Keywords>five-barrel picquic stubby screwdriver</Keywords>
+                <ResponseGroup>EditorialReview</ResponseGroup>
+                <ResponseGroup>ItemAttributes</ResponseGroup>
+                <SearchIndex>All</SearchIndex>
+            </ItemSearchRequest>
+            <Errors>
+                <Error>
+                    <Code>AWS.ECommerceService.NoExactMatches</Code>
+                    <Message>We did not find any matches for your request.</Message>
+                </Error>
+            </Errors>
+        </Request>
+        <TotalResults>0</TotalResults>
+        <TotalPages>0</TotalPages>
+        <MoreSearchResultsUrl>https://www.amazon.com/gp/search?linkCode=xm2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&keywords=five-barrel%20picquic%20stubby%20screwdriver&tag=benderapps-20&creative=386001&url=search-alias%3Daws-amazon-aps&camp=2025</MoreSearchResultsUrl>
+    </Items>
+</ItemSearchResponse>

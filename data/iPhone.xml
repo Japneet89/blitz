@@ -1,0 +1,1034 @@
+﻿/* **********Unsigned URL********** */
+http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemSearch&SubscriptionId=AKIAILMBKWFE4D6QDNWA&AssociateTag=benderapps-20&SearchIndex=All&Keywords=iPhone&ResponseGroup=EditorialReview,ItemAttributes
+
+/* **********Signed URL********** */
+http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAILMBKWFE4D6QDNWA&AssociateTag=benderapps-20&Keywords=iPhone&Operation=ItemSearch&ResponseGroup=EditorialReview%2CItemAttributes&SearchIndex=All&Service=AWSECommerceService&Timestamp=2017-04-19T19%3A30%3A13.000Z&Signature=6sNRGLFfzK5c2nSfPjf9Des7FRclYiUE10R7GNRf6Wo%3D
+
+/* **********Response********** */
+<?xml version="1.0" ?>
+<ItemSearchResponse
+    xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"></Header>
+        </HTTPHeaders>
+        <RequestId>bee630bc-a95e-4cb5-a8df-726cd5939833</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAILMBKWFE4D6QDNWA"></Argument>
+            <Argument Name="AssociateTag" Value="benderapps-20"></Argument>
+            <Argument Name="Keywords" Value="iPhone"></Argument>
+            <Argument Name="Operation" Value="ItemSearch"></Argument>
+            <Argument Name="ResponseGroup" Value="EditorialReview,ItemAttributes"></Argument>
+            <Argument Name="SearchIndex" Value="All"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Timestamp" Value="2017-04-19T19:30:13.000Z"></Argument>
+            <Argument Name="Signature" Value="6sNRGLFfzK5c2nSfPjf9Des7FRclYiUE10R7GNRf6Wo="></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0346766130000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+                <Keywords>iPhone</Keywords>
+                <ResponseGroup>EditorialReview</ResponseGroup>
+                <ResponseGroup>ItemAttributes</ResponseGroup>
+                <SearchIndex>All</SearchIndex>
+            </ItemSearchRequest>
+        </Request>
+        <TotalResults>13776745</TotalResults>
+        <TotalPages>1377675</TotalPages>
+        <MoreSearchResultsUrl>https://www.amazon.com/gp/search?linkCode=xm2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&keywords=iPhone&tag=benderapps-20&creative=386001&url=search-alias%3Daws-amazon-aps&camp=2025</MoreSearchResultsUrl>
+        <Item>
+            <ASIN>B00YD548Q0</ASIN>
+            <ParentASIN>B01MS99NTI</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/Apple-iPhone-64GB-Unlocked-Smartphone/dp/B00YD548Q0?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD548Q0</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Apple-iPhone-64GB-Unlocked-Smartphone/dp/tech-data/B00YD548Q0?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD548Q0&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD548Q0&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD548Q0&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B00YD548Q0?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B00YD548Q0?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B00YD548Q0?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD548Q0</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Electronics</Binding>
+                <Brand>Apple</Brand>
+                <Color>Gold</Color>
+                <EAN>0712201431674</EAN>
+                <EANList>
+                    <EANListElement>0712201431674</EANListElement>
+                </EANList>
+                <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">264</Height>
+                    <Length Units="hundredths-inches">544</Length>
+                    <Weight Units="hundredths-pounds">28</Weight>
+                    <Width Units="hundredths-inches">27</Width>
+                </ItemDimensions>
+                <Label>Apple Computer</Label>
+                <ListPrice>
+                    <Amount>33953</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$339.53</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Apple Computer</Manufacturer>
+                <Model>MG5D2LL/A-RB</Model>
+                <MPN>MG5D2LL/A-RB</MPN>
+                <OperatingSystem>iOS</OperatingSystem>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">291</Height>
+                    <Length Units="hundredths-inches">622</Length>
+                    <Weight Units="hundredths-pounds">53</Weight>
+                    <Width Units="hundredths-inches">457</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>MG5D2LL/A-RB</PartNumber>
+                <ProductGroup>Wireless</ProductGroup>
+                <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                <Publisher>Apple Computer</Publisher>
+                <Size>64 GB</Size>
+                <Studio>Apple Computer</Studio>
+                <Title>Apple iPhone 6 64GB Unlocked Smartphone - Gold (Certified Refurbished)</Title>
+                <UPC>712201431674</UPC>
+                <UPCList>
+                    <UPCListElement>712201431674</UPCListElement>
+                </UPCList>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>What's in the box: Certified Refurbished iPhone 6 Gold 64GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 90 days Limited Warranty.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B00YD547Q6</ASIN>
+            <ParentASIN>B06ZXSL8Q5</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/B00YD547Q6?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD547Q6</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/tech-data/B00YD547Q6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD547Q6&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD547Q6&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD547Q6&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B00YD547Q6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B00YD547Q6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B00YD547Q6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD547Q6</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Electronics</Binding>
+                <Brand>Apple</Brand>
+                <CatalogNumberList>
+                    <CatalogNumberListElement>CE17507C</CatalogNumberListElement>
+                </CatalogNumberList>
+                <Color>Space Gray</Color>
+                <EAN>0712201431667</EAN>
+                <EANList>
+                    <EANListElement>0712201431667</EANListElement>
+                </EANList>
+                <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">264</Height>
+                    <Length Units="hundredths-inches">544</Length>
+                    <Width Units="hundredths-inches">27</Width>
+                </ItemDimensions>
+                <Label>Apple</Label>
+                <ListPrice>
+                    <Amount>27964</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$279.64</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Apple</Manufacturer>
+                <Model>MG542LL/A-RB</Model>
+                <MPN>MG542LL/A-RB</MPN>
+                <OperatingSystem>iOS</OperatingSystem>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">189</Height>
+                    <Length Units="hundredths-inches">598</Length>
+                    <Weight Units="hundredths-pounds">65</Weight>
+                    <Width Units="hundredths-inches">319</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>MG542LL/A-RB</PartNumber>
+                <ProductGroup>Wireless</ProductGroup>
+                <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                <Publisher>Apple</Publisher>
+                <Size>16 GB</Size>
+                <Studio>Apple</Studio>
+                <Title>Apple iPhone 6 16GB Factory Unlocked GSM 4G LTE Smartphone, Space Grey (Certified Refurbished)</Title>
+                <TradeInValue>
+                    <Amount>13000</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$130.00</FormattedPrice>
+                </TradeInValue>
+                <UPC>712201431667</UPC>
+                <UPCList>
+                    <UPCListElement>712201431667</UPCListElement>
+                </UPCList>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>What's in the box: Unlocked iPhone , USB Cable/Adapter. Comes in a Generic Box with a 90 days Limited Warranty. *IMPORTANT* - "GSM unlocked.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B01J8PBEUM</ASIN>
+            <ParentASIN>B01MTF33S8</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/Apple-iPhone-6S-Certified-Refurbished/dp/B01J8PBEUM?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B01J8PBEUM</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Apple-iPhone-6S-Certified-Refurbished/dp/tech-data/B01J8PBEUM?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B01J8PBEUM&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B01J8PBEUM&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B01J8PBEUM&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B01J8PBEUM?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B01J8PBEUM?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B01J8PBEUM?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B01J8PBEUM</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Wireless Phone Accessory</Binding>
+                <Brand>Apple</Brand>
+                <Color>Rose Gold</Color>
+                <EAN>0759776413520</EAN>
+                <EANList>
+                    <EANListElement>0759776413520</EANListElement>
+                    <EANListElement>0759776405129</EANListElement>
+                </EANList>
+                <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                <Feature>Comes with Easy to use iOS 9 with refinements at every level from the apps you see on your Home screendownto the foundation of the system</Feature>
+                <Feature>This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box with generic accessories. Only select sellers who maintain a high performance bar may offer Certified Refurbished products on Amazon.com</Feature>
+                <Feature>Wi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi hotspot, Bluetooth: v4.2, A2DP, LE, USB: v2.0, reversible connector, GPS: with A-GPS, GLONASS</Feature>
+                <Feature>Browser: HTML (Safari), Messaging: iMessage, SMS (threaded view), MMS, Email, Push Email. iPhone 6s is powered by the custom-designed 64-bit A9 chip.- delivers 70% more CPU performance.</Feature>
+                <IsAutographed>0</IsAutographed>
+                <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                <IsMemorabilia>0</IsMemorabilia>
+                <Label>Apple</Label>
+                <ListPrice>
+                    <Amount>36998</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$369.98</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Apple</Manufacturer>
+                <Model>6s</Model>
+                <MPN>6s</MPN>
+                <OperatingSystem>iOS</OperatingSystem>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">270</Height>
+                    <Length Units="hundredths-inches">760</Length>
+                    <Weight Units="hundredths-pounds">70</Weight>
+                    <Width Units="hundredths-inches">470</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>6s</PartNumber>
+                <ProductGroup>Wireless</ProductGroup>
+                <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                <Publisher>Apple</Publisher>
+                <Size>16 GB</Size>
+                <Studio>Apple</Studio>
+                <Title>Apple iPhone 6S - 16GB GSM Unlocked - Rose (Certified Refurbished)</Title>
+                <TradeInValue>
+                    <Amount>20000</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$200.00</FormattedPrice>
+                </TradeInValue>
+                <UPC>759776405129</UPC>
+                <UPCList>
+                    <UPCListElement>759776405129</UPCListElement>
+                    <UPCListElement>759776413520</UPCListElement>
+                </UPCList>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>The moment you use iPhone 6s, you know you've never felt anything like it. With just a single press, 3D Touch lets you do more than ever before. Live Photos bring your memories to life in a powerfully vivid way. And that's just the beginning. Take a deeper look at iPhone 6s, and you'll find innovation on every level.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B00WZR5ULU</ASIN>
+            <ParentASIN>B06XTYRYZX</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/Apple-iPhone-16GB-Certified-Refurbished/dp/B00WZR5ULU?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00WZR5ULU</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Apple-iPhone-16GB-Certified-Refurbished/dp/tech-data/B00WZR5ULU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00WZR5ULU&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00WZR5ULU&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00WZR5ULU&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B00WZR5ULU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B00WZR5ULU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B00WZR5ULU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00WZR5ULU</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Wireless Phone Accessory</Binding>
+                <Brand>Apple</Brand>
+                <Color>White</Color>
+                <EAN>0712131664913</EAN>
+                <EANList>
+                    <EANListElement>0712131664913</EANListElement>
+                    <EANListElement>0649906100355</EANListElement>
+                </EANList>
+                <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty (Apple Care Sold Separately) and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                <Feature>Camera: Primary - 8 MP iSight camera, 1080p HD Video / Secondary - 1.2MP FaceTime Camera</Feature>
+                <Feature>iOS 6, Apple A6 Processor, 16GB Memory</Feature>
+                <Feature>Unlocked cell phones are compatible with GSM carriers like AT&T and T-Mobile as well as with GSM SIM cards (e.g. H20, Straight Talk, and select prepaid carriers). Unlocked cell phones will not work with CDMA Carriers like Sprint, Verizon, Boost or Virgin.</Feature>
+                <Feature>4.0 inch Retina LED-backlit IPS LCD capacitive touchscreen display</Feature>
+                <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">30</Height>
+                    <Length Units="hundredths-inches">487</Length>
+                    <Width Units="hundredths-inches">231</Width>
+                </ItemDimensions>
+                <Label>Apple</Label>
+                <ListPrice>
+                    <Amount>15000</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$150.00</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Apple</Manufacturer>
+                <Model>iPhone5</Model>
+                <MPN>MD294LL/A WHITE</MPN>
+                <OperatingSystem>iOS</OperatingSystem>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">161</Height>
+                    <Length Units="hundredths-inches">618</Length>
+                    <Weight Units="hundredths-pounds">70</Weight>
+                    <Width Units="hundredths-inches">331</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>MD294LL/A WHITE</PartNumber>
+                <ProductGroup>Wireless</ProductGroup>
+                <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                <Publisher>Apple</Publisher>
+                <Size>16 GB</Size>
+                <Studio>Apple</Studio>
+                <Title>Apple iPhone 5 16GB - Unlocked - White (Certified Refurbished)</Title>
+                <TradeInValue>
+                    <Amount>5500</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$55.00</FormattedPrice>
+                </TradeInValue>
+                <UPC>712131664913</UPC>
+                <UPCList>
+                    <UPCListElement>712131664913</UPCListElement>
+                    <UPCListElement>649906100355</UPCListElement>
+                </UPCList>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>A beautiful aluminum body designed and made with an unprecedented level of precision. iPhone 5 measures a mere 7.6 millimeters thin and weighs just 112 grams. That's 18 percent thinner and 20 percent lighter than iPhone 4S. The only way to achieve a design like this is by relentlessly considering (and reconsidering) every single detail - including the details you don't see. 
+                        <br>
+                            <br>
+                                <b>4-inch Retina display</b>
+                                <br> See more of everything - your inbox, every web page, an extra row of apps - on the larger display. With 326 pixels per inch, it all looks amazing. 
+                                    <br>
+                                        <br>
+                                            <b>Ultrafast wireless</b>
+                                            <br> iPhone 5 connects to more networks all over the world. And Wi-Fi is faster, too. So you can browse, download, and stream content at remarkable speeds, wherever you happen to be. 
+                                                <br>
+                                                    <br>
+                                                        <b>A6 chip</b>
+                                                        <br> The power-efficient A6 chip delivers up to twice the CPU performance and renders graphics up to twice as fast - with even better battery life. NOTE : Please use the certified and quality cables to charge the phones otherwise cheaper charging cable brands can cause damage of the U2 IC chip that sits on the logic board of the iPhone 5. This particular chip controls the charge to the battery  
+                                                            <br>
+                                                                <br>
+                                                                    <b>8-megapixel iSight Camera </b>
+                                                                    <br> iPhone is the most popular camera in the world. Photos look so stunning, it's hard to believe they were taken with a mobile phone. 
+                                                                        <br>
+                                                                            <br>
+                                                                                <b>1080p HD video recording</b>
+                                                                                <br> Imagine sidesplitting, adventure-filled, must-see flicks produced by you in stunning HD video with the iSight camera. You can even take still photos as you record, so you can capture small moments while shooting a big one with no shaky footage. 
+                                                                                    <br>
+                                                                                        <br>
+                                                                                            <b>Siri - Your intelligent assistant</b>
+                                                                                            <br> Ask Siri to make calls, send texts, set reminders, and more. Just talk the way you talk. Siri understands what you say and knows what you mean. 
+                                                                                                <br>
+                                                                                                    <br>
+                                                                                                        <b>Includes:</b>
+                                                                                                        <br> -iPhone 5 
+                                                                                                            <br> -Lightning to USB cable 
+                                                                                                                <br> -USB power adapter
+                                                                                                                </Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                    <Item>
+                                                                                                        <ASIN>B00YD545CC</ASIN>
+                                                                                                        <ParentASIN>B01MS99NTI</ParentASIN>
+                                                                                                        <DetailPageURL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/B00YD545CC?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD545CC</DetailPageURL>
+                                                                                                        <ItemLinks>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Technical Details</Description>
+                                                                                                                <URL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/tech-data/B00YD545CC?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Baby Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD545CC&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wedding Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD545CC&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wishlist</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD545CC&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Tell A Friend</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/pdp/taf/B00YD545CC?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Customer Reviews</Description>
+                                                                                                                <URL>https://www.amazon.com/review/product/B00YD545CC?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Offers</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/offer-listing/B00YD545CC?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD545CC</URL>
+                                                                                                            </ItemLink>
+                                                                                                        </ItemLinks>
+                                                                                                        <ItemAttributes>
+                                                                                                            <Binding>Electronics</Binding>
+                                                                                                            <Brand>Apple</Brand>
+                                                                                                            <CatalogNumberList>
+                                                                                                                <CatalogNumberListElement>CE17509C</CatalogNumberListElement>
+                                                                                                            </CatalogNumberList>
+                                                                                                            <Color>Gold</Color>
+                                                                                                            <EAN>0712201431643</EAN>
+                                                                                                            <EANList>
+                                                                                                                <EANListElement>0712201431643</EANListElement>
+                                                                                                            </EANList>
+                                                                                                            <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                                                                                                            <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                                                                                                            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                                                                                                            <ItemDimensions>
+                                                                                                                <Height Units="hundredths-inches">264</Height>
+                                                                                                                <Length Units="hundredths-inches">544</Length>
+                                                                                                                <Weight Units="hundredths-pounds">28</Weight>
+                                                                                                                <Width Units="hundredths-inches">27</Width>
+                                                                                                            </ItemDimensions>
+                                                                                                            <Label>Apple</Label>
+                                                                                                            <ListPrice>
+                                                                                                                <Amount>28145</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$281.45</FormattedPrice>
+                                                                                                            </ListPrice>
+                                                                                                            <Manufacturer>Apple</Manufacturer>
+                                                                                                            <Model>MG562LL/A-RB</Model>
+                                                                                                            <MPN>MG562LL/A-RB</MPN>
+                                                                                                            <OperatingSystem>iOS</OperatingSystem>
+                                                                                                            <PackageDimensions>
+                                                                                                                <Height Units="hundredths-inches">283</Height>
+                                                                                                                <Length Units="hundredths-inches">622</Length>
+                                                                                                                <Weight Units="hundredths-pounds">57</Weight>
+                                                                                                                <Width Units="hundredths-inches">457</Width>
+                                                                                                            </PackageDimensions>
+                                                                                                            <PackageQuantity>1</PackageQuantity>
+                                                                                                            <PartNumber>MG562LL/A-RB</PartNumber>
+                                                                                                            <ProductGroup>Wireless</ProductGroup>
+                                                                                                            <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                                                                                                            <Publisher>Apple</Publisher>
+                                                                                                            <Size>16 GB</Size>
+                                                                                                            <Studio>Apple</Studio>
+                                                                                                            <Title>Apple iPhone 6 16GB Factory Unlocked GSM 4G LTE Smartphone, Gold (Certified Refurbished)</Title>
+                                                                                                            <TradeInValue>
+                                                                                                                <Amount>13000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$130.00</FormattedPrice>
+                                                                                                            </TradeInValue>
+                                                                                                            <UPC>712201431643</UPC>
+                                                                                                            <UPCList>
+                                                                                                                <UPCListElement>712201431643</UPCListElement>
+                                                                                                            </UPCList>
+                                                                                                        </ItemAttributes>
+                                                                                                        <EditorialReviews>
+                                                                                                            <EditorialReview>
+                                                                                                                <Source>Product Description</Source>
+                                                                                                                <Content>What's in the box: Certified Refurbished iPhone 6 Gold 16GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 1 Year Limited Warranty. PLEASE NOTE: Charge phone overnight before using for the first time to ensure full battery capability. In the event that the phone does not turn on initially - press and hold down the 'Power' and 'Home' buttons simultaneously until the Apple logo appears on the screen.</Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                    <Item>
+                                                                                                        <ASIN>B00YD5400Y</ASIN>
+                                                                                                        <ParentASIN>B06XTYL34L</ParentASIN>
+                                                                                                        <DetailPageURL>https://www.amazon.com/Apple-iPhone-Unlocked-Certified-Refurbished/dp/B00YD5400Y?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD5400Y</DetailPageURL>
+                                                                                                        <ItemLinks>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Technical Details</Description>
+                                                                                                                <URL>https://www.amazon.com/Apple-iPhone-Unlocked-Certified-Refurbished/dp/tech-data/B00YD5400Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Baby Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD5400Y&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wedding Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD5400Y&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wishlist</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD5400Y&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Tell A Friend</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/pdp/taf/B00YD5400Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Customer Reviews</Description>
+                                                                                                                <URL>https://www.amazon.com/review/product/B00YD5400Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Offers</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/offer-listing/B00YD5400Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD5400Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                        </ItemLinks>
+                                                                                                        <ItemAttributes>
+                                                                                                            <Binding>Electronics</Binding>
+                                                                                                            <Brand>Apple</Brand>
+                                                                                                            <Color>Space Gray</Color>
+                                                                                                            <EAN>0712201431605</EAN>
+                                                                                                            <EANList>
+                                                                                                                <EANListElement>0712201431605</EANListElement>
+                                                                                                                <EANListElement>0649906101307</EANListElement>
+                                                                                                                <EANListElement>0759776395604</EANListElement>
+                                                                                                            </EANList>
+                                                                                                            <Feature>This Certified Refurbished item by Limitless Product shows limited or no wear, is fully operational and functions as intended. The cosmetic Grade is 4/5 and the item comes with a 1 year limited warranty by Limitless Product. The generic box kit includes a data cable & charger. SIM card and headset not included.</Feature>
+                                                                                                            <Feature>There may be minor scuffs and scratches on the iPhone. It's nothing that a case or cover can't hide.</Feature>
+                                                                                                            <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                                                                                                            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                                                                                                            <ItemDimensions>
+                                                                                                                <Height Units="hundredths-inches">231</Height>
+                                                                                                                <Length Units="hundredths-inches">487</Length>
+                                                                                                                <Weight Units="hundredths-pounds">25</Weight>
+                                                                                                                <Width Units="hundredths-inches">30</Width>
+                                                                                                            </ItemDimensions>
+                                                                                                            <Label>Apple</Label>
+                                                                                                            <ListPrice>
+                                                                                                                <Amount>16991</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$169.91</FormattedPrice>
+                                                                                                            </ListPrice>
+                                                                                                            <Manufacturer>Apple</Manufacturer>
+                                                                                                            <Model>A1533</Model>
+                                                                                                            <MPN>A1533</MPN>
+                                                                                                            <OperatingSystem>iOS</OperatingSystem>
+                                                                                                            <PackageDimensions>
+                                                                                                                <Height Units="hundredths-inches">236</Height>
+                                                                                                                <Length Units="hundredths-inches">669</Length>
+                                                                                                                <Weight Units="hundredths-pounds">40</Weight>
+                                                                                                                <Width Units="hundredths-inches">339</Width>
+                                                                                                            </PackageDimensions>
+                                                                                                            <PackageQuantity>1</PackageQuantity>
+                                                                                                            <PartNumber>A1533</PartNumber>
+                                                                                                            <ProductGroup>Wireless</ProductGroup>
+                                                                                                            <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                                                                                                            <Publisher>Apple</Publisher>
+                                                                                                            <Size>16 GB</Size>
+                                                                                                            <Studio>Apple</Studio>
+                                                                                                            <Title>Apple iPhone 5S 16GB GSM Unlocked, Space Gray (Certified Refurbished)</Title>
+                                                                                                            <TradeInValue>
+                                                                                                                <Amount>8000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$80.00</FormattedPrice>
+                                                                                                            </TradeInValue>
+                                                                                                            <UPC>712201431605</UPC>
+                                                                                                            <UPCList>
+                                                                                                                <UPCListElement>712201431605</UPCListElement>
+                                                                                                                <UPCListElement>649906101307</UPCListElement>
+                                                                                                                <UPCListElement>759776395604</UPCListElement>
+                                                                                                            </UPCList>
+                                                                                                        </ItemAttributes>
+                                                                                                        <EditorialReviews>
+                                                                                                            <EditorialReview>
+                                                                                                                <Source>Product Description</Source>
+                                                                                                                <Content>This Certified Refurbished product is tested and certified to look and work like new, with limited to no wear. The refurbishing process includes functionality testing, inspection, and repackaging. The product is backed by a minimum 90-day warranty, and may arrive in a generic box. The product ships with a charger and cable, but does not include headphone, manual or SIM card. Only select sellers who maintain a high performance bar may offer Certified Refurbished products on Amazon.</Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                    <Item>
+                                                                                                        <ASIN>B00YD546IA</ASIN>
+                                                                                                        <ParentASIN>B01MS99NTI</ParentASIN>
+                                                                                                        <DetailPageURL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/B00YD546IA?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD546IA</DetailPageURL>
+                                                                                                        <ItemLinks>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Technical Details</Description>
+                                                                                                                <URL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/tech-data/B00YD546IA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Baby Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD546IA&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wedding Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD546IA&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wishlist</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD546IA&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Tell A Friend</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/pdp/taf/B00YD546IA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Customer Reviews</Description>
+                                                                                                                <URL>https://www.amazon.com/review/product/B00YD546IA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Offers</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/offer-listing/B00YD546IA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD546IA</URL>
+                                                                                                            </ItemLink>
+                                                                                                        </ItemLinks>
+                                                                                                        <ItemAttributes>
+                                                                                                            <Binding>Electronics</Binding>
+                                                                                                            <Brand>Apple</Brand>
+                                                                                                            <CatalogNumberList>
+                                                                                                                <CatalogNumberListElement>CE17508C</CatalogNumberListElement>
+                                                                                                            </CatalogNumberList>
+                                                                                                            <Color>Silver</Color>
+                                                                                                            <EAN>0636173543589</EAN>
+                                                                                                            <EANList>
+                                                                                                                <EANListElement>0636173543589</EANListElement>
+                                                                                                                <EANListElement>0712201431650</EANListElement>
+                                                                                                            </EANList>
+                                                                                                            <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                                                                                                            <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                                                                                                            <Feature>Troubleshooting Tips: for optimal use perform a factory reset upon initial use and reset all settings</Feature>
+                                                                                                            <Feature>4.7-inch (diagonal) LED-backlit widescreen Multi-Touch display with IPS technology</Feature>
+                                                                                                            <Feature>A8 chip with 64-bit architecture. M8 motion coprocessor</Feature>
+                                                                                                            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                                                                                                            <ItemDimensions>
+                                                                                                                <Height Units="hundredths-inches">264</Height>
+                                                                                                                <Length Units="hundredths-inches">544</Length>
+                                                                                                                <Weight Units="hundredths-pounds">28</Weight>
+                                                                                                                <Width Units="hundredths-inches">27</Width>
+                                                                                                            </ItemDimensions>
+                                                                                                            <Label>Apple</Label>
+                                                                                                            <ListPrice>
+                                                                                                                <Amount>27859</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$278.59</FormattedPrice>
+                                                                                                            </ListPrice>
+                                                                                                            <Manufacturer>Apple</Manufacturer>
+                                                                                                            <Model>MG552LL/A-RB</Model>
+                                                                                                            <MPN>MG552LL/A-RB</MPN>
+                                                                                                            <OperatingSystem>iOS</OperatingSystem>
+                                                                                                            <PackageDimensions>
+                                                                                                                <Height Units="hundredths-inches">240</Height>
+                                                                                                                <Length Units="hundredths-inches">700</Length>
+                                                                                                                <Weight Units="hundredths-pounds">45</Weight>
+                                                                                                                <Width Units="hundredths-inches">450</Width>
+                                                                                                            </PackageDimensions>
+                                                                                                            <PackageQuantity>1</PackageQuantity>
+                                                                                                            <PartNumber>MG552LL/A-RB</PartNumber>
+                                                                                                            <ProductGroup>Wireless</ProductGroup>
+                                                                                                            <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                                                                                                            <Publisher>Apple</Publisher>
+                                                                                                            <Size>16 GB</Size>
+                                                                                                            <Studio>Apple</Studio>
+                                                                                                            <Title>Apple iPhone 6 16GB Factory Unlocked GSM 4G LTE Smartphone, Silver (Certified Refurbished)</Title>
+                                                                                                            <TradeInValue>
+                                                                                                                <Amount>13000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$130.00</FormattedPrice>
+                                                                                                            </TradeInValue>
+                                                                                                            <UPC>636173543589</UPC>
+                                                                                                            <UPCList>
+                                                                                                                <UPCListElement>636173543589</UPCListElement>
+                                                                                                                <UPCListElement>712201431650</UPCListElement>
+                                                                                                            </UPCList>
+                                                                                                        </ItemAttributes>
+                                                                                                        <EditorialReviews>
+                                                                                                            <EditorialReview>
+                                                                                                                <Source>Product Description</Source>
+                                                                                                                <Content>What's in the box: Certified Refurbished iPhone 6 Gold 64GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 90 days Limited Warranty. PLEASE NOTE: Charge phone overnight before using for the first time to ensure full battery capability. In the event that the phone does not turn on initially - press and hold down the 'Power' and 'Home' buttons simultaneously until the Apple logo appears on the screen.</Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                    <Item>
+                                                                                                        <ASIN>B00YD549VE</ASIN>
+                                                                                                        <ParentASIN>B01MS99NTI</ParentASIN>
+                                                                                                        <DetailPageURL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/B00YD549VE?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD549VE</DetailPageURL>
+                                                                                                        <ItemLinks>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Technical Details</Description>
+                                                                                                                <URL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/tech-data/B00YD549VE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Baby Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD549VE&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wedding Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD549VE&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wishlist</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD549VE&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Tell A Friend</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/pdp/taf/B00YD549VE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Customer Reviews</Description>
+                                                                                                                <URL>https://www.amazon.com/review/product/B00YD549VE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Offers</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/offer-listing/B00YD549VE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD549VE</URL>
+                                                                                                            </ItemLink>
+                                                                                                        </ItemLinks>
+                                                                                                        <ItemAttributes>
+                                                                                                            <Binding>Wireless Phone Accessory</Binding>
+                                                                                                            <Brand>Apple</Brand>
+                                                                                                            <Color>Silver</Color>
+                                                                                                            <EAN>0712201431681</EAN>
+                                                                                                            <EANList>
+                                                                                                                <EANListElement>0712201431681</EANListElement>
+                                                                                                            </EANList>
+                                                                                                            <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                                                                                                            <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                                                                                                            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                                                                                                            <ItemDimensions>
+                                                                                                                <Height Units="hundredths-inches">264</Height>
+                                                                                                                <Length Units="hundredths-inches">544</Length>
+                                                                                                                <Weight Units="hundredths-pounds">28</Weight>
+                                                                                                                <Width Units="hundredths-inches">27</Width>
+                                                                                                            </ItemDimensions>
+                                                                                                            <Label>Apple Computer</Label>
+                                                                                                            <ListPrice>
+                                                                                                                <Amount>31000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$310.00</FormattedPrice>
+                                                                                                            </ListPrice>
+                                                                                                            <Manufacturer>Apple Computer</Manufacturer>
+                                                                                                            <Model>MG5C2LL/A-RB</Model>
+                                                                                                            <MPN>MG5C2LL/A-RB</MPN>
+                                                                                                            <OperatingSystem>iOS</OperatingSystem>
+                                                                                                            <PackageDimensions>
+                                                                                                                <Height Units="hundredths-inches">240</Height>
+                                                                                                                <Length Units="hundredths-inches">670</Length>
+                                                                                                                <Weight Units="hundredths-pounds">60</Weight>
+                                                                                                                <Width Units="hundredths-inches">440</Width>
+                                                                                                            </PackageDimensions>
+                                                                                                            <PackageQuantity>1</PackageQuantity>
+                                                                                                            <PartNumber>MG5C2LL/A-RB</PartNumber>
+                                                                                                            <ProductGroup>Wireless Device</ProductGroup>
+                                                                                                            <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                                                                                                            <Publisher>Apple Computer</Publisher>
+                                                                                                            <Size>64 GB</Size>
+                                                                                                            <Studio>Apple Computer</Studio>
+                                                                                                            <Title>Apple iPhone 6 64GB Factory Unlocked GSM 4G LTE Smartphone, Silver (Certified Refurbished)</Title>
+                                                                                                            <TradeInValue>
+                                                                                                                <Amount>15000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$150.00</FormattedPrice>
+                                                                                                            </TradeInValue>
+                                                                                                            <UPC>712201431681</UPC>
+                                                                                                            <UPCList>
+                                                                                                                <UPCListElement>712201431681</UPCListElement>
+                                                                                                            </UPCList>
+                                                                                                        </ItemAttributes>
+                                                                                                        <EditorialReviews>
+                                                                                                            <EditorialReview>
+                                                                                                                <Source>Product Description</Source>
+                                                                                                                <Content>What's in the box: Certified Refurbished iPhone 6 Gold 64GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 90 days Limited Warranty. PLEASE NOTE: Charge phone overnight before using for the first time to ensure full battery capability. In the event that the phone does not turn on initially - press and hold down the 'Power' and 'Home' buttons simultaneously until the Apple logo appears on the screen.</Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                    <Item>
+                                                                                                        <ASIN>B00YD54GG2</ASIN>
+                                                                                                        <DetailPageURL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/B00YD54GG2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00YD54GG2</DetailPageURL>
+                                                                                                        <ItemLinks>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Technical Details</Description>
+                                                                                                                <URL>https://www.amazon.com/Apple-Unlocked-Smartphone-Certified-Refurbished/dp/tech-data/B00YD54GG2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Baby Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00YD54GG2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wedding Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00YD54GG2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wishlist</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00YD54GG2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Tell A Friend</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/pdp/taf/B00YD54GG2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Customer Reviews</Description>
+                                                                                                                <URL>https://www.amazon.com/review/product/B00YD54GG2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Offers</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/offer-listing/B00YD54GG2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00YD54GG2</URL>
+                                                                                                            </ItemLink>
+                                                                                                        </ItemLinks>
+                                                                                                        <ItemAttributes>
+                                                                                                            <Binding>Unlocked Phone</Binding>
+                                                                                                            <Brand>Apple</Brand>
+                                                                                                            <Color>Gold</Color>
+                                                                                                            <EAN>0712201431735</EAN>
+                                                                                                            <EANList>
+                                                                                                                <EANListElement>0712201431735</EANListElement>
+                                                                                                            </EANList>
+                                                                                                            <Feature>This Certified Refurbished product has been tested and certified to work and look like new, with minimal to no signs of wear, by a specialized third-party seller approved by Amazon. The product is backed by a minimum 90-day warranty, and may arrive in a generic brown or white box. Accessories may be generic and not directly from the manufacturer.</Feature>
+                                                                                                            <Feature>Factory unlocked iPhones are GSM models and are ONLY compatible with GSM carriers like AT&T and T-Mobile as well as other GSM networks around the world. They WILL NOT WORK with CDMA carriers like Sprint, Verizon and the likes. The phone requires a nano SIM card (not included in the package).</Feature>
+                                                                                                            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                                                                                                            <ItemDimensions>
+                                                                                                                <Height Units="hundredths-inches">27</Height>
+                                                                                                                <Length Units="hundredths-inches">544</Length>
+                                                                                                                <Weight Units="hundredths-pounds">38</Weight>
+                                                                                                                <Width Units="hundredths-inches">264</Width>
+                                                                                                            </ItemDimensions>
+                                                                                                            <Label>Apple Computer</Label>
+                                                                                                            <ListPrice>
+                                                                                                                <Amount>39955</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$399.55</FormattedPrice>
+                                                                                                            </ListPrice>
+                                                                                                            <Manufacturer>Apple Computer</Manufacturer>
+                                                                                                            <Model>iPhone16GBRFGLDEU</Model>
+                                                                                                            <MPN>iPhone16GBRFGLDEU</MPN>
+                                                                                                            <OperatingSystem>iOS</OperatingSystem>
+                                                                                                            <PackageDimensions>
+                                                                                                                <Height Units="hundredths-inches">291</Height>
+                                                                                                                <Length Units="hundredths-inches">677</Length>
+                                                                                                                <Weight Units="hundredths-pounds">71</Weight>
+                                                                                                                <Width Units="hundredths-inches">457</Width>
+                                                                                                            </PackageDimensions>
+                                                                                                            <PackageQuantity>1</PackageQuantity>
+                                                                                                            <PartNumber>iPhone16GBRFGLDEU</PartNumber>
+                                                                                                            <ProductGroup>Wireless</ProductGroup>
+                                                                                                            <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                                                                                                            <Publisher>Apple Computer</Publisher>
+                                                                                                            <Size>16 GB</Size>
+                                                                                                            <Studio>Apple Computer</Studio>
+                                                                                                            <Title>Apple iPhone 6 Plus 16GB Factory Unlocked GSM 4G LTE Smartphone, Gold (Certified Refurbished)</Title>
+                                                                                                            <TradeInValue>
+                                                                                                                <Amount>15000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$150.00</FormattedPrice>
+                                                                                                            </TradeInValue>
+                                                                                                            <UPC>712201431735</UPC>
+                                                                                                            <UPCList>
+                                                                                                                <UPCListElement>712201431735</UPCListElement>
+                                                                                                            </UPCList>
+                                                                                                        </ItemAttributes>
+                                                                                                        <EditorialReviews>
+                                                                                                            <EditorialReview>
+                                                                                                                <Source>Product Description</Source>
+                                                                                                                <Content>What's in the box: Certified Refurbished iPhone 6 Plus Gold 16GB Unlocked , USB Cable/Adapter. Comes in a Generic Box with a 1 Year Limited Warranty.</Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                    <Item>
+                                                                                                        <ASIN>B00NQGP42Y</ASIN>
+                                                                                                        <ParentASIN>B01M7S7GDU</ParentASIN>
+                                                                                                        <DetailPageURL>https://www.amazon.com/Apple-Factory-Unlocked-Internal-Smartphone/dp/B00NQGP42Y?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00NQGP42Y</DetailPageURL>
+                                                                                                        <ItemLinks>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Technical Details</Description>
+                                                                                                                <URL>https://www.amazon.com/Apple-Factory-Unlocked-Internal-Smartphone/dp/tech-data/B00NQGP42Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Baby Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B00NQGP42Y&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wedding Registry</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B00NQGP42Y&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Add To Wishlist</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B00NQGP42Y&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>Tell A Friend</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/pdp/taf/B00NQGP42Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Customer Reviews</Description>
+                                                                                                                <URL>https://www.amazon.com/review/product/B00NQGP42Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                            <ItemLink>
+                                                                                                                <Description>All Offers</Description>
+                                                                                                                <URL>https://www.amazon.com/gp/offer-listing/B00NQGP42Y?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B00NQGP42Y</URL>
+                                                                                                            </ItemLink>
+                                                                                                        </ItemLinks>
+                                                                                                        <ItemAttributes>
+                                                                                                            <Binding>Wireless Phone</Binding>
+                                                                                                            <Brand>Apple</Brand>
+                                                                                                            <CatalogNumberList>
+                                                                                                                <CatalogNumberListElement>885909950249</CatalogNumberListElement>
+                                                                                                            </CatalogNumberList>
+                                                                                                            <Color>Space Gray</Color>
+                                                                                                            <EAN>0646117873290</EAN>
+                                                                                                            <EANList>
+                                                                                                                <EANListElement>0646117873290</EANListElement>
+                                                                                                                <EANListElement>0739027483816</EANListElement>
+                                                                                                                <EANListElement>0646117873313</EANListElement>
+                                                                                                                <EANListElement>0759776402593</EANListElement>
+                                                                                                                <EANListElement>0738878322589</EANListElement>
+                                                                                                            </EANList>
+                                                                                                            <Feature>Unlocked cell phones are compatible with GSM carriers like AT&T and T-Mobile as well as with GSM SIM cards (e.g. H20, Straight Talk, and select prepaid carriers). Unlocked cell phones will not work with CDMA Carriers like Sprint, Verizon, Boost or Virgin.</Feature>
+                                                                                                            <HazardousMaterialType>Unknown</HazardousMaterialType>
+                                                                                                            <IsAutographed>0</IsAutographed>
+                                                                                                            <IsEligibleForTradeIn>1</IsEligibleForTradeIn>
+                                                                                                            <IsMemorabilia>0</IsMemorabilia>
+                                                                                                            <ItemDimensions>
+                                                                                                                <Height Units="hundredths-inches">264</Height>
+                                                                                                                <Length Units="hundredths-inches">544</Length>
+                                                                                                                <Weight Units="hundredths-pounds">28</Weight>
+                                                                                                                <Width Units="hundredths-inches">27</Width>
+                                                                                                            </ItemDimensions>
+                                                                                                            <Label>Apple Computer</Label>
+                                                                                                            <LegalDisclaimer>Fully Functional. Mint cosmetic condition. Extremely minor wear or none at all. Rated cosmetically as 9/10 or better. Wall charger and data cable are included. Backed by Cellular Professor's 60 day warranty.</LegalDisclaimer>
+                                                                                                            <ListPrice>
+                                                                                                                <Amount>37499</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$374.99</FormattedPrice>
+                                                                                                            </ListPrice>
+                                                                                                            <Manufacturer>Apple Computer</Manufacturer>
+                                                                                                            <Model>A1549</Model>
+                                                                                                            <MPN>MG5W2LL/A - (A1549)</MPN>
+                                                                                                            <OperatingSystem>iOS 8, upgradable to iOS 8.2</OperatingSystem>
+                                                                                                            <PackageDimensions>
+                                                                                                                <Height Units="hundredths-inches">190</Height>
+                                                                                                                <Length Units="hundredths-inches">580</Length>
+                                                                                                                <Weight Units="hundredths-pounds">65</Weight>
+                                                                                                                <Width Units="hundredths-inches">330</Width>
+                                                                                                            </PackageDimensions>
+                                                                                                            <PackageQuantity>1</PackageQuantity>
+                                                                                                            <PartNumber>MG5W2LL/A - (A1549)</PartNumber>
+                                                                                                            <ProductGroup>Wireless Device</ProductGroup>
+                                                                                                            <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+                                                                                                            <Publisher>Apple Computer</Publisher>
+                                                                                                            <Size>16 GB</Size>
+                                                                                                            <Studio>Apple Computer</Studio>
+                                                                                                            <Title>Apple iPhone 6 16GB Factory Unlocked GSM 4G LTE Internal Smartphone - Space Gray</Title>
+                                                                                                            <TradeInValue>
+                                                                                                                <Amount>13000</Amount>
+                                                                                                                <CurrencyCode>USD</CurrencyCode>
+                                                                                                                <FormattedPrice>$130.00</FormattedPrice>
+                                                                                                            </TradeInValue>
+                                                                                                            <UPC>739027483816</UPC>
+                                                                                                            <UPCList>
+                                                                                                                <UPCListElement>739027483816</UPCListElement>
+                                                                                                                <UPCListElement>646117873313</UPCListElement>
+                                                                                                                <UPCListElement>738878322589</UPCListElement>
+                                                                                                                <UPCListElement>646117873290</UPCListElement>
+                                                                                                                <UPCListElement>759776402593</UPCListElement>
+                                                                                                            </UPCList>
+                                                                                                        </ItemAttributes>
+                                                                                                        <EditorialReviews>
+                                                                                                            <EditorialReview>
+                                                                                                                <Source>Product Description</Source>
+                                                                                                                <Content>The Apple iPhone 6 comes with a 4.7 inch screen, an 8 megapixel camera and Apple A8 processor. The iPhone 6 also features near field communications capabilities (NFC) and a sleek design. Other features include a fingerprint reader and Siri personal assistant. This device is in GOOD cosmetic condition, it is 100% fully functional as tested by our expert technicians and passed an industry leading 65-point inspection.  Please be aware this device is previously owned and does have cosmetic wear such as light scratches on the screen and/or minor scuff, scratches or nicks on the housing and/or back of device.   The device has been thoroughly inspected, cleaned and refurbished (if necessary) at our manufacturer approved repair center.  Our devices are extensively inspected for quality and reliability, if you are not 100% satisfied we offer a 30-day money-back promise. Includes A/C Adapter & USB Cable. No other accessories, original box or manufacturer's warranty are included. This Verizon device is factory unlocked for use with most other CDMA or GSM carriers. Please contact your carrier to confirm compatibility prior to purchasing. Bands: GSM/EDGE: 850/900/1800/1900; CDMA: 800/1700/1900/2100; UMTS: 850/900/1700/1900/2100; LTE: 1/2/3/4/5/8/13/17/19/20/25/26/28/29</Content>
+                                                                                                                <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                            </EditorialReview>
+                                                                                                        </EditorialReviews>
+                                                                                                    </Item>
+                                                                                                </Items>
+                                                                                            </ItemSearchResponse>

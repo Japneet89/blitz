@@ -1,0 +1,1132 @@
+﻿/* **********Unsigned URL********** */
+http://webservices.amazon.com/onca/xml?Service=AWSECommerceService&Operation=ItemSearch&SubscriptionId=AKIAILMBKWFE4D6QDNWA&AssociateTag=benderapps-20&SearchIndex=All&Keywords=wrench&ResponseGroup=EditorialReview,ItemAttributes
+
+/* **********Signed URL********** */
+http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAILMBKWFE4D6QDNWA&AssociateTag=benderapps-20&Keywords=wrench&Operation=ItemSearch&ResponseGroup=EditorialReview%2CItemAttributes&SearchIndex=All&Service=AWSECommerceService&Timestamp=2017-04-19T19%3A32%3A19.000Z&Signature=PCyC95glQJaWIBnh9Gi61VezkKoMgMDyvsK%2BnGQQo1w%3D
+
+/* **********Response********** */
+<?xml version="1.0" ?>
+<ItemSearchResponse
+    xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"></Header>
+        </HTTPHeaders>
+        <RequestId>03bd6d43-3400-4f99-867d-c014cbd5f0f8</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAILMBKWFE4D6QDNWA"></Argument>
+            <Argument Name="AssociateTag" Value="benderapps-20"></Argument>
+            <Argument Name="Keywords" Value="wrench"></Argument>
+            <Argument Name="Operation" Value="ItemSearch"></Argument>
+            <Argument Name="ResponseGroup" Value="EditorialReview,ItemAttributes"></Argument>
+            <Argument Name="SearchIndex" Value="All"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Timestamp" Value="2017-04-19T19:32:19.000Z"></Argument>
+            <Argument Name="Signature" Value="PCyC95glQJaWIBnh9Gi61VezkKoMgMDyvsK+nGQQo1w="></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.1033433710000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemSearchRequest>
+                <Keywords>wrench</Keywords>
+                <ResponseGroup>EditorialReview</ResponseGroup>
+                <ResponseGroup>ItemAttributes</ResponseGroup>
+                <SearchIndex>All</SearchIndex>
+            </ItemSearchRequest>
+        </Request>
+        <TotalResults>438487</TotalResults>
+        <TotalPages>43849</TotalPages>
+        <MoreSearchResultsUrl>https://www.amazon.com/gp/search?linkCode=xm2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&keywords=wrench&tag=benderapps-20&creative=386001&url=search-alias%3Daws-amazon-aps&camp=2025</MoreSearchResultsUrl>
+        <Item>
+            <ASIN>B000NIK9S2</ASIN>
+            <ParentASIN>B00X6F0ONY</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/Stanley-90-947-6-Inch-MaxSteel-Adjustable/dp/B000NIK9S2?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000NIK9S2</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Stanley-90-947-6-Inch-MaxSteel-Adjustable/dp/tech-data/B000NIK9S2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000NIK9S2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000NIK9S2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000NIK9S2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B000NIK9S2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B000NIK9S2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B000NIK9S2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIK9S2</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Tools & Home Improvement</Binding>
+                <Brand>Stanley</Brand>
+                <CatalogNumberList>
+                    <CatalogNumberListElement>VIF-065</CatalogNumberListElement>
+                    <CatalogNumberListElement>90-947</CatalogNumberListElement>
+                </CatalogNumberList>
+                <Color>DESIGN 1</Color>
+                <EAN>6818237125434</EAN>
+                <EANList>
+                    <EANListElement>6818237125434</EANListElement>
+                    <EANListElement>6007845908052</EANListElement>
+                    <EANListElement>0785533575309</EANListElement>
+                    <EANListElement>0754262194617</EANListElement>
+                    <EANListElement>0076174909470</EANListElement>
+                    <EANListElement>0613706966800</EANListElement>
+                    <EANListElement>0074994448292</EANListElement>
+                    <EANListElement>7262318386198</EANListElement>
+                    <EANListElement>0767615244181</EANListElement>
+                    <EANListElement>7147905940802</EANListElement>
+                    <EANListElement>0700038697912</EANListElement>
+                </EANList>
+                <Feature>Laser-etched SAE and mm jaw scale for easy size adjustment</Feature>
+                <Feature>Built-in tension spring stabilizes movable jaw.</Feature>
+                <Feature>Forged chrome vanadium steel is strong and durable. Meets ANSI specifications.</Feature>
+                <Feature>Slip-resistant bi-material handle for a comfortable grip. Used for automotive maintenance and repair, plumbing and general assembly tasks. Limited Lifetime Warranty</Feature>
+                <Feature>Max Jaw Capacity: 13/14" / 26.3mm Head Width: 11/25" / 11.2mm</Feature>
+                <IsAutographed>0</IsAutographed>
+                <IsMemorabilia>0</IsMemorabilia>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">70</Height>
+                    <Length Units="hundredths-inches">820</Length>
+                    <Weight Units="hundredths-pounds">36</Weight>
+                    <Width Units="hundredths-inches">330</Width>
+                </ItemDimensions>
+                <Label>Stanley</Label>
+                <ListPrice>
+                    <Amount>922</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$9.22</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Stanley</Manufacturer>
+                <ManufacturerPartsWarrantyDescription>Parts</ManufacturerPartsWarrantyDescription>
+                <Model>90-947</Model>
+                <MPN>90-947</MPN>
+                <NumberOfItems>1</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">50</Height>
+                    <Length Units="hundredths-inches">800</Length>
+                    <Weight Units="hundredths-pounds">35</Weight>
+                    <Width Units="hundredths-inches">250</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>90-947</PartNumber>
+                <ProductGroup>Home Improvement</ProductGroup>
+                <ProductTypeName>TOOLS</ProductTypeName>
+                <Publisher>Stanley</Publisher>
+                <Size>1</Size>
+                <Studio>Stanley</Studio>
+                <Title>Stanley 90-947 6-Inch MaxSteel Adjustable Wrench</Title>
+                <UPC>700038697912</UPC>
+                <UPCList>
+                    <UPCListElement>700038697912</UPCListElement>
+                    <UPCListElement>785533575309</UPCListElement>
+                    <UPCListElement>754262194617</UPCListElement>
+                    <UPCListElement>767615244181</UPCListElement>
+                    <UPCListElement>076174909470</UPCListElement>
+                    <UPCListElement>613706966800</UPCListElement>
+                    <UPCListElement>074994448292</UPCListElement>
+                </UPCList>
+                <Warranty>Stanley warrants this product to the original purchaser for its useful life against deficiencies in material and workmanship. This LIMITED LIFETIME WARRANTY does not cover products that are improperly used, abused, altered or repaired. Deficient products will be replaced or repaired.</Warranty>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Durable Product</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B000NPR438</ASIN>
+            <ParentASIN>B00N5POUQM</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/TEKTON-23001-4-Inch-Adjustable-Wrench/dp/B000NPR438?psc=1&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000NPR438</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/TEKTON-23001-4-Inch-Adjustable-Wrench/dp/tech-data/B000NPR438?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000NPR438&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000NPR438&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000NPR438&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B000NPR438?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B000NPR438?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B000NPR438?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NPR438</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Tools & Home Improvement</Binding>
+                <Brand>TEKTON</Brand>
+                <EAN>0020209230015</EAN>
+                <EANList>
+                    <EANListElement>0020209230015</EANListElement>
+                    <EANListElement>7355117374081</EANListElement>
+                </EANList>
+                <Feature>Drop forged and heat-treated carbon steel construction with a corrosion-resistant satin chrome plated finish</Feature>
+                <Feature>Precision-machined slide jaw and worm gear allows for exact fastener fit and smooth adjustment</Feature>
+                <Feature>Quick fit jaw opening guide with permanent laser-etched size markings in 1/16 in. and 1mm increments</Feature>
+                <Feature>Meets or exceeds ANSI standards</Feature>
+                <Feature>1/2 in. jaw capacity</Feature>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">63</Height>
+                    <Length Units="hundredths-inches">669</Length>
+                    <Weight Units="hundredths-pounds">0</Weight>
+                    <Width Units="hundredths-inches">188</Width>
+                </ItemDimensions>
+                <Label>TEKTON</Label>
+                <Languages>
+                    <Language>
+                        <Name>English</Name>
+                        <Type>Unknown</Type>
+                    </Language>
+                </Languages>
+                <ListPrice>
+                    <Amount>556</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$5.56</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>TEKTON</Manufacturer>
+                <Model>23001</Model>
+                <MPN>23001</MPN>
+                <NumberOfItems>1</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">10</Height>
+                    <Length Units="hundredths-inches">400</Length>
+                    <Weight Units="hundredths-pounds">2</Weight>
+                    <Width Units="hundredths-inches">100</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>23001</PartNumber>
+                <ProductGroup>Home Improvement</ProductGroup>
+                <ProductTypeName>TOOLS</ProductTypeName>
+                <Publisher>TEKTON</Publisher>
+                <Size>4 in.</Size>
+                <Studio>TEKTON</Studio>
+                <Title>TEKTON 23001 4-Inch Adjustable Wrench</Title>
+                <UPC>020209230015</UPC>
+                <UPCList>
+                    <UPCListElement>020209230015</UPCListElement>
+                </UPCList>
+                <Warranty>Always Guaranteed: support@tekton.com</Warranty>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Designed for tight and hard-to-reach spaces, the TEKTON 4 in. Adjustable Wrench can take on bicycle repair and furniture assembly. It also works well to secure back nut or bolt while tightening or loosening front nut or bolt with a socket or combination wrench. TEKTON adjustable wrenches are designed to be versatile enough to tighten and loosen fasteners of various sizes without needing to grab other tools. Made from durable carbon steel with a corrosion-resistant satin chrome finish, our wrenches will become a permanent staple in your toolbox. Manufactured to strict quality specifications, TEKTON adjustable wrenches meet or exceed ANSI performance standards. Precision-machined for a tight fit, the slide jaw and worm gear contact in 3 spots for smooth operation and less play. Knurling on worm guide allows for quick jaw size adjustment. The satin finish keeps wrench looking like new by hiding scratch marks that can be seen in regular chrome finished wrenches. Jaw opening guide has permanent laser etched size markings in both metric and Inch scales. The dual Inch/metric scale is useful measuring the size of nuts and bolts. Each wrench displays a stamped length size and model number for distinction among your TEKTON adjustable wrenches.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B000NIDIXA</ASIN>
+            <DetailPageURL>https://www.amazon.com/Stanley-90-949-10-Inch-MaxSteel-Adjustable/dp/B000NIDIXA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000NIDIXA</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Stanley-90-949-10-Inch-MaxSteel-Adjustable/dp/tech-data/B000NIDIXA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000NIDIXA&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000NIDIXA&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000NIDIXA&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B000NIDIXA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B000NIDIXA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B000NIDIXA?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIDIXA</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Tools & Home Improvement</Binding>
+                <Brand>Stanley</Brand>
+                <CatalogNumberList>
+                    <CatalogNumberListElement>90-949</CatalogNumberListElement>
+                    <CatalogNumberListElement>317810</CatalogNumberListElement>
+                </CatalogNumberList>
+                <Color>One Color</Color>
+                <EAN>6019845759121</EAN>
+                <EANList>
+                    <EANListElement>6019845759121</EANListElement>
+                    <EANListElement>7535001393774</EANListElement>
+                    <EANListElement>0078433221484</EANListElement>
+                    <EANListElement>7258006647665</EANListElement>
+                    <EANListElement>0076174909494</EANListElement>
+                    <EANListElement>0705548258288</EANListElement>
+                    <EANListElement>0785533886306</EANListElement>
+                    <EANListElement>0755187054475</EANListElement>
+                </EANList>
+                <Feature>Laser-marked SAE and metric jaw scale for easy fastener size</Feature>
+                <Feature>Forged alloy-steel body increases strength and exceeds ANSI standards for torque</Feature>
+                <Feature>Extra-wide jaw capacity opens wider than standard adjustable wrenches</Feature>
+                <Feature>Bi-material handle for a comfortable grip.  Used for automotive maintenance and repair, plumbing and general assembly tasks</Feature>
+                <Feature>Limited Lifetime Warranty</Feature>
+                <IsAutographed>0</IsAutographed>
+                <IsMemorabilia>0</IsMemorabilia>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">70</Height>
+                    <Length Units="hundredths-inches">1200</Length>
+                    <Weight Units="hundredths-pounds">103</Weight>
+                    <Width Units="hundredths-inches">380</Width>
+                </ItemDimensions>
+                <Label>Stanley</Label>
+                <Languages>
+                    <Language>
+                        <Name>English</Name>
+                        <Type>Unknown</Type>
+                    </Language>
+                </Languages>
+                <ListPrice>
+                    <Amount>1949</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$19.49</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Stanley</Manufacturer>
+                <Model>90-949</Model>
+                <MPN>90-949</MPN>
+                <NumberOfItems>1</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">70</Height>
+                    <Length Units="hundredths-inches">1230</Length>
+                    <Weight Units="hundredths-pounds">115</Weight>
+                    <Width Units="hundredths-inches">540</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>90-949</PartNumber>
+                <ProductGroup>Home Improvement</ProductGroup>
+                <ProductTypeName>TOOLS</ProductTypeName>
+                <Publisher>Stanley</Publisher>
+                <Size>10 inch</Size>
+                <Studio>Stanley</Studio>
+                <Title>Stanley 90-949 10-Inch MaxSteel Adjustable Wrench</Title>
+                <UPC>755187054475</UPC>
+                <UPCList>
+                    <UPCListElement>755187054475</UPCListElement>
+                    <UPCListElement>076174909494</UPCListElement>
+                    <UPCListElement>078433221484</UPCListElement>
+                    <UPCListElement>705548258288</UPCListElement>
+                    <UPCListElement>785533886306</UPCListElement>
+                </UPCList>
+                <Warranty>Stanley warrants this product to the original purchaser for its useful life against deficiencies in material and workmanship. This LIMITED LIFETIME WARRANTY does not cover products that are improperly used, abused, altered or repaired. Deficient products will be replaced or repaired.</Warranty>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>2540-8378 Features: -Extra wide jaw capacity.-Slim head profile to fit in tight spaces.-Bi-material cushion grip for comfort.-Laser etched measurements.-Standard measurements on one side, metric measurements on the other side.-Meets or exceeds ASME standards.-10''.-Carded.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B000NIGOBS</ASIN>
+            <DetailPageURL>https://www.amazon.com/Stanley-90-948-8-Inch-Adjustable-Wrench/dp/B000NIGOBS?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000NIGOBS</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Stanley-90-948-8-Inch-Adjustable-Wrench/dp/tech-data/B000NIGOBS?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000NIGOBS&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000NIGOBS&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000NIGOBS&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B000NIGOBS?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B000NIGOBS?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B000NIGOBS?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NIGOBS</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Tools & Home Improvement</Binding>
+                <Brand>Stanley</Brand>
+                <CatalogNumberList>
+                    <CatalogNumberListElement>90-948</CatalogNumberListElement>
+                    <CatalogNumberListElement>317578</CatalogNumberListElement>
+                </CatalogNumberList>
+                <EAN>7262318312647</EAN>
+                <EANList>
+                    <EANListElement>7262318312647</EANListElement>
+                    <EANListElement>7147905925724</EANListElement>
+                    <EANListElement>6824917200797</EANListElement>
+                    <EANListElement>0787721795339</EANListElement>
+                    <EANListElement>5448095555084</EANListElement>
+                    <EANListElement>7258006542786</EANListElement>
+                    <EANListElement>7241870813885</EANListElement>
+                    <EANListElement>7336117933713</EANListElement>
+                    <EANListElement>0076174909487</EANListElement>
+                    <EANListElement>7535001180855</EANListElement>
+                </EANList>
+                <Feature>Laser-marked SAE and metric jaw scale for easy fastener size</Feature>
+                <Feature>Forged alloy-steel body increases strength and exceeds ANSI standards for torque</Feature>
+                <Feature>Extra-wide jaw capacity opens wider than standard adjustable wrenches</Feature>
+                <Feature>Bi-material handle for a comfortable grip.  Used for automotive maintenance and repair, plumbing and general assembly tasks</Feature>
+                <Feature>Limited Lifetime Warranty</Feature>
+                <IsAutographed>0</IsAutographed>
+                <IsMemorabilia>0</IsMemorabilia>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">70</Height>
+                    <Length Units="hundredths-inches">980</Length>
+                    <Weight Units="hundredths-pounds">68</Weight>
+                    <Width Units="hundredths-inches">350</Width>
+                </ItemDimensions>
+                <Label>Stanley</Label>
+                <Languages>
+                    <Language>
+                        <Name>English</Name>
+                        <Type>Unknown</Type>
+                    </Language>
+                </Languages>
+                <ListPrice>
+                    <Amount>1388</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$13.88</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Stanley</Manufacturer>
+                <ManufacturerPartsWarrantyDescription>Parts</ManufacturerPartsWarrantyDescription>
+                <Model>90-948</Model>
+                <MPN>90-948</MPN>
+                <NumberOfItems>1</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">118</Height>
+                    <Length Units="hundredths-inches">1000</Length>
+                    <Weight Units="hundredths-pounds">97</Weight>
+                    <Width Units="hundredths-inches">339</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>90-948</PartNumber>
+                <ProductGroup>Home Improvement</ProductGroup>
+                <ProductTypeName>TOOLS</ProductTypeName>
+                <Publisher>Stanley</Publisher>
+                <Size>Pack of 1</Size>
+                <Studio>Stanley</Studio>
+                <Title>Stanley 90-948 8-Inch Adjustable Wrench</Title>
+                <UPC>787721795339</UPC>
+                <UPCList>
+                    <UPCListElement>787721795339</UPCListElement>
+                    <UPCListElement>076174909487</UPCListElement>
+                </UPCList>
+                <Warranty>Stanley warrants this product to the original purchaser for its useful life against deficiencies in material and workmanship. This LIMITED LIFETIME WARRANTY does not cover products that are improperly used, abused, altered or repaired. Deficient products will be replaced or repaired.</Warranty>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>The Stanley 8" max steel adjustable wrench is a versatile tool that is ideal for many types of assembly, repair, and maintenance jobs including plumbing and automotive tasks. Its slip-resistant handle and tapered jaw design gives you precision and control when working in limited spaces.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+            </EditorialReviews>
+        </Item>
+        <Item>
+            <ASIN>B000065CJ8</ASIN>
+            <DetailPageURL>https://www.amazon.com/Gator-Grip-Universal-Socket-Set/dp/B000065CJ8?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000065CJ8</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/Gator-Grip-Universal-Socket-Set/dp/tech-data/B000065CJ8?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000065CJ8&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000065CJ8&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000065CJ8&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B000065CJ8?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B000065CJ8?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B000065CJ8?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000065CJ8</URL>
+                </ItemLink>
+            </ItemLinks>
+            <ItemAttributes>
+                <Binding>Tools & Home Improvement</Binding>
+                <Brand>Endeavor Tool LLC</Brand>
+                <CatalogNumberList>
+                    <CatalogNumberListElement>317136</CatalogNumberListElement>
+                    <CatalogNumberListElement>ETC200-6</CatalogNumberListElement>
+                </CatalogNumberList>
+                <EAN>0608721001216</EAN>
+                <EANList>
+                    <EANListElement>0608721001216</EANListElement>
+                    <EANListElement>0608721001223</EANListElement>
+                    <EANListElement>0785533865370</EANListElement>
+                    <EANListElement>0733353722885</EANListElement>
+                    <EANListElement>6348288567780</EANListElement>
+                </EANList>
+                <Feature>Professional grade universal socket wrench</Feature>
+                <Feature>Replaces both metric and standard sockets and wrenches</Feature>
+                <Feature>Unique design automatically adjusts to any size or shape</Feature>
+                <Feature>Includes power adapter for electric drill or screwdriver</Feature>
+                <Feature>1-year limited manufacturer's warranty</Feature>
+                <IsAutographed>0</IsAutographed>
+                <IsMemorabilia>0</IsMemorabilia>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">1050</Height>
+                    <Length Units="hundredths-inches">680</Length>
+                    <Weight Units="hundredths-pounds">55</Weight>
+                    <Width Units="hundredths-inches">150</Width>
+                </ItemDimensions>
+                <Label>Endeavor Tool Company</Label>
+                <ListPrice>
+                    <Amount>2199</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$21.99</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>Endeavor Tool Company</Manufacturer>
+                <Model>200MO</Model>
+                <MPN>20201</MPN>
+                <NumberOfItems>1</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">169</Height>
+                    <Length Units="hundredths-inches">1409</Length>
+                    <Weight Units="hundredths-pounds">135</Weight>
+                    <Width Units="hundredths-inches">358</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>20201</PartNumber>
+                <ProductGroup>Home Improvement</ProductGroup>
+                <ProductTypeName>TOOLS</ProductTypeName>
+                <Publisher>Endeavor Tool Company</Publisher>
+                <Studio>Endeavor Tool Company</Studio>
+                <Title>Gator Grip Universal Socket Set - ETC-200</Title>
+                <UPC>608721001223</UPC>
+                <UPCList>
+                    <UPCListElement>608721001223</UPCListElement>
+                    <UPCListElement>785533865370</UPCListElement>
+                    <UPCListElement>733353722885</UPCListElement>
+                    <UPCListElement>608721001216</UPCListElement>
+                </UPCList>
+            </ItemAttributes>
+            <EditorialReviews>
+                <EditorialReview>
+                    <Source>Product Description</Source>
+                    <Content>Includes: Gator-Grip 3/4" socket, Ratchet wrench, Power driver adapter. 
+
+The Gator Grip Universal Socket is a universal socket that instantly adjusts to grip hex nuts, screw eyes, hooks, lag screws, and bolt heads. It features a wide range of adjustability that will fit standard 1/4-inch to 3/4-inch and metric 7mm to 19mm nuts and bolt heads. The tool's socket contains 54 hardened steel spring pins for long-lasting durability. When placed onto a fastener, the center pins retract and the outer pins surround the fastener. As the fastener is turned, the torque is transmitted through the outer pins to the walls of the socket, making this socket an ideal choice for heavy-duty personal or professional use. The tool features a 3/8" drive.</Content>
+                    <IsLinkSuppressed>0</IsLinkSuppressed>
+                </EditorialReview>
+                <EditorialReview>
+                    <Source>Amazon.com</Source>
+                    <Content>The Gator Grip Universal Socket is a universal socket that instantly adjusts to grip hex nuts, screw eyes, hooks, lag screws, and bolt heads. It features a wide range of adjustability that will fit standard 1/4-inch to 3/4-inch and metric 7mm to 19mm nuts and bolt heads. The tool's socket contains 54 hardened steel spring pins for long-lasting durability. When placed onto a fastener, the center pins retract and the outer pins surround the fastener. As the fastener is turned, the torque is transmitted through the outer pins to the walls of the socket, making this socket an ideal choice for heavy-duty personal or professional use. The tool features a 3/8-inch drive, and comes with a 1-year limited manufacturer's warranty.
+                        <P>
+                            <b>What's in the Box</b>
+                            <br> Drill adapter and ratcheting socket wrench with 3/8-inch drive.
+                            </Content>
+                            <IsLinkSuppressed>0</IsLinkSuppressed>
+                        </EditorialReview>
+                    </EditorialReviews>
+                </Item>
+                <Item>
+                    <ASIN>B0016K9FX6</ASIN>
+                    <DetailPageURL>https://www.amazon.com/GRIP-89358-Combination-Wrench-24-Piece/dp/B0016K9FX6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B0016K9FX6</DetailPageURL>
+                    <ItemLinks>
+                        <ItemLink>
+                            <Description>Technical Details</Description>
+                            <URL>https://www.amazon.com/GRIP-89358-Combination-Wrench-24-Piece/dp/tech-data/B0016K9FX6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Baby Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B0016K9FX6&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wedding Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B0016K9FX6&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wishlist</Description>
+                            <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B0016K9FX6&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Tell A Friend</Description>
+                            <URL>https://www.amazon.com/gp/pdp/taf/B0016K9FX6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Customer Reviews</Description>
+                            <URL>https://www.amazon.com/review/product/B0016K9FX6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Offers</Description>
+                            <URL>https://www.amazon.com/gp/offer-listing/B0016K9FX6?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B0016K9FX6</URL>
+                        </ItemLink>
+                    </ItemLinks>
+                    <ItemAttributes>
+                        <Binding>Tools & Home Improvement</Binding>
+                        <Brand>GRIP</Brand>
+                        <EAN>0097257893585</EAN>
+                        <EANList>
+                            <EANListElement>0097257893585</EANListElement>
+                            <EANListElement>0784497233157</EANListElement>
+                            <EANListElement>0787721567271</EANListElement>
+                            <EANListElement>0713827470764</EANListElement>
+                        </EANList>
+                        <Feature>Drop forged, heat treated alloy steel.</Feature>
+                        <Feature>Precision machined open and boxed ends.</Feature>
+                        <Feature>Raised panel provides added strength.</Feature>
+                        <Feature>Sizes: MM (7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 22), SAE (1/4", 5/16", 3/8", 7/16", 1/2", 9/16", 5/8", 11/16", 3/4", 13/16", 7/8", 1").</Feature>
+                        <ItemDimensions>
+                            <Height Units="hundredths-inches">300</Height>
+                            <Length Units="hundredths-inches">1400</Length>
+                            <Weight Units="hundredths-pounds">800</Weight>
+                            <Width Units="hundredths-inches">400</Width>
+                        </ItemDimensions>
+                        <Label>GRIP (GRAND RAPIDS INDUSTRIAL PRODUCTS)</Label>
+                        <Languages>
+                            <Language>
+                                <Name>English</Name>
+                                <Type>Unknown</Type>
+                            </Language>
+                        </Languages>
+                        <ListPrice>
+                            <Amount>2499</Amount>
+                            <CurrencyCode>USD</CurrencyCode>
+                            <FormattedPrice>$24.99</FormattedPrice>
+                        </ListPrice>
+                        <Manufacturer>GRIP (GRAND RAPIDS INDUSTRIAL PRODUCTS)</Manufacturer>
+                        <ManufacturerPartsWarrantyDescription>Parts</ManufacturerPartsWarrantyDescription>
+                        <Model>89358</Model>
+                        <MPN>89358</MPN>
+                        <NumberOfItems>1</NumberOfItems>
+                        <PackageDimensions>
+                            <Height Units="hundredths-inches">280</Height>
+                            <Length Units="hundredths-inches">1390</Length>
+                            <Weight Units="hundredths-pounds">675</Weight>
+                            <Width Units="hundredths-inches">430</Width>
+                        </PackageDimensions>
+                        <PackageQuantity>1</PackageQuantity>
+                        <PartNumber>89358</PartNumber>
+                        <ProductGroup>Home Improvement</ProductGroup>
+                        <ProductTypeName>TOOLS</ProductTypeName>
+                        <Publisher>GRIP (GRAND RAPIDS INDUSTRIAL PRODUCTS)</Publisher>
+                        <Studio>GRIP (GRAND RAPIDS INDUSTRIAL PRODUCTS)</Studio>
+                        <Title>GRIP 89358 MM/SAE Combination Wrench Set, Chrome, 24-Piece</Title>
+                        <UPC>787721567271</UPC>
+                        <UPCList>
+                            <UPCListElement>787721567271</UPCListElement>
+                            <UPCListElement>097257893585</UPCListElement>
+                            <UPCListElement>784497233157</UPCListElement>
+                            <UPCListElement>713827470764</UPCListElement>
+                        </UPCList>
+                    </ItemAttributes>
+                    <EditorialReviews>
+                        <EditorialReview>
+                            <Source>Product Description</Source>
+                            <Content>Grip combination wrench set combines both MM and SAE sizes for use while repairing objects around the home, garage, or workshop.</Content>
+                            <IsLinkSuppressed>0</IsLinkSuppressed>
+                        </EditorialReview>
+                    </EditorialReviews>
+                </Item>
+                <Item>
+                    <ASIN>B000NNFSKG</ASIN>
+                    <DetailPageURL>https://www.amazon.com/Stanley-84-024-10-Inch-Bi-Material-Groove/dp/B000NNFSKG?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000NNFSKG</DetailPageURL>
+                    <ItemLinks>
+                        <ItemLink>
+                            <Description>Technical Details</Description>
+                            <URL>https://www.amazon.com/Stanley-84-024-10-Inch-Bi-Material-Groove/dp/tech-data/B000NNFSKG?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Baby Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000NNFSKG&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wedding Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000NNFSKG&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wishlist</Description>
+                            <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000NNFSKG&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Tell A Friend</Description>
+                            <URL>https://www.amazon.com/gp/pdp/taf/B000NNFSKG?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Customer Reviews</Description>
+                            <URL>https://www.amazon.com/review/product/B000NNFSKG?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Offers</Description>
+                            <URL>https://www.amazon.com/gp/offer-listing/B000NNFSKG?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000NNFSKG</URL>
+                        </ItemLink>
+                    </ItemLinks>
+                    <ItemAttributes>
+                        <Binding>Tools & Home Improvement</Binding>
+                        <Brand>Stanley</Brand>
+                        <CatalogNumberList>
+                            <CatalogNumberListElement>84-024</CatalogNumberListElement>
+                            <CatalogNumberListElement>344504</CatalogNumberListElement>
+                        </CatalogNumberList>
+                        <EAN>0078433167829</EAN>
+                        <EANList>
+                            <EANListElement>0078433167829</EANListElement>
+                            <EANListElement>0785533791211</EANListElement>
+                            <EANListElement>6824917203361</EANListElement>
+                            <EANListElement>0754262194549</EANListElement>
+                            <EANListElement>6919289866679</EANListElement>
+                            <EANListElement>7535001190342</EANListElement>
+                            <EANListElement>0076174840247</EANListElement>
+                            <EANListElement>0100058673611</EANListElement>
+                            <EANListElement>7258006567949</EANListElement>
+                            <EANListElement>0787721798330</EANListElement>
+                            <EANListElement>7241870768536</EANListElement>
+                        </EANList>
+                        <Feature>Adjustable-width jaw designed for grasping and turning</Feature>
+                        <Feature>Used for plumbing, automotive and general applications</Feature>
+                        <Feature>Rust-resistant chrome finish</Feature>
+                        <Feature>Machined jaws help grip items securely</Feature>
+                        <Feature>Limited Lifetime Warranty</Feature>
+                        <IsAutographed>0</IsAutographed>
+                        <IsMemorabilia>0</IsMemorabilia>
+                        <ItemDimensions>
+                            <Height Units="hundredths-inches">80</Height>
+                            <Length Units="hundredths-inches">1220</Length>
+                            <Weight Units="pounds">1</Weight>
+                            <Width Units="hundredths-inches">380</Width>
+                        </ItemDimensions>
+                        <Label>Stanley</Label>
+                        <ListPrice>
+                            <Amount>992</Amount>
+                            <CurrencyCode>USD</CurrencyCode>
+                            <FormattedPrice>$9.92</FormattedPrice>
+                        </ListPrice>
+                        <Manufacturer>Stanley</Manufacturer>
+                        <ManufacturerPartsWarrantyDescription>Parts</ManufacturerPartsWarrantyDescription>
+                        <Model>84-024</Model>
+                        <MPN>84-024</MPN>
+                        <NumberOfItems>1</NumberOfItems>
+                        <PackageDimensions>
+                            <Height Units="hundredths-inches">60</Height>
+                            <Length Units="hundredths-inches">1150</Length>
+                            <Weight Units="hundredths-pounds">90</Weight>
+                            <Width Units="hundredths-inches">260</Width>
+                        </PackageDimensions>
+                        <PackageQuantity>1</PackageQuantity>
+                        <PartNumber>84-024</PartNumber>
+                        <ProductGroup>Home Improvement</ProductGroup>
+                        <ProductTypeName>TOOLS</ProductTypeName>
+                        <Publisher>Stanley</Publisher>
+                        <Size>EA</Size>
+                        <Studio>Stanley</Studio>
+                        <Title>Stanley 84-024 10-Inch Bi-Material Groove Joint Pliers</Title>
+                        <UPC>076174840247</UPC>
+                        <UPCList>
+                            <UPCListElement>076174840247</UPCListElement>
+                            <UPCListElement>785533791211</UPCListElement>
+                            <UPCListElement>078433167829</UPCListElement>
+                            <UPCListElement>787721798330</UPCListElement>
+                            <UPCListElement>754262194549</UPCListElement>
+                            <UPCListElement>100058673611</UPCListElement>
+                        </UPCList>
+                        <Warranty>Stanley warrants this product to the original purchaser for its useful life against deficiencies in material and workmanship. This LIMITED LIFETIME WARRANTY does not cover products that are improperly used, abused, altered or repaired. Deficient products will be replaced or repaired</Warranty>
+                    </ItemAttributes>
+                    <EditorialReviews>
+                        <EditorialReview>
+                            <Source>Product Description</Source>
+                            <Content>Adjustable-width jaw designed for grasping and turning. Used for plumbing, automotive and general applications. Rust-resistant chrome finish. Machined jaws help grip items securely.</Content>
+                            <IsLinkSuppressed>0</IsLinkSuppressed>
+                        </EditorialReview>
+                    </EditorialReviews>
+                </Item>
+                <Item>
+                    <ASIN>B000628RIE</ASIN>
+                    <DetailPageURL>https://www.amazon.com/Stanley-87-473-12-Inch-Adjustable-Wrench/dp/B000628RIE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000628RIE</DetailPageURL>
+                    <ItemLinks>
+                        <ItemLink>
+                            <Description>Technical Details</Description>
+                            <URL>https://www.amazon.com/Stanley-87-473-12-Inch-Adjustable-Wrench/dp/tech-data/B000628RIE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Baby Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000628RIE&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wedding Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000628RIE&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wishlist</Description>
+                            <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000628RIE&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Tell A Friend</Description>
+                            <URL>https://www.amazon.com/gp/pdp/taf/B000628RIE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Customer Reviews</Description>
+                            <URL>https://www.amazon.com/review/product/B000628RIE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Offers</Description>
+                            <URL>https://www.amazon.com/gp/offer-listing/B000628RIE?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000628RIE</URL>
+                        </ItemLink>
+                    </ItemLinks>
+                    <ItemAttributes>
+                        <Binding>Tools & Home Improvement</Binding>
+                        <Brand>Stanley</Brand>
+                        <CatalogNumberList>
+                            <CatalogNumberListElement>2AA83790BOS87473</CatalogNumberListElement>
+                            <CatalogNumberListElement>87-473</CatalogNumberListElement>
+                            <CatalogNumberListElement>BOS-87473</CatalogNumberListElement>
+                        </CatalogNumberList>
+                        <EAN>0076174874730</EAN>
+                        <EANList>
+                            <EANListElement>0076174874730</EANListElement>
+                            <EANListElement>0636123586567</EANListElement>
+                            <EANListElement>0640026896494</EANListElement>
+                            <EANListElement>0642008625832</EANListElement>
+                            <EANListElement>6824917202821</EANListElement>
+                            <EANListElement>0754262194631</EANListElement>
+                            <EANListElement>0787721807124</EANListElement>
+                        </EANList>
+                        <Feature>Forged chrome vanadium steel construction for strength</Feature>
+                        <Feature>Meets or exceeds ANSI specifications</Feature>
+                        <Feature>Rust resistant polished chrome finish</Feature>
+                        <Feature>Handle hole for tethering, hanging or storage</Feature>
+                        <Feature>Limited Lifetime Warranty</Feature>
+                        <IsAutographed>0</IsAutographed>
+                        <IsMemorabilia>0</IsMemorabilia>
+                        <ItemDimensions>
+                            <Height Units="hundredths-inches">60</Height>
+                            <Length Units="hundredths-inches">1400</Length>
+                            <Weight Units="hundredths-pounds">133</Weight>
+                            <Width Units="hundredths-inches">380</Width>
+                        </ItemDimensions>
+                        <Label>Stanley</Label>
+                        <Languages>
+                            <Language>
+                                <Name>English</Name>
+                                <Type>Unknown</Type>
+                            </Language>
+                        </Languages>
+                        <ListPrice>
+                            <Amount>1720</Amount>
+                            <CurrencyCode>USD</CurrencyCode>
+                            <FormattedPrice>$17.20</FormattedPrice>
+                        </ListPrice>
+                        <Manufacturer>Stanley</Manufacturer>
+                        <ManufacturerPartsWarrantyDescription>Parts</ManufacturerPartsWarrantyDescription>
+                        <Model>87-473</Model>
+                        <MPN>87-473</MPN>
+                        <NumberOfItems>1</NumberOfItems>
+                        <PackageDimensions>
+                            <Height Units="hundredths-inches">50</Height>
+                            <Length Units="hundredths-inches">1350</Length>
+                            <Weight Units="hundredths-pounds">165</Weight>
+                            <Width Units="hundredths-inches">400</Width>
+                        </PackageDimensions>
+                        <PackageQuantity>1</PackageQuantity>
+                        <PartNumber>87-473</PartNumber>
+                        <ProductGroup>Home Improvement</ProductGroup>
+                        <ProductTypeName>TOOLS</ProductTypeName>
+                        <Publisher>Stanley</Publisher>
+                        <Size>12"</Size>
+                        <SKU>HH-25400342</SKU>
+                        <Studio>Stanley</Studio>
+                        <Title>Stanley 87-473 12-Inch Adjustable Wrench</Title>
+                        <UPC>640026896494</UPC>
+                        <UPCList>
+                            <UPCListElement>640026896494</UPCListElement>
+                            <UPCListElement>787721807124</UPCListElement>
+                            <UPCListElement>754262194631</UPCListElement>
+                            <UPCListElement>076174874730</UPCListElement>
+                            <UPCListElement>636123586567</UPCListElement>
+                            <UPCListElement>642008625832</UPCListElement>
+                        </UPCList>
+                        <Warranty>Stanley warrants this product to the original purchaser for its useful life against deficiencies in material and workmanship. This LIMITED LIFETIME WARRANTY does not cover products that are improperly used, abused, altered or repaired. Deficient products will be replaced or repaired.</Warranty>
+                    </ItemAttributes>
+                    <EditorialReviews>
+                        <EditorialReview>
+                            <Source>Product Description</Source>
+                            <Content>Value not found</Content>
+                            <IsLinkSuppressed>0</IsLinkSuppressed>
+                        </EditorialReview>
+                    </EditorialReviews>
+                </Item>
+                <Item>
+                    <ASIN>B000FK6YZU</ASIN>
+                    <DetailPageURL>https://www.amazon.com/Stanley-87-367-6-Inch-Adjustable-Wrench/dp/B000FK6YZU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B000FK6YZU</DetailPageURL>
+                    <ItemLinks>
+                        <ItemLink>
+                            <Description>Technical Details</Description>
+                            <URL>https://www.amazon.com/Stanley-87-367-6-Inch-Adjustable-Wrench/dp/tech-data/B000FK6YZU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Baby Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B000FK6YZU&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wedding Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B000FK6YZU&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wishlist</Description>
+                            <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B000FK6YZU&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Tell A Friend</Description>
+                            <URL>https://www.amazon.com/gp/pdp/taf/B000FK6YZU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Customer Reviews</Description>
+                            <URL>https://www.amazon.com/review/product/B000FK6YZU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Offers</Description>
+                            <URL>https://www.amazon.com/gp/offer-listing/B000FK6YZU?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B000FK6YZU</URL>
+                        </ItemLink>
+                    </ItemLinks>
+                    <ItemAttributes>
+                        <Binding>Tools & Home Improvement</Binding>
+                        <Brand>Stanley</Brand>
+                        <CatalogNumberList>
+                            <CatalogNumberListElement>BOS87367</CatalogNumberListElement>
+                            <CatalogNumberListElement>87367</CatalogNumberListElement>
+                            <CatalogNumberListElement>87-367</CatalogNumberListElement>
+                        </CatalogNumberList>
+                        <EAN>0076174873672</EAN>
+                        <EANList>
+                            <EANListElement>0076174873672</EANListElement>
+                            <EANListElement>0640024942254</EANListElement>
+                            <EANListElement>0787721810865</EANListElement>
+                            <EANListElement>6370600487537</EANListElement>
+                            <EANListElement>0013161021333</EANListElement>
+                        </EANList>
+                        <Feature>Forged chrome vanadium steel construction for strength</Feature>
+                        <Feature>Meets or exceeds ANSI specifications</Feature>
+                        <Feature>Rust resistant polished chrome finish</Feature>
+                        <Feature>Handle hole for tethering, hanging or storage</Feature>
+                        <Feature>Limited Lifetime Warranty</Feature>
+                        <IsAutographed>0</IsAutographed>
+                        <IsMemorabilia>0</IsMemorabilia>
+                        <ItemDimensions>
+                            <Height Units="hundredths-inches">830</Height>
+                            <Length Units="hundredths-inches">50</Length>
+                            <Weight Units="pounds">0.15</Weight>
+                            <Width Units="hundredths-inches">290</Width>
+                        </ItemDimensions>
+                        <Label>Stanley</Label>
+                        <Languages>
+                            <Language>
+                                <Name>English</Name>
+                                <Type>Unknown</Type>
+                            </Language>
+                        </Languages>
+                        <ListPrice>
+                            <Amount>935</Amount>
+                            <CurrencyCode>USD</CurrencyCode>
+                            <FormattedPrice>$9.35</FormattedPrice>
+                        </ListPrice>
+                        <Manufacturer>Stanley</Manufacturer>
+                        <ManufacturerPartsWarrantyDescription>Parts</ManufacturerPartsWarrantyDescription>
+                        <Model>87-367</Model>
+                        <MPN>87-367</MPN>
+                        <NumberOfItems>1</NumberOfItems>
+                        <PackageDimensions>
+                            <Height Units="hundredths-inches">5</Height>
+                            <Length Units="hundredths-inches">800</Length>
+                            <Weight Units="hundredths-pounds">15</Weight>
+                            <Width Units="hundredths-inches">200</Width>
+                        </PackageDimensions>
+                        <PackageQuantity>1</PackageQuantity>
+                        <PartNumber>87-367</PartNumber>
+                        <ProductGroup>Home Improvement</ProductGroup>
+                        <ProductTypeName>TOOLS</ProductTypeName>
+                        <Publisher>Stanley</Publisher>
+                        <Size>6"</Size>
+                        <SKU>2540-8402</SKU>
+                        <Studio>Stanley</Studio>
+                        <Title>Stanley 87-367 6-Inch Adjustable Wrench</Title>
+                        <UPC>640024942254</UPC>
+                        <UPCList>
+                            <UPCListElement>640024942254</UPCListElement>
+                            <UPCListElement>787721810865</UPCListElement>
+                            <UPCListElement>013161021333</UPCListElement>
+                            <UPCListElement>076174873672</UPCListElement>
+                        </UPCList>
+                        <Warranty>Stanley warrants this product to the original purchaser for its useful life against deficiencies in material and workmanship. This LIMITED LIFETIME WARRANTY does not cover products that are improperly used, abused, altered or repaired. Deficient products will be replaced or repaired</Warranty>
+                    </ItemAttributes>
+                    <EditorialReviews>
+                        <EditorialReview>
+                            <Source>Product Description</Source>
+                            <Content>87-367 Style: Opening:3/4" [Max], Len.:6" (part# 87-367)  This item features: -Slip-resistant bi-material cushion grip. -Knurl turns smoothly for easy operation. -Laser etched SAE and Metric scale on jaw. -Opening Type: Jaw. -Head Angle: 15 . -Handle Type: I-Beam. -Material: Forged Alloy Steel. -Finish: Chrome. -Price is for 1 Each. Len. = Overall Length</Content>
+                            <IsLinkSuppressed>0</IsLinkSuppressed>
+                        </EditorialReview>
+                    </EditorialReviews>
+                </Item>
+                <Item>
+                    <ASIN>B06XB86VF2</ASIN>
+                    <DetailPageURL>https://www.amazon.com/OriGlam-Purpose-Functional-Adjustable-Universal/dp/B06XB86VF2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B06XB86VF2</DetailPageURL>
+                    <ItemLinks>
+                        <ItemLink>
+                            <Description>Technical Details</Description>
+                            <URL>https://www.amazon.com/OriGlam-Purpose-Functional-Adjustable-Universal/dp/tech-data/B06XB86VF2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Baby Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B06XB86VF2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wedding Registry</Description>
+                            <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B06XB86VF2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Add To Wishlist</Description>
+                            <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B06XB86VF2&SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>Tell A Friend</Description>
+                            <URL>https://www.amazon.com/gp/pdp/taf/B06XB86VF2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Customer Reviews</Description>
+                            <URL>https://www.amazon.com/review/product/B06XB86VF2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                        <ItemLink>
+                            <Description>All Offers</Description>
+                            <URL>https://www.amazon.com/gp/offer-listing/B06XB86VF2?SubscriptionId=AKIAILMBKWFE4D6QDNWA&tag=benderapps-20&linkCode=xm2&camp=2025&creative=386001&creativeASIN=B06XB86VF2</URL>
+                        </ItemLink>
+                    </ItemLinks>
+                    <ItemAttributes>
+                        <Binding>Misc.</Binding>
+                        <Brand>OriGlam</Brand>
+                        <EAN>4895192448763</EAN>
+                        <EANList>
+                            <EANListElement>4895192448763</EANListElement>
+                        </EANList>
+                        <Feature>√ Multipurpose - Magic wrench works with any shape of nuts or bolts.</Feature>
+                        <Feature>√ Great Value - It is compatible used for all kind of bolts & nuts, The wrench size can be extended from 9 to 45mm.</Feature>
+                        <Feature>√ Advanced Design - Particulary it is convinient to work in narrow spaces due to it is ergonomically designed.</Feature>
+                        <Feature>√ Safety Assurance - The red part of wrench consists of rubber material, so it prevents wrench falling down wrench.</Feature>
+                        <Feature>√ Perfect Selection - Magic Wrench is completely versatile and can be used for DIY,industrial or professinal use.</Feature>
+                        <Label>OriGlam</Label>
+                        <ListPrice>
+                            <Amount>1688</Amount>
+                            <CurrencyCode>USD</CurrencyCode>
+                            <FormattedPrice>$16.88</FormattedPrice>
+                        </ListPrice>
+                        <Manufacturer>OriGlam</Manufacturer>
+                        <MPN>16092024NQ</MPN>
+                        <PackageDimensions>
+                            <Height Units="hundredths-inches">71</Height>
+                            <Length Units="hundredths-inches">1382</Length>
+                            <Weight Units="hundredths-pounds">150</Weight>
+                            <Width Units="hundredths-inches">350</Width>
+                        </PackageDimensions>
+                        <PartNumber>16092024NQ</PartNumber>
+                        <ProductGroup>Home Improvement</ProductGroup>
+                        <ProductTypeName>TOOLS</ProductTypeName>
+                        <Publisher>OriGlam</Publisher>
+                        <Studio>OriGlam</Studio>
+                        <Title>OriGlam Multi Purpose Functional Spanner Tools, Magic Adjustable Universal Wrench 9~45mm</Title>
+                    </ItemAttributes>
+                    <EditorialReviews>
+                        <EditorialReview>
+                            <Source>Product Description</Source>
+                            <Content>
+                                <br>
+                                    <b>Features:</b>
+                                    <br>
+                                        <br>Magic wrench works with any shape of nuts or bolts. 
+                                            <br>It is compatible used for all kind of bolts & nuts, The wrench size can be extended from 9 to 45mm. 
+                                                <br>Particulary it is convinient to work in narrow spaces due to it is ergonomically designed. 
+                                                    <br>The red part of wrench consists of rubber material, so it prevents wrench falling down wrench. 
+                                                        <br>Magic Wrench is completely versatile and can be used for DIY,industrial or professinal use. 
+                                                            <br>You can tight up any screw with this magic wrench. 
+                                                                <br>You also can use this wrench for housework. 
+                                                                    <br>
+                                                                        <br>Type: Multifunction Wrench Spanner 
+                                                                            <br>Length: 290mm 
+                                                                                <br>Width: 53mm 
+                                                                                    <br>Thinckness: 12mm 
+                                                                                        <br>Availavle Sizes: 9mm~45mm 
+                                                                                            <br>
+                                                                                                <br>
+                                                                                                    <b>Caution:</b>
+                                                                                                    <br>
+                                                                                                        <br>1.Wear gloves and protective glasses for your safety. 
+                                                                                                            <br>2.Keep your fingers away from jaw teeth. 
+                                                                                                                <br>3.Keep away from children. 
+                                                                                                                    <br>
+                                                                                                                        <br>Package Weight : 684 G / 24.13 Ounces 
+                                                                                                                            <br>Package Dimensions (L*W*H) : 290*55*25 MM / 11.42*2.17*0.98 Inches 
+                                                                                                                                <br>
+                                                                                                                                    <br>
+                                                                                                                                        <b>Package Include:</b>
+                                                                                                                                        <br>
+                                                                                                                                            <br>1pcs x Magic Spanner
+                                                                                                                                            </Content>
+                                                                                                                                            <IsLinkSuppressed>0</IsLinkSuppressed>
+                                                                                                                                        </EditorialReview>
+                                                                                                                                    </EditorialReviews>
+                                                                                                                                </Item>
+                                                                                                                            </Items>
+                                                                                                                        </ItemSearchResponse>
