@@ -5,19 +5,14 @@ import bottlenose
 # Amazon Product Advertising API returns.
 from bs4 import BeautifulSoup
 
-# Allows us to accept and thus parse command-line arguments
-import sys
+# Allows us to parse command-line arguments better
+import argparse
 
-## Function definitions
-def showHelp():
-    print("This script takes command-line arguments as keywords,")
-    print("queries the Amazon Products Advertising API with those keywords,")
-    print("parses the response into a list of tuples, and saves the string")
-    print("representation of that list of tuples into \"keywords\".txt")
-    print("in the current working directory.\nUsage:")
-    print("python AmazonRequester.py all of the keywords")
-    
-def toFlatFile(listOfTuples):
+# Allows us to create paths that aren't dependent on operating system
+import os
+
+## Function definitions    
+def toFlatFile(listOfTuples, directory):
     """
     Given a list of tuples (the converted, formatted response from
     the Amazon API), save the string representation of that list of
@@ -28,8 +23,12 @@ def toFlatFile(listOfTuples):
     Ex. Philips Screwdriver.txt
     """
     filename = listOfTuples[0] + ".txt"
-    with open(filename, "w") as f:
+    
+    filepath = os.path.join(directory, filename)
+    
+    with open(filepath, "w") as f:
         f.write(repr(listOfTuples))
+
 
 ## Variable definitions
 # Declare AWS account variables
@@ -45,15 +44,31 @@ ResponseGroup = "ItemAttributes,Offers"
 
 
 ## Begin script
-# Join the keywords passed to the script as command-line arguments
-if len(sys.argv) < 2:
-    showHelp()
-    exit()
+
+# Declare our argument parser
+parser = argparse.ArgumentParser(description="Store Amazon API responses to DIR/\"keywords\".txt")
+
+# Include keyword and (optional) directory parsing
+parser.add_argument("keywords", metavar="keyword", type=str, nargs="+",
+                    help="keywords to pass to the Amazon API")
+parser.add_argument("--dir", help="the directory to save the response to")
+
+# Parse the command-line arguments
+args = parser.parse_args()
+
+# Join the given keywords into a single string
+keywords = str.join(" ", args.keywords)
+
+# Generate a filename from the joined keywords
+filename = keywords + ".txt"
+
+# If given, also get the provided directory
+# If a directory is not provided, the current working directory is used.
+if (args.dir):
+    directory = args.dir
 else:
-    # The script name is the 0th element, and all subsequent elements
-    # of argv are command-line arguments that we presume are keywords
-    keywords = str.join(" ", sys.argv[1:])
-    
+    directory = os.curdir
+
 
 # Begin session
 #
@@ -91,4 +106,4 @@ for item in response.find_all("Item"):
     ASIN = item.find("ASIN").text
     ret.append((title, features, formatted_price, ASIN))
 
-toFlatFile(ret)
+toFlatFile(ret, directory)
