@@ -57,12 +57,17 @@ def getTagStrings(tag, reply):
         items.append(item.text)
     return items
 
-all_titles = getTagStrings("Title", response)
-all_formatted_prices = getTagStrings("")
-
-
-
-
+ret = [response.find("Keywords").text]
+for item in response.find_all("Item"):
+    features = []
+    for feature in item.find_all("Feature"):
+        features.append(feature.text)
+    title = item.find("Title").text
+    formatted_price = item.find("FormattedPrice").text
+    ASIN = item.find("ASIN").text
+    ret.append((title, features, formatted_price, ASIN))
+    
+print(ret)
 
 if __name__=="__main__":
     print("To search for a specific item, use, e.g. `response = " + \
