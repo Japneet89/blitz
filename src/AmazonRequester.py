@@ -55,7 +55,22 @@ for item in response.find_all("Item"):
     ASIN = item.find("ASIN").text
     ret.append((title, features, formatted_price, ASIN))
     
-print(ret)
+def toFlatFile(listOfTuples):
+    """
+    Given a list of tuples (the converted, formatted response from
+    the Amazon API), save the string representation of that list of
+    tuples to a text file in the current working directory.
+    
+    The filename will be the Keywords used to generate the query,
+    and will have a .txt extension.
+    Ex. Philips Screwdriver.txt
+    """
+    filename = listOfTuples[0] + ".txt"
+    with open(filename, "w") as f:
+        f.write(repr(listOfTuples))
+        
+
+toFlatFile(ret)
 
 if __name__=="__main__":
     print("To search for a specific item, use, e.g. `response = " + \
