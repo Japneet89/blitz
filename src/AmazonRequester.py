@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 # Allows us to accept and thus parse command-line arguments
 import sys
 
+## Function definitions
 def showHelp():
     print("This script takes command-line arguments as keywords,")
     print("queries the Amazon Products Advertising API with those keywords,")
@@ -15,7 +16,36 @@ def showHelp():
     print("representation of that list of tuples into \"keywords\".txt")
     print("in the current working directory.\nUsage:")
     print("python AmazonRequester.py all of the keywords")
+    
+def toFlatFile(listOfTuples):
+    """
+    Given a list of tuples (the converted, formatted response from
+    the Amazon API), save the string representation of that list of
+    tuples to a text file in the current working directory.
+    
+    The filename will be the Keywords used to generate the query,
+    and will have a .txt extension.
+    Ex. Philips Screwdriver.txt
+    """
+    filename = listOfTuples[0] + ".txt"
+    with open(filename, "w") as f:
+        f.write(repr(listOfTuples))
 
+## Variable definitions
+# Declare AWS account variables
+# Note that bottlenose is able to read these credentials from the
+# environment variables as well, as an alternative.
+AWS_ACCESS_KEY_ID = "AKIAILMBKWFE4D6QDNWA"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_ASSOCIATE_TAG = "benderapps-20"
+
+# Define our Response Groups, so that we're not:
+# (1) Using more bandwidth than we need to, and
+# (2) Not making our parser work any harder than it has to.
+ResponseGroup = "ItemAttributes,Offers"
+
+
+## Begin script
 # Join the keywords passed to the script as command-line arguments
 if len(sys.argv) < 2:
     showHelp()
@@ -25,13 +55,6 @@ else:
     # of argv are command-line arguments that we presume are keywords
     keywords = str.join(" ", sys.argv[1:])
     
-
-# Declare AWS account variables
-# Note that bottlenose is able to read these credentials from the
-# environment variables as well, as an alternative.
-AWS_ACCESS_KEY_ID = "AKIAILMBKWFE4D6QDNWA"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_ASSOCIATE_TAG = "benderapps-20"
 
 # Begin session
 #
@@ -44,13 +67,6 @@ AWS_ASSOCIATE_TAG = "benderapps-20"
 amazon = bottlenose.Amazon(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
                         AWS_ASSOCIATE_TAG, MaxQPS = 0.9,
                         Parser=lambda text: BeautifulSoup(text,'xml'))
-
-
-# Define our Response Groups, so that we're not:
-# (1) Using more bandwidth than we need to, and
-# (2) Not making our parser work any harder than it has to.
-ResponseGroup = "ItemAttributes,Offers"
-
 
 # Submit a keywords query, and save the response
 #
@@ -75,20 +91,5 @@ for item in response.find_all("Item"):
     formatted_price = item.find("FormattedPrice").text
     ASIN = item.find("ASIN").text
     ret.append((title, features, formatted_price, ASIN))
-    
-def toFlatFile(listOfTuples):
-    """
-    Given a list of tuples (the converted, formatted response from
-    the Amazon API), save the string representation of that list of
-    tuples to a text file in the current working directory.
-    
-    The filename will be the Keywords used to generate the query,
-    and will have a .txt extension.
-    Ex. Philips Screwdriver.txt
-    """
-    filename = listOfTuples[0] + ".txt"
-    with open(filename, "w") as f:
-        f.write(repr(listOfTuples))
-        
 
 toFlatFile(ret)
