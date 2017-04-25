@@ -5,6 +5,27 @@ import bottlenose
 # Amazon Product Advertising API returns.
 from bs4 import BeautifulSoup
 
+# Allows us to accept and thus parse command-line arguments
+import sys
+
+def showHelp():
+    print("This script takes command-line arguments as keywords,")
+    print("queries the Amazon Products Advertising API with those keywords,")
+    print("parses the response into a list of tuples, and saves the string")
+    print("representation of that list of tuples into \"keywords\".txt")
+    print("in the current working directory.\nUsage:")
+    print("python AmazonRequester.py all of the keywords")
+
+# Join the keywords passed to the script as command-line arguments
+if len(sys.argv) < 2:
+    showHelp()
+    exit()
+else:
+    # The script name is the 0th element, and all subsequent elements
+    # of argv are command-line arguments that we presume are keywords
+    keywords = str.join(" ", sys.argv[1:])
+    
+
 # Declare AWS account variables
 # Note that bottlenose is able to read these credentials from the
 # environment variables as well, as an alternative.
@@ -36,7 +57,7 @@ ResponseGroup = "ItemAttributes,Offers"
 # Note that we specify our response group, or else the Amazon API
 # will return a bare response that does not contain the info we want.
 #
-response = amazon.ItemSearch(Keywords="Philips Screwdriver",
+response = amazon.ItemSearch(Keywords=keywords,
             SearchIndex="All",
             ResponseGroup = ResponseGroup)
 
