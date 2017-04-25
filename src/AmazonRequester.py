@@ -39,9 +39,8 @@ AWS_ACCESS_KEY_ID = "AKIAILMBKWFE4D6QDNWA"
 AWS_SECRET_ACCESS_KEY = "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"
 AWS_ASSOCIATE_TAG = "benderapps-20"
 
-# Define our Response Groups, so that we're not:
-# (1) Using more bandwidth than we need to, and
-# (2) Not making our parser work any harder than it has to.
+# Define our Response Groups, otherwise the Amazon API will not return
+# tags that contain the information that we want.
 ResponseGroup = "ItemAttributes,Offers"
 
 
