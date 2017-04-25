@@ -36,11 +36,10 @@ ResponseGroup = "ItemAttributes,Offers"
 # Note that we specify our response group, or else the Amazon API
 # will return a bare response that does not contain the info we want.
 #
-"""
 response = amazon.ItemSearch(Keywords="Philips Screwdriver",
             SearchIndex="All",
             ResponseGroup = ResponseGroup)
-"""
+
 
 # Convert the response to a list of tuples
 # ["keywords", tool1, tool2, ..., tool3]
