@@ -45,18 +45,7 @@ response = amazon.ItemSearch(Keywords="Philips Screwdriver",
 # Convert the response to a list of tuples
 # ["keywords", tool1, tool2, ..., tool3]
 # where, e.g., tool1 = (title, [features], formatted_price, ASIN)
-def getTagStrings(tag, reply):
-    """
-    Given the `tag` as a string, finds all of the matching tags in
-    the `response` and returns the strings within as an ordered list.
-    """
-    
-    items = []
-    for item in reply.find_all(tag):
-        # Appends the string contained within the tag
-        items.append(item.text)
-    return items
-
+#
 ret = [response.find("Keywords").text]
 for item in response.find_all("Item"):
     features = []
