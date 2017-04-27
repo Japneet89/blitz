@@ -7,10 +7,10 @@ app = Flask(__name__)
 def hello():
     return render_template("listOfTuples.html")
 
-@app.route("/results")
+@app.route("/result", methods = ["GET", "POST"])
 def result():
     if request.method == "POST":
-        return "Hello!"
+        return redirect(url_for("floats"))
     else:
         return redirect(url_for("no"))
 
@@ -18,6 +18,9 @@ def result():
 def no():
     return "No!"
 
+@app.route("/floats")
+def floats():
+    return "floating!"
 
 if __name__ == "__main__":
     app.run()
