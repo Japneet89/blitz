@@ -1,3 +1,5 @@
+import random
+
 class MLEngine(object):
     """
     Accepts lists of tuples during instantiation, performs tf-idf
@@ -8,3 +10,14 @@ class MLEngine(object):
     
     Could return [0.87, 0.45, ..., 0.98].
     """
+    def __init__(self, listOfTuples):
+        self.listOfTuples = listOfTuples
+        
+    def getScores(self):
+        """
+        Returns the scores that were calculated during instantiation
+        """
+        scores = []
+        for i in range(len(self.listOfTuples) - 1):
+            scores.append(random.random())
+        return scores
