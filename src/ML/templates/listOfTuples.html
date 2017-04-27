@@ -1,7 +1,7 @@
 <html>
 <body>
 <h1>Raw List of Tuples Input</h1>
-<form action="/" method = 'POST'>
+<form action="{{ url_for('results') }}" method = 'POST'>
     <p>Name:</p>
     <input type = 'text' size = '30' name = 'input' placeholder = 'List of Tuples'>
     <input type = 'submit' value = 'submit'>
