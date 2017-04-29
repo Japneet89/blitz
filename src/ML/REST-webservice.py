@@ -9,7 +9,6 @@ app = Flask(__name__)
 api = Api(app)
 
 class getScore(Resource):
-        
     def post(self):
         listOfTuples = j2t(json.loads(request.data))
         mle = MLEngine(listOfTuples)
