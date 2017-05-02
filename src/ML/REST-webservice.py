@@ -3,7 +3,7 @@ from flask_restful import Resource, Api
 import json
 
 from JSONtuple import *
-from MLEngineStub import MLEngine
+from MLEngine import MLEngine
 
 app = Flask(__name__)
 api = Api(app)
