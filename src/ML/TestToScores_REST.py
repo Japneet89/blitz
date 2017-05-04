@@ -6,14 +6,16 @@ from requests import post
 
 from JSONtuple import *
 
+from TextSimilarityEngine import *
+
 
 def readFile(path):
     with open(path, "r") as f:
         return f.read()
 
 def stringToScores(listOfTuples):
-    mle = MLEngine(ast.literal_eval(listOfTuples))
-    return mle.getScores()
+    tse = TextSimilarityEngine(ast.literal_eval(listOfTuples))
+    return tse.getScores()
     
 
 if __name__ == "__main__":

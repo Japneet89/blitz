@@ -1,4 +1,4 @@
-from MLEngineStub import MLEngine
+from TextSimilarityEngine import TextSimilarityEngine
 import ast
 import argparse
 
@@ -7,8 +7,8 @@ def readFile(path):
         return f.read()
 
 def stringToScores(listOfTuples):
-    mle = MLEngine(ast.literal_eval(listOfTuples))
-    return mle.getScores()
+    tse = TextSimilarityEngine(ast.literal_eval(listOfTuples))
+    return tse.getScores()
 
 if __name__ == "__main__":
     # Declare our argument parser

@@ -1,7 +1,7 @@
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-class MLEngine(object):
+class TextSimilarityEngine(object):
     """
     Accepts lists of tuples during instantiation, performs tf-idf
     calculations, and returns relevance scores as a list of floats.
@@ -87,5 +87,4 @@ class MLEngine(object):
         """
         Returns the scores that were calculated during instantiation
         """
-        print(type(self.scores))
         return self.scores
