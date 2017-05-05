@@ -7,12 +7,12 @@ from TextSimilarityEngine import TextSimilarityEngine
 
 app = Flask(__name__)
 api = Api(app)
+tse = TextSimilarityEngine()
 
 class getScore(Resource):
     def post(self):
         listOfTuples = j2t(json.loads(request.data))
-        tse = TextSimilarityEngine(listOfTuples)
-        return tse.getScores()
+        return tse.getScores(listOfTuples)
 
 api.add_resource(getScore, '/')
 
