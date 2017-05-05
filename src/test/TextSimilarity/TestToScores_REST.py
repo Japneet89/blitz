@@ -12,8 +12,17 @@ import json
 
 from requests import post
 
-from JSONtuple import *
+from JSONparser import queryDocumentsToJSONString
 
+
+def fileToQueryDocuments(path):
+    with open(path, "r") as f:
+        lines = f.readlines()
+        query = ast.literal_eval(lines[0])
+        documents = ast.literal_eval(lines[1])
+    
+    return query, documents
+            
 
 def readFile(path):
     with open(path, "r") as f:
@@ -36,9 +45,10 @@ if __name__ == "__main__":
     filepath = args.file[0]
     
     # Construct a query and return the results
-    listOfTuples = ast.literal_eval(readFile(filepath))
-    payload = t2j(listOfTuples)
-    r = post("http://localhost:5000/", data=json.dumps(payload)).json()
+    query, documents = fileToQueryDocuments(filepath)
+    
+    data = queryDocumentsToJSONString(query, documents)
+    r = post("http://localhost:5000/", data=data).json()
     if type(r) is dict:
         print("Error:")
         print(r['code'])

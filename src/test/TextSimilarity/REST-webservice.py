@@ -11,7 +11,7 @@ from flask_restful import Resource, Api
 from pprint import pprint
 import json
 
-from JSONtuple import *
+from JSONparser import JSONStringToQueryDocuments
 
 
 app = Flask(__name__)
@@ -20,10 +20,14 @@ tse = TextSimilarityEngine()
 
 class getScore(Resource):
     def post(self):
-        listOfTuples = j2t(json.loads(request.data))
+        # Print the input
         pprint(json.loads(request.data))
         print("\n\n")
-        return tse.getTextSimilarityScores(listOfTuples)
+        
+        # Parse the request
+        query, documents = JSONStringToQueryDocuments(request.data)
+        
+        return tse.getTextSimilarityScores(query, documents)
 
 api.add_resource(getScore, '/')
 
