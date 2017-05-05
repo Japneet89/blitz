@@ -61,7 +61,7 @@ class TextSimilarityEngine(object):
                     return {'code': 'TextSimilarityEngine-Validation-0010',
                     'message': "feature must be a str, is %r" % type(feature)}
     
-    def __performAnalysis(self, listOfTuples):
+    def __performAnalysis(self, query, documents):
         """
         Performs tf-idf calculations and stores the relevance scores
         """
@@ -71,16 +71,16 @@ class TextSimilarityEngine(object):
         # (1) Title,
         # (2) Features
         corpus = []
-        for tool in listOfTuples[1:]:
+        for doc in documents:
             # Concatenate the title with the features, separating by space
-            corpus.append(str.join(" ", [tool[0], str.join(" ", tool[1])]))
+            corpus.append(str.join(" ", [doc[0], str.join(" ", doc[1])]))
                 
         # Transform the corpus
         tfidfvectorizer = TfidfVectorizer()
         X = tfidfvectorizer.fit_transform(corpus)
         
         # Transform our query into the same space
-        K = tfidfvectorizer.transform([listOfTuples[0]])
+        K = tfidfvectorizer.transform([query])
         
         # Perform a similarity query against the corpus, storing result
         # Note that since we perform one query, we index into [0]
@@ -88,13 +88,13 @@ class TextSimilarityEngine(object):
         # serializable
         return list(cosine_similarity(K, X)[0])
         
-    def getTextSimilarityScores(self, listOfTuples):
+    def getTextSimilarityScores(self, query, documents):
         """
         Given listOfTuples as an input, returns the text similarity
         scores in the same ordering.
         """
-        val = self.__validateInput(listOfTuples)
-        if val:
-            return val
+        #val = self.__validateInput(query, documents)
+        #if val:
+        #    return val
         
-        return self.__performAnalysis(listOfTuples)
+        return self.__performAnalysis(query, documents)
