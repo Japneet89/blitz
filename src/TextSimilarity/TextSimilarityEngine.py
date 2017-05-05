@@ -18,47 +18,47 @@ class TextSimilarityEngine(object):
     
     def validateInput(self, listOfTuples):
         if type(listOfTuples) is not list:
-            return {'code': "tse-val-0001",
+            return {'code': "TextSimilarityEngine-Validation-0001",
             'message': "expected a list, got %r" % type(listOfTuples)}
         
         if len(listOfTuples) <= 1:
-            return {'code': "tse-val-0002",
+            return {'code': "TextSimilarityEngine-Validation-0002",
             'message': "expected a list of length 2 or more, got list of length %r" \
             % len(listOfTuples)}
         
         if type(listOfTuples[0]) is not str:
-            return {'code': 'tse-val-0003', 
+            return {'code': 'TextSimilarityEngine-Validation-0003',
             'message': "query must be a str, is %r" % type(listOfTuples[0])}
         
         # For each of the items in the listOfTuples, after the query
         for item in listOfTuples[1:]:
             if type(item) is not tuple:
-                return {'code': 'tse-val-0004',
+                return {'code': 'TextSimilarityEngine-Validation-0004',
                 'message': "expected a tuple, got %r" % type(item)}
             
             if len(item) is not 4:
-                return {'code': 'tse-val-0005', 
+                return {'code': 'TextSimilarityEngine-Validation-0005',
                 'message': "expected a tuple of length 4, got a tuple of length %r" \
                 % len(item)}
             
             if type(item[0]) is not str:
-                return {'code': 'tse-val-0006',
+                return {'code': 'TextSimilarityEngine-Validation-0006',
                 'message': "title must be a str, is %r" % type(item[0])}
             if type(item[2]) is not str:
-                return {'code': 'tse-val-0007',
+                return {'code': 'TextSimilarityEngine-Validation-0007',
                 'message': "formatted_price must be a str, is %r" % type(item[2])}
             if type(item[3]) is not str:
-                return {'code': 'tse-val-0008',
+                return {'code': 'TextSimilarityEngine-Validation-0008',
                 'message': "ASIN must be a str, is %r" % type(item[3])}
             
             if type(item[1]) is not list:
-                return {'code': 'tse-val-0009',
+                return {'code': 'TextSimilarityEngine-Validation-0009',
                 'message': "expected a list of features, got %r" % type(item[1])}
             
             # For each of the features in the list of features
             for feature in item[1]:
                 if type(feature) is not str:
-                    return {'code': 'tse-val-0010',
+                    return {'code': 'TextSimilarityEngine-Validation-0010',
                     'message': "feature must be a str, is %r" % type(feature)}
     
     def performAnalysis(self, listOfTuples):
