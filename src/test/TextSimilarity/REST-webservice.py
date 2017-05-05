@@ -8,6 +8,7 @@ from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
 
 from flask import Flask, request
 from flask_restful import Resource, Api
+from pprint import pprint
 import json
 
 from JSONtuple import *
@@ -20,6 +21,8 @@ tse = TextSimilarityEngine()
 class getScore(Resource):
     def post(self):
         listOfTuples = j2t(json.loads(request.data))
+        pprint(json.loads(request.data))
+        print("\n\n")
         return tse.getTextSimilarityScores(listOfTuples)
 
 api.add_resource(getScore, '/')
