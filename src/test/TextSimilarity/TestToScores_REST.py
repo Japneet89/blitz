@@ -19,27 +19,6 @@ def readFile(path):
     with open(path, "r") as f:
         return f.read()
 
-def stringToScores(listOfTuples):
-    l = ast.literal_eval(listOfTuples)
-    payload = t2j(l)
-    r = post("http://localhost:5000/", data=json.dumps(payload)).json()
-    if type(r) is dict:
-        print("Error:")
-        print(r['code'])
-        print(r['message'])
-    elif type(r) is list:
-        print(r)
-
-def toScores(listOfTuples):
-    payload = t2j(listOfTuples)
-    r = post("http://localhost:5000/", data=json.dumps(payload)).json()
-    if type(r) is dict:
-        print("Error:")
-        print(r['code'])
-        print(r['message'])
-    elif type(r) is list:
-        print(r)
-
 
 if __name__ == "__main__":
     # Declare our argument parser
