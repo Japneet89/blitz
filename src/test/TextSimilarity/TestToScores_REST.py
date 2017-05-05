@@ -1,3 +1,11 @@
+# handle importation of other modules
+import sys
+import os
+par_par_dir = os.path.join(os.path.join('.', os.pardir), os.pardir)
+sys.path.append(par_par_dir)
+
+from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
+
 import ast
 import argparse
 import json
@@ -5,8 +13,6 @@ import json
 from requests import post
 
 from JSONtuple import *
-
-from TextSimilarityEngine import *
 
 
 def readFile(path):

@@ -1,9 +1,17 @@
+# handle importation of other modules
+import sys
+import os
+par_par_dir = os.path.join(os.path.join('.', os.pardir), os.pardir)
+sys.path.append(par_par_dir)
+
+from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
+
 from flask import Flask, request
 from flask_restful import Resource, Api
 import json
 
 from JSONtuple import *
-from TextSimilarityEngine import TextSimilarityEngine
+
 
 app = Flask(__name__)
 api = Api(app)

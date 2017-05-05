@@ -1,5 +1,12 @@
+# handle importation of other modules
+import sys
+import os
+par_par_dir = os.path.join(os.path.join('.', os.pardir), os.pardir)
+sys.path.append(par_par_dir)
+
+
 import unittest
-from TextSimilarityEngine import TextSimilarityEngine
+from TextSimilarity.TextSimilarityEngine import *
 
 tse = TextSimilarityEngine()
 
