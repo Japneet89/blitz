@@ -14,9 +14,26 @@ def readFile(path):
         return f.read()
 
 def stringToScores(listOfTuples):
-    tse = TextSimilarityEngine(ast.literal_eval(listOfTuples))
-    return tse.getScores()
-    
+    l = ast.literal_eval(listOfTuples)
+    payload = t2j(l)
+    r = post("http://localhost:5000/", data=json.dumps(payload)).json()
+    if type(r) is dict:
+        print("Error:")
+        print(r['code'])
+        print(r['message'])
+    elif type(r) is list:
+        print(r)
+
+def toScores(listOfTuples):
+    payload = t2j(listOfTuples)
+    r = post("http://localhost:5000/", data=json.dumps(payload)).json()
+    if type(r) is dict:
+        print("Error:")
+        print(r['code'])
+        print(r['message'])
+    elif type(r) is list:
+        print(r)
+
 
 if __name__ == "__main__":
     # Declare our argument parser
@@ -36,6 +53,11 @@ if __name__ == "__main__":
     # Construct a query and return the results
     listOfTuples = ast.literal_eval(readFile(filepath))
     payload = t2j(listOfTuples)
-    r = post("http://localhost:5000/", data=json.dumps(payload))
-    print(r.json())
+    r = post("http://localhost:5000/", data=json.dumps(payload)).json()
+    if type(r) is dict:
+        print("Error:")
+        print(r['code'])
+        print(r['message'])
+    elif type(r) is list:
+        print(r)
 

@@ -17,39 +17,49 @@ class TextSimilarityEngine(object):
     
     
     def validateInput(self, listOfTuples):
-        assert type(listOfTuples) is list, \
-        "expected a list, got %r" % type(listOfTuples)
+        if type(listOfTuples) is not list:
+            return {'code': "TextSimilarityEngine-Validation-0001",
+            'message': "expected a list, got %r" % type(listOfTuples)}
         
-        assert len(listOfTuples) > 1, \
-        "expected a list of length 2 or more, got list of length %r" \
-        % len(listOfTuples)
+        if len(listOfTuples) <= 1:
+            return {'code': "TextSimilarityEngine-Validation-0002",
+            'message': "expected a list of length 2 or more, got list of length %r" \
+            % len(listOfTuples)}
         
-        assert type(listOfTuples[0]) is str, \
-        "query must be a str, is %r" % type(listOfTuples[0])
+        if type(listOfTuples[0]) is not str:
+            return {'code': 'TextSimilarityEngine-Validation-0003',
+            'message': "query must be a str, is %r" % type(listOfTuples[0])}
         
         # For each of the items in the listOfTuples, after the query
         for item in listOfTuples[1:]:
-            assert type(item) is tuple, \
-            "expected a tuple, got %r" % type(item)
+            if type(item) is not tuple:
+                return {'code': 'TextSimilarityEngine-Validation-0004',
+                'message': "expected a tuple, got %r" % type(item)}
             
-            assert len(item) is 4, \
-            "expected a tuple of length 4, got a tuple of length %r" \
-            % len(item)
+            if len(item) is not 4:
+                return {'code': 'TextSimilarityEngine-Validation-0005',
+                'message': "expected a tuple of length 4, got a tuple of length %r" \
+                % len(item)}
             
-            assert type(item[0]) is str, \
-            "title must be a str, is %r" % type(item[0])
-            assert type(item[2]) is str, \
-            "formatted_price must be a str, is %r" % type(item[2])
-            assert type(item[3]) is str, \
-            "ASIN must be a str, is %r" % type(item[3])
+            if type(item[0]) is not str:
+                return {'code': 'TextSimilarityEngine-Validation-0006',
+                'message': "title must be a str, is %r" % type(item[0])}
+            if type(item[2]) is not str:
+                return {'code': 'TextSimilarityEngine-Validation-0007',
+                'message': "formatted_price must be a str, is %r" % type(item[2])}
+            if type(item[3]) is not str:
+                return {'code': 'TextSimilarityEngine-Validation-0008',
+                'message': "ASIN must be a str, is %r" % type(item[3])}
             
-            assert type(item[1]) is list, \
-            "expected a list of features, got %r" % type(item[1])
+            if type(item[1]) is not list:
+                return {'code': 'TextSimilarityEngine-Validation-0009',
+                'message': "expected a list of features, got %r" % type(item[1])}
             
             # For each of the features in the list of features
             for feature in item[1]:
-                assert type(feature) is str, \
-                "feature must be a str, is %r" % type(feature)
+                if type(feature) is not str:
+                    return {'code': 'TextSimilarityEngine-Validation-0010',
+                    'message': "feature must be a str, is %r" % type(feature)}
     
     def performAnalysis(self, listOfTuples):
         """
@@ -83,9 +93,8 @@ class TextSimilarityEngine(object):
         Given listOfTuples as an input, returns the text similarity
         scores in the same ordering.
         """
-        try:
-            self.validateInput(listOfTuples)
-        except AssertionError:
-            raise
+        val = self.validateInput(listOfTuples)
+        if val:
+            return val
         
         return self.performAnalysis(listOfTuples)

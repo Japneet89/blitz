@@ -25,4 +25,10 @@ if __name__ == "__main__":
 
     # If given, also get the provided file
     filepath = args.file[0]
-    print(stringToScores(readFile(filepath)))
+    r = stringToScores(readFile(filepath))
+    if type(r) is dict:
+        print("Error:")
+        print(r['code'])
+        print(r['message'])
+    elif type(r) is list:
+        print(r)
