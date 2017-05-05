@@ -16,7 +16,7 @@ class TextSimilarityEngine(object):
         pass
     
     
-    def validateInput(self, listOfTuples):
+    def __validateInput(self, listOfTuples):
         if type(listOfTuples) is not list:
             return {'code': "TextSimilarityEngine-Validation-0001",
             'message': "expected a list, got %r" % type(listOfTuples)}
@@ -61,7 +61,7 @@ class TextSimilarityEngine(object):
                     return {'code': 'TextSimilarityEngine-Validation-0010',
                     'message': "feature must be a str, is %r" % type(feature)}
     
-    def performAnalysis(self, listOfTuples):
+    def __performAnalysis(self, listOfTuples):
         """
         Performs tf-idf calculations and stores the relevance scores
         """
@@ -93,8 +93,8 @@ class TextSimilarityEngine(object):
         Given listOfTuples as an input, returns the text similarity
         scores in the same ordering.
         """
-        val = self.validateInput(listOfTuples)
+        val = self.__validateInput(listOfTuples)
         if val:
             return val
         
-        return self.performAnalysis(listOfTuples)
+        return self.__performAnalysis(listOfTuples)
