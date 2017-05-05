@@ -12,7 +12,7 @@ tse = TextSimilarityEngine()
 class getScore(Resource):
     def post(self):
         listOfTuples = j2t(json.loads(request.data))
-        return tse.getScores(listOfTuples)
+        return tse.getTextSimilarityScores(listOfTuples)
 
 api.add_resource(getScore, '/')
 
