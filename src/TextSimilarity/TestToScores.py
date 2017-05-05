@@ -7,10 +7,11 @@ def readFile(path):
         return f.read()
 
 def stringToScores(listOfTuples):
-    tse = TextSimilarityEngine(ast.literal_eval(listOfTuples))
-    return tse.getScores()
+    return tse.getTextSimilarityScores(ast.literal_eval(listOfTuples))
 
-if __name__ == "__main__":
+tse = TextSimilarityEngine()
+
+if __name__ == "__main__":    
     # Declare our argument parser
     parser = argparse.ArgumentParser(description="A wrapper to score a lists of tuples")
 
