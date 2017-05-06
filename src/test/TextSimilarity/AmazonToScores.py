@@ -5,7 +5,6 @@ par_par_dir = os.path.join(os.path.join('.', os.pardir), os.pardir)
 sys.path.append(par_par_dir)
 
 import argparse
-from requests import post
 
 import TextSimilarity.AmazonRequester as AmazonRequester
 import fileToScores
@@ -50,28 +49,19 @@ if __name__ == "__main__":
     else:
         directory = os.curdir
     
-    ## Get and save response from Amazon
-    AmazonRequester.getAndSaveResponse(keywords, directory)
+    
     
     # Get the query and documents to pass as input
     filepath = os.path.join(directory, keywords + ".txt")
-    query, documents = fileToScores.fileToQueryDocuments(filepath)
     
-    # Get the scores from the TextSimilarityEngine or the REST API
-    if vars(args)['offline']:
-        from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
-        tse = TextSimilarityEngine()
-        r = tse.getTextSimilarityScores(query, documents)
-    else:
-        data = fileToScores.queryDocumentsToJSONString(query, documents)
-        r = post("http://localhost:5000/", data=data).json()
+    ## Get and save response from Amazon
+    AmazonRequester.getAndSaveResponse(keywords, directory)
     
-    if type(r) is dict:
-        print("Error:")
-        print(r['code'])
-        print(r['message'])
-    elif type(r) is list:
-        print(r)
+    ## Retrieve and print the scores from the TextSimilarityEngine
+    fileToScores.retrieveAndPrintScores(filepath, vars(args)['offline'])
+    
+    
+    
     
     # Delete the response from Amazon, if desired
     if vars(args)['delete']:

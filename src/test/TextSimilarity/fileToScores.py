@@ -20,6 +20,28 @@ def fileToQueryDocuments(path):
         documents = ast.literal_eval(lines[1])
     return query, documents
 
+def retrieveAndPrintScores(filepath, offline=False):
+    
+    # Get the query and documents to pass as input to TextSimilarityEngine
+    query, documents = fileToQueryDocuments(filepath)
+    
+    # Get the scores from the TextSimilarityEngine or the REST API
+    if offline:
+        from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
+        tse = TextSimilarityEngine()
+        r = tse.getTextSimilarityScores(query, documents)
+    else:
+        data = queryDocumentsToJSONString(query, documents)
+        r = post("http://localhost:5000/", data=data).json()
+    
+    # Print the retrieved scores
+    if type(r) is dict:
+        print("Error:")
+        print(r['code'])
+        print(r['message'])
+    elif type(r) is list:
+        print(r)
+
 if __name__ == "__main__":
     # Declare our argument parser
     parser = argparse.ArgumentParser(description="A wrapper to score a (query, documents) pair")
@@ -40,26 +62,10 @@ if __name__ == "__main__":
     # Parse the command-line arguments
     args = parser.parse_args()
 
-
     # If given, also get the provided file
     filepath = args.file[0]
     
-    # Get the query and documents to pass as input
-    query, documents = fileToQueryDocuments(filepath)
     
-    # Get the scores from the TextSimilarityEngine or the REST API
-    if vars(args)['offline']:
-        from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
-        tse = TextSimilarityEngine()
-        r = tse.getTextSimilarityScores(query, documents)
-    else:
-        data = queryDocumentsToJSONString(query, documents)
-        r = post("http://localhost:5000/", data=data).json()
-    
-    if type(r) is dict:
-        print("Error:")
-        print(r['code'])
-        print(r['message'])
-    elif type(r) is list:
-        print(r)
+    ## Retrieve and print the scores from the TextSimilarityEngine
+    retrieveAndPrintScores(filepath, vars(args)['offline'])
 

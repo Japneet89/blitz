@@ -127,4 +127,6 @@ if __name__=="__main__":
     else:
         directory = os.curdir
     
+    
+    ## Get and save response from Amazon
     getAndSaveResponse(keywords, directory)
