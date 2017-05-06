@@ -31,11 +31,13 @@ def readFile(path):
 
 if __name__ == "__main__":
     # Declare our argument parser
-    parser = argparse.ArgumentParser(description="A wrapper to score a lists of tuples")
+    parser = argparse.ArgumentParser(description="A wrapper to score a (query, documents) pair")
 
     # Include file path to parse
+    helpMsg = "a text file containing a query on its first line, and " \
+    + "a list of tuples representing documents on its second line."
     parser.add_argument("file", metavar="file", type=str, nargs=1,
-                    help="a text file containing a list of tuples")
+                    help=helpMsg)
 
     # Parse the command-line arguments
     args = parser.parse_args()
