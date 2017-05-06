@@ -87,8 +87,8 @@ class TextSimilarityEngine(object):
         
     def getTextSimilarityScores(self, query, documents):
         """
-        Given listOfTuples as an input, returns the text similarity
-        scores in the same ordering.
+        Given query and documents as an input, returns the text similarity
+        scores in the same ordering as the documents
         """
         val = self.__validateInput(query, documents)
         if val:
