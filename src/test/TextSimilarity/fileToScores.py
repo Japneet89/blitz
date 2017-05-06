@@ -4,8 +4,6 @@ import os
 par_par_dir = os.path.join(os.path.join('.', os.pardir), os.pardir)
 sys.path.append(par_par_dir)
 
-from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
-
 import ast
 import argparse
 import json
@@ -20,14 +18,7 @@ def fileToQueryDocuments(path):
         lines = f.readlines()
         query = ast.literal_eval(lines[0])
         documents = ast.literal_eval(lines[1])
-    
     return query, documents
-            
-
-def readFile(path):
-    with open(path, "r") as f:
-        return f.read()
-
 
 if __name__ == "__main__":
     # Declare our argument parser
@@ -38,7 +29,14 @@ if __name__ == "__main__":
     + "a list of tuples representing documents on its second line."
     parser.add_argument("file", metavar="file", type=str, nargs=1,
                     help=helpMsg)
-
+    
+    # Parse the flag for offline processing.  If this flag is present,
+    # do not send the scores through the REST API, but rather
+    # instantiate a TextSimilarityEngine and call getTextSimilarityScores
+    # directly.
+    parser.add_argument("--offline", action='store_true', 
+        help="call TextSimilarityEngine directly, bypassing the REST API")
+    
     # Parse the command-line arguments
     args = parser.parse_args()
 
@@ -46,11 +44,18 @@ if __name__ == "__main__":
     # If given, also get the provided file
     filepath = args.file[0]
     
-    # Construct a query and return the results
+    # Get the query and documents to pass as input
     query, documents = fileToQueryDocuments(filepath)
     
-    data = queryDocumentsToJSONString(query, documents)
-    r = post("http://localhost:5000/", data=data).json()
+    # Get the scores from the TextSimilarityEngine or the REST API
+    if vars(args)['offline']:
+        from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
+        tse = TextSimilarityEngine()
+        r = tse.getTextSimilarityScores(query, documents)
+    else:
+        data = queryDocumentsToJSONString(query, documents)
+        r = post("http://localhost:5000/", data=data).json()
+    
     if type(r) is dict:
         print("Error:")
         print(r['code'])
