@@ -12,22 +12,25 @@ import argparse
 import os
 
 ## Function definitions    
-def toFlatFile(listOfTuples, directory):
+def toFlatFile(query, documents, directory):
     """
-    Given a list of tuples (the converted, formatted response from
-    the Amazon API), save the string representation of that list of
-    tuples to a text file in the current working directory.
+    Given a query and a list of document (the converted, formatted
+    response from the Amazon API), save the string representations of
+    the query and that list of documents to a text file in the directory
+    specified.
     
     The filename will be the Keywords used to generate the query,
     and will have a .txt extension.
     Ex. Philips Screwdriver.txt
     """
-    filename = listOfTuples[0] + ".txt"
+    filename = query + ".txt"
     
     filepath = os.path.join(directory, filename)
     
     with open(filepath, "w") as f:
-        f.write(repr(listOfTuples))
+        f.write(repr(query))
+        f.write("\n")
+        f.write(repr(documents))
 
 
 ## Variable definitions
@@ -92,11 +95,14 @@ response = amazon.ItemSearch(Keywords=keywords,
             ResponseGroup = ResponseGroup)
 
 
-# Convert the response to a list of tuples
-# ["keywords", tool1, tool2, ..., tool3]
+# Convert the response to a (query, documents) pair
+# query = "query"
+# documents = [tool1, tool2, ..., tool3]
 # where, e.g., tool1 = (title, [features], formatted_price, ASIN)
 #
-ret = [response.find("Keywords").text]
+
+query = response.find("Keywords").text
+documents = []
 for item in response.find_all("Item"):
     features = []
     for feature in item.find_all("Feature"):
@@ -104,6 +110,6 @@ for item in response.find_all("Item"):
     title = item.find("Title").text
     formatted_price = item.find("FormattedPrice").text
     ASIN = item.find("ASIN").text
-    ret.append((title, features, formatted_price, ASIN))
+    documents.append((title, features, formatted_price, ASIN))
 
-toFlatFile(ret, directory)
+toFlatFile(query, documents, directory)
