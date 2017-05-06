@@ -15,51 +15,48 @@ class TextSimilarityEngine(object):
         # Since this is a stateless object, we do not store attributes
         pass
     
+    def __makeMessage(self, code, message):
+        return {'code': "TextSimilarityEngine-Validation-%04d" % code,
+                'message': message}
     
-    def __validateInput(self, listOfTuples):
-        if type(listOfTuples) is not list:
-            return {'code': "TextSimilarityEngine-Validation-0001",
-            'message': "expected a list, got %r" % type(listOfTuples)}
+    def __validateInput(self, query, documents):
+        if len(documents) == 0:
+            return self.__makeMessage(2,
+            "expected a list of length 2 or more, got list of length 0")
         
-        if len(listOfTuples) <= 1:
-            return {'code': "TextSimilarityEngine-Validation-0002",
-            'message': "expected a list of length 2 or more, got list of length %r" \
-            % len(listOfTuples)}
+        if type(query) is not str:
+            return self.__makeMessage(3,
+            "query must be a str, is {}".format(type(query)))
         
-        if type(listOfTuples[0]) is not str:
-            return {'code': 'TextSimilarityEngine-Validation-0003',
-            'message': "query must be a str, is %r" % type(listOfTuples[0])}
-        
-        # For each of the items in the listOfTuples, after the query
-        for item in listOfTuples[1:]:
-            if type(item) is not tuple:
-                return {'code': 'TextSimilarityEngine-Validation-0004',
-                'message': "expected a tuple, got %r" % type(item)}
+        for doc in documents:
+            if type(doc) is not tuple:
+                return self.__makeMessage(4,
+                "expected a tuple, got {}".format(type(doc)))
             
-            if len(item) is not 4:
-                return {'code': 'TextSimilarityEngine-Validation-0005',
-                'message': "expected a tuple of length 4, got a tuple of length %r" \
-                % len(item)}
+            if len(doc) is not 4:
+                return self.__makeMessage(5,
+                "expected a tuple of length 4, got a tuple of length {}".\
+                format(len(doc)))
             
-            if type(item[0]) is not str:
-                return {'code': 'TextSimilarityEngine-Validation-0006',
-                'message': "title must be a str, is %r" % type(item[0])}
-            if type(item[2]) is not str:
-                return {'code': 'TextSimilarityEngine-Validation-0007',
-                'message': "formatted_price must be a str, is %r" % type(item[2])}
-            if type(item[3]) is not str:
-                return {'code': 'TextSimilarityEngine-Validation-0008',
-                'message': "ASIN must be a str, is %r" % type(item[3])}
+            if type(doc[0]) is not str:
+                return self.__makeMessage(6,
+                "title must be a str, is {}".format(type(doc[0])))
+            if type(doc[2]) is not str:
+                return self.__makeMessage(7,
+                "formatted_price must be a str, is {}".format(type(doc[2])))
+            if type(doc[3]) is not str:
+                return self.__makeMessage(8,
+                "ASIN must be a str, is {}".format(type(doc[3])))
             
-            if type(item[1]) is not list:
-                return {'code': 'TextSimilarityEngine-Validation-0009',
-                'message': "expected a list of features, got %r" % type(item[1])}
+            if type(doc[1]) is not list:
+                return self.__makeMessage(9,
+                "expected a list of features, got {}".format(type(doc[1])))
             
             # For each of the features in the list of features
-            for feature in item[1]:
+            for feature in doc[1]:
                 if type(feature) is not str:
-                    return {'code': 'TextSimilarityEngine-Validation-0010',
-                    'message': "feature must be a str, is %r" % type(feature)}
+                    return self.__makeMessage(10,
+                    "feature must be a str, is {}".format(type(feature)))
     
     def __performAnalysis(self, query, documents):
         """
@@ -93,8 +90,8 @@ class TextSimilarityEngine(object):
         Given listOfTuples as an input, returns the text similarity
         scores in the same ordering.
         """
-        #val = self.__validateInput(query, documents)
-        #if val:
-        #    return val
+        val = self.__validateInput(query, documents)
+        if val:
+            return val
         
         return self.__performAnalysis(query, documents)
