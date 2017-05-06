@@ -18,14 +18,7 @@ def fileToQueryDocuments(path):
         lines = f.readlines()
         query = ast.literal_eval(lines[0])
         documents = ast.literal_eval(lines[1])
-    
     return query, documents
-            
-
-def readFile(path):
-    with open(path, "r") as f:
-        return f.read()
-
 
 if __name__ == "__main__":
     # Declare our argument parser
