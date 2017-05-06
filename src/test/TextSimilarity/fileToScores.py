@@ -47,15 +47,13 @@ if __name__ == "__main__":
     # Get the query and documents to pass as input
     query, documents = fileToQueryDocuments(filepath)
     
-    # Format the query and documents as an acceptable JSON string
-    data = queryDocumentsToJSONString(query, documents)
-    
-    # Get the scores from the TextSimilarityEngine
+    # Get the scores from the TextSimilarityEngine or the REST API
     if vars(args)['offline']:
         from TextSimilarity.TextSimilarityEngine import TextSimilarityEngine
         tse = TextSimilarityEngine()
         r = tse.getTextSimilarityScores(query, documents)
     else:
+        data = queryDocumentsToJSONString(query, documents)
         r = post("http://localhost:5000/", data=data).json()
     
     if type(r) is dict:
