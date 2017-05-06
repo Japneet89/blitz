@@ -87,6 +87,17 @@ def getQueryDocuments(response):
         documents.append((title, features, formatted_price, ASIN))
     return query, documents
 
+def getAndSaveResponse(keywords, directory):
+    """
+    Given a string of keywords, and a directory, create a new
+    Amazon Products Advertising session, send a query for the keywords,
+    and save the response to "keywords".txt in the given directory
+    """
+    session = startSession()
+    response = getResponse(keywords, session)
+    query, documents = getQueryDocuments(response)
+    toFlatFile(query, documents, directory)
+
 if __name__=="__main__":
     ## Begin script
 
@@ -116,8 +127,4 @@ if __name__=="__main__":
     else:
         directory = os.curdir
     
-    ## Get and save response from Amazon
-    session = startSession()
-    response = getResponse(keywords, session)
-    query, documents = getQueryDocuments(response)
-    toFlatFile(query, documents, directory)
+    getAndSaveResponse(keywords, directory)

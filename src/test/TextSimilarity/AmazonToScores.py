@@ -51,13 +51,10 @@ if __name__ == "__main__":
         directory = os.curdir
     
     ## Get and save response from Amazon
-    session = AmazonRequester.startSession()
-    response = AmazonRequester.getResponse(keywords, session)
-    query, documents = AmazonRequester.getQueryDocuments(response)
-    AmazonRequester.toFlatFile(query, documents, directory)
+    AmazonRequester.getAndSaveResponse(keywords, directory)
     
     # Get the query and documents to pass as input
-    filepath = os.path.join(directory, query + ".txt")
+    filepath = os.path.join(directory, keywords + ".txt")
     query, documents = fileToScores.fileToQueryDocuments(filepath)
     
     # Get the scores from the TextSimilarityEngine or the REST API
