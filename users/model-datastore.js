@@ -116,19 +116,29 @@ function update (id, data, cb) {
   } else {
     key = ds.key(kind);
   }
-
-  const entity = {
-    key: key,
-    data: toDatastore(data, ['description'])
-  };
-
-  ds.save(
-    entity,
-    (err) => {
-      data.id = entity.key.id;
-      cb(err, err ? null : data);
-    }
-  );
+  
+  const query = ds.createQuery('Group');
+  ds.runQuery(query)
+    .then(results => {
+      
+      const groups = results[0];
+      var group = groups.filter(group => group[Datastore.KEY].id === data.group)
+      data.group = group[0][Datastore.KEY]
+    
+      const entity = {
+        key: key,
+        data: toDatastore(data, ['description'])
+      };
+      console.log('updateeee')
+      ds.save(
+        entity,
+        (err) => {
+          data.id = entity.key.id;
+          cb(err, err ? null : data);
+        }
+      );
+    });
+  
 }
 // [END update]
 
