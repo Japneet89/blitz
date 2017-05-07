@@ -1,4 +1,4 @@
-FROM launcher.gcr.io/google/nodejs
+FROM node:6-alpine
 
 # Copy application code.
 COPY . /app/
@@ -7,4 +7,4 @@ COPY . /app/
 RUN npm --unsafe-perm install
 
 # Run app
-CMD ["node", "app.js"]
+CMD ["node", "/app/app.js"]
