@@ -1,16 +1,3 @@
-// Copyright 2017, Google, Inc.
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 'use strict';
 
 const Datastore = require('@google-cloud/datastore');
@@ -83,10 +70,7 @@ function toDatastore (obj, nonIndexed) {
   return results;
 }
 
-// Lists all books in the Datastore sorted alphabetically by title.
-// The ``limit`` argument determines the maximum amount of results to
-// return per page. The ``token`` argument allows requesting additional
-// pages. The callback is invoked with ``(err, books, nextPageToken)``.
+
 // [START list]
 function list (limit, token, cb) {
   // const q = ds.createQuery(kind) // Group
@@ -105,9 +89,7 @@ function list (limit, token, cb) {
 }
 // [END list]
 
-// Creates a new book or updates an existing book with new data. The provided
-// data is automatically translated into Datastore format. The book will be
-// queued for background processing.
+
 // [START update]
 function update (id, data, cb) {
   let key;
@@ -117,18 +99,29 @@ function update (id, data, cb) {
     key = ds.key(kind);
   }
 
-  const entity = {
-    key: key,
-    data: toDatastore(data, ['description'])
-  };
-
-  ds.save(
-    entity,
-    (err) => {
-      data.id = entity.key.id;
-      cb(err, err ? null : data);
-    }
-  );
+  
+  const query = ds.createQuery('User');
+  ds.runQuery(query)
+    .then(results => {
+      
+      const users = results[0];
+      var keys = users.map(user => user[Datastore.KEY]);
+      var user = users.filter(user => user[Datastore.KEY].id === data.owner)
+      data.owner = user[0][Datastore.KEY]
+    
+      const entity = {
+        key: key,
+        data: toDatastore(data, ['description'])
+      };
+      ds.save(
+        entity,
+        (err) => {
+          data.id = entity.key.id;
+          cb(err, err ? null : data);
+        }
+      );
+    });
+  
 }
 // [END update]
 
