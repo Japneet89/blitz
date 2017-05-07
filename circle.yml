@@ -18,6 +18,13 @@ dependencies:
     - docker build -t gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 .
 
 deployment:
+  feature:
+    branch:deployment
+    commands:
+      - sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
+      - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
+      - kubectl run ${CLUSTER_NAME} --image=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 --port 8080
+      - kubectl expose deployment ${CLUSTER_NAME} --type=LoadBalancer --port 8080
   prod:
     branch: master
     commands:
@@ -25,6 +32,3 @@ deployment:
       - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
       - kubectl run ${CLUSTER_NAME} --image=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 --port 8080
       - kubectl expose deployment ${CLUSTER_NAME} --type=LoadBalancer --port 8080
-
-      
-      
