@@ -3,6 +3,8 @@ machine:
     PROJECT_NAME: customer-4dat
     CLUSTER_NAME: cluster-nodejs
     CLOUDSDK_COMPUTE_ZONE: us-central1-a
+  services:
+    - docker 
 
 dependencies:
   pre:
@@ -22,3 +24,7 @@ deployment:
       - sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
       - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
       - kubectl run ${CLUSTER_NAME} --image=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 --port 8080
+      - kubectl expose deployment ${CLUSTER_NAME} --type=LoadBalancer --port 8080
+
+      
+      
