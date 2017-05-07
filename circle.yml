@@ -24,8 +24,7 @@ deployment:
       - sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
       - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
       - sudo chown -R $USER /home/ubuntu/.config
-      - kubectl run ${CLUSTER_NAME} --image=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 --port 8080
-      - kubectl expose deployment ${CLUSTER_NAME} --type=LoadBalancer --port 8080
+      - kubectl set image deployment/${CLUSTER_NAME} ${CLUSTER_NAME}=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
   prod:
     branch: master
     commands:
