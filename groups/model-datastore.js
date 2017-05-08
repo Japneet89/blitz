@@ -105,7 +105,6 @@ function update (id, data, cb) {
     .then(results => {
       
       const users = results[0];
-      var keys = users.map(user => user[Datastore.KEY]);
       var user = users.filter(user => user[Datastore.KEY].id === data.owner)
       data.owner = user[0][Datastore.KEY]
     
