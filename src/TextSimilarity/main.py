@@ -13,28 +13,24 @@ from flask_restful import Resource, Api, reqparse
 # Import packages from this project
 #from JSONparser import JSONStringToQueryDocuments
 from TextSimilarityEngine import TextSimilarityEngine
-from AmazonClient import AmazconClient
-from Insights import Insights
+from AmazonClient import AmazonClient
+# from Insights import Insights
 
 app = Flask(__name__)
 api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('query', type=str, help='Query sent to Amazon')
-args = parser.parse_args()
 
 tse = TextSimilarityEngine()
-client = AmazconClient()
-insights = Insights()
+client = AmazonClient()
 
 class getScore(Resource):
-    def get(self):    
-        # Parse the request
+    def post(self):    
         args = parser.parse_args()
         query = args['query']
         documents = client.getDocuments(query)
         scores = tse.getTextSimilarityScores(query, documents)
         
-        print(insights.getInsights(query, documents, scores))
         return scores
 
 api.add_resource(getScore, '/scores')
@@ -60,4 +56,4 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=8080)

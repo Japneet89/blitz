@@ -15,13 +15,14 @@ class AmazonClient(object):
 
     ## Function definitions
     def __init__(self):
-        self.session = __startSession()
+        self.session = self.__startSession()
 
-    def __startSession(AWS_ACCESS_KEY_ID = "AKIAILMBKWFE4D6QDNWA",
-        AWS_SECRET_ACCESS_KEY = "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",
-        AWS_ASSOCIATE_TAG = "benderapps-20",
-        MaxQPS = 0.9,
-        Parser=lambda text: BeautifulSoup(text,'xml')):
+    def __startSession(self):
+	AWS_ACCESS_KEY_ID = "AKIAILMBKWFE4D6QDNWA"
+        AWS_SECRET_ACCESS_KEY = "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"
+        AWS_ASSOCIATE_TAG = "benderapps-20"
+        MaxQPS = 0.9
+        Parser=lambda text: BeautifulSoup(text,'xml')
         """
         Instantiate and return a session, which can send queries to Amazon.
         
@@ -37,20 +38,16 @@ class AmazonClient(object):
             AWS_ASSOCIATE_TAG, MaxQPS = MaxQPS, Parser=Parser)
 
 
-    def __getResponse(keywords, SearchIndex="All", ResponseGroup="ItemAttributes,Offers"):
+    def __getResponse(self, keywords, SearchIndex="All", ResponseGroup="ItemAttributes, Offers"):
         """
         Submit a keywords query, and return the response.
         """
-        print("""Sending query \"{}\" to Amazon using:
-        SearchIndex \"{}\" 
-        ResponseGroup \"{}\"""".\
-            format(keywords, SearchIndex, ResponseGroup))
         return self.session.ItemSearch(Keywords=keywords,
-            SearchIndex=SearchIndex,
-            ResponseGroup = ResponseGroup)
+		SearchIndex=SearchIndex, 
+		ResponseGroup=ResponseGroup)
 
 
-    def __getQueryDocuments(response):
+    def __getQueryDocuments(self, response):
         """
         Given the response from Amazon, return a (query, documents) pair.
         
@@ -63,19 +60,19 @@ class AmazonClient(object):
         for item in response.find_all("Item"):
             features = []
             for feature in item.find_all("Feature"):
-                features.append(feature.text)
-            title = item.find("Title").text
-            formatted_price = item.find("FormattedPrice").text
-            ASIN = item.find("ASIN").text
+                features.append(feature.text.encode('utf_8'))
+            title = item.find("Title").text.encode('utf_8')
+            formatted_price = item.find("FormattedPrice").text.encode('utf_8')
+            ASIN = item.find("ASIN").text.encode('utf_8')
             documents.append((title, features, formatted_price, ASIN))
         return documents
 
-    def getDocuments(keywords):
+    def getDocuments(self, keywords):
         """
         Given a string of keywords, and a directory, create a new
         Amazon Products Advertising session, send a query for the keywords,
         and save the response to "keywords".txt in the given directory
         """
-        response = getResponse(keywords)
-        documents = getQueryDocuments(response)
+        response = self.__getResponse(keywords)
+        documents = self.__getQueryDocuments(response)
         return documents
