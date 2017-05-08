@@ -7,11 +7,8 @@ sys.path.append(par_par_dir)
 # Import other python packages
 from flask import Flask, request, render_template
 from flask_restful import Resource, Api, reqparse
-# from pprint import pprint
-# import json
 
 # Import packages from this project
-#from JSONparser import JSONStringToQueryDocuments
 from TextSimilarityEngine import TextSimilarityEngine
 from AmazonClient import AmazonClient
 # from Insights import Insights
@@ -36,18 +33,6 @@ class getScore(Resource):
 api.add_resource(getScore, '/scores')
 
 
-@app.route('/form')
-def form():
-    return render_template('form.html')
-
-@app.route('/submitted', methods=['POST'])
-def submitted_form():
-    query = request.form['query']
-
-    return render_template(
-        'submitted_form.html',
-        query=query)
-
 @app.errorhandler(500)
 def server_error(e):
     # Log the error and stacktrace.
@@ -56,4 +41,5 @@ def server_error(e):
 
 
 if __name__ == '__main__':
+    #TODO: do not expose dev server to world
     app.run(debug=True, host='0.0.0.0', port=8080)

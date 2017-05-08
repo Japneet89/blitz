@@ -49,13 +49,14 @@ class AmazonClient(object):
 
     def __getQueryDocuments(self, response):
         """
-        Given the response from Amazon, return a (query, documents) pair.
+        Given the response from Amazon, return a list of tuples representing Amazon items.
         
         query = "query"
         documents = [tool1, tool2, ..., tool3]
         where, e.g., tool1 = (title, [features], formatted_price, ASIN).
         
         """
+	#TODO: find better way to convert to strings
         documents = []
         for item in response.find_all("Item"):
             features = []
@@ -69,9 +70,7 @@ class AmazonClient(object):
 
     def getDocuments(self, keywords):
         """
-        Given a string of keywords, and a directory, create a new
-        Amazon Products Advertising session, send a query for the keywords,
-        and save the response to "keywords".txt in the given directory
+        Given a string of keywords, return list of items and their scores
         """
         response = self.__getResponse(keywords)
         documents = self.__getQueryDocuments(response)

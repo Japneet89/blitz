@@ -38,6 +38,7 @@ class TextSimilarityEngine(object):
                 "expected a tuple of length 4, got a tuple of length {}".\
                 format(len(doc)))
             
+	    #TODO: Do not refer to variables in tuple by counter. What if newer ones are added?	
             if type(doc[0]) is not str:
                 return self.__makeMessage(6,
                 "title must be a str, is {}".format(type(doc[0])))
@@ -83,6 +84,7 @@ class TextSimilarityEngine(object):
         # Note that since we perform one query, we index into [0]
         # Note also that we cast to a list, since numpy.ndarray is not
         # serializable
+	#TODO: make this concatenation cleaner
         scores = list(cosine_similarity(K, X)[0])
 	for idx in range(0, len(documents)):
 		doc_tuple = documents[idx]
