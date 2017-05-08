@@ -117,18 +117,38 @@ function update (id, data, cb) {
     key = ds.key(kind);
   }
 
-  const entity = {
-    key: key,
-    data: toDatastore(data, ['description'])
-  };
-
-  ds.save(
-    entity,
-    (err) => {
-      data.id = entity.key.id;
-      cb(err, err ? null : data);
-    }
-  );
+  const query = ds.createQuery('Drawers');
+  ds.runQuery(query)
+    .then(results => {
+      
+      const drawers = results[0];
+      var drawer = drawers.filter(drawer => drawer[Datastore.KEY].id === data.drawer)
+      data.drawer = drawer[0][Datastore.KEY]
+      
+      const query = ds.createQuery('Tools');
+      ds.runQuery(query)
+        .then(results => {
+          
+          const tools = results[0];
+          for (var i = 0; i < data.tools.length; i++) {
+            var tool = tools.filter(tool => tool[Datastore.KEY].id === data.tools[i])
+            data.tools[i] = tool[0][Datastore.KEY]
+          }
+          
+          const entity = {
+            key: key,
+            data: toDatastore(data, ['description'])
+          };
+          ds.save(
+            entity,
+            (err) => {
+              data.id = entity.key.id;
+              cb(err, err ? null : data);
+            }
+          );
+        });
+        
+    });
 }
 // [END update]
 
