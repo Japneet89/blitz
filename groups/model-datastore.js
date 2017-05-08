@@ -10,50 +10,12 @@ const ds = Datastore({
 const kind = 'Group';
 // [END config]
 
-// Translates from Datastore's entity format to
-// the format expected by the application.
-//
-// Datastore format:
-//   {
-//     key: [kind, id],
-//     data: {
-//       property: value
-//     }
-//   }
-//
-// Application format:
-//   {
-//     id: id,
-//     property: value
-//   }
 function fromDatastore (obj) {
   obj.id = obj[Datastore.KEY].id;
   return obj;
 }
 
-// Translates from the application's format to the datastore's
-// extended entity property format. It also handles marking any
-// specified properties as non-indexed. Does not translate the key.
-//
-// Application format:
-//   {
-//     id: id,
-//     property: value,
-//     unindexedProperty: value
-//   }
-//
-// Datastore extended format:
-//   [
-//     {
-//       name: property,
-//       value: value
-//     },
-//     {
-//       name: unindexedProperty,
-//       value: value,
-//       excludeFromIndexes: true
-//     }
-//   ]
+
 function toDatastore (obj, nonIndexed) {
   nonIndexed = nonIndexed || [];
   const results = [];
@@ -73,10 +35,7 @@ function toDatastore (obj, nonIndexed) {
 
 // [START list]
 function list (limit, token, cb) {
-  // const q = ds.createQuery(kind) // Group
-  //   .limit(limit)
-  //   .order('title')
-  //   .start(token);
+
   const q = ds.createQuery(kind)
   ds.runQuery(q, (err, entities, nextQuery) => {
     if (err) {

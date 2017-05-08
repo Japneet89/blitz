@@ -10,50 +10,13 @@ const ds = Datastore({
 const kind = 'Toolbox';
 // [END config]
 
-// Translates from Datastore's entity format to
-// the format expected by the application.
-//
-// Datastore format:
-//   {
-//     key: [kind, id],
-//     data: {
-//       property: value
-//     }
-//   }
-//
-// Application format:
-//   {
-//     id: id,
-//     property: value
-//   }
+
 function fromDatastore (obj) {
   obj.id = obj[Datastore.KEY].id;
   return obj;
 }
 
-// Translates from the application's format to the datastore's
-// extended entity property format. It also handles marking any
-// specified properties as non-indexed. Does not translate the key.
-//
-// Application format:
-//   {
-//     id: id,
-//     property: value,
-//     unindexedProperty: value
-//   }
-//
-// Datastore extended format:
-//   [
-//     {
-//       name: property,
-//       value: value
-//     },
-//     {
-//       name: unindexedProperty,
-//       value: value,
-//       excludeFromIndexes: true
-//     }
-//   ]
+
 function toDatastore (obj, nonIndexed) {
   nonIndexed = nonIndexed || [];
   const results = [];
@@ -70,16 +33,9 @@ function toDatastore (obj, nonIndexed) {
   return results;
 }
 
-// Lists all books in the Datastore sorted alphabetically by title.
-// The ``limit`` argument determines the maximum amount of results to
-// return per page. The ``token`` argument allows requesting additional
-// pages. The callback is invoked with ``(err, books, nextPageToken)``.
 // [START list]
 function list (limit, token, cb) {
-  // const q = ds.createQuery(kind) // Group
-  //   .limit(limit)
-  //   .order('title')
-  //   .start(token);
+ 
   const q = ds.createQuery(kind)
   ds.runQuery(q, (err, entities, nextQuery) => {
     if (err) {
@@ -92,17 +48,7 @@ function list (limit, token, cb) {
 }
 // [END list]
 
-// Creates a new book or updates an existing book with new data. The provided
-// data is automatically translated into Datastore format. The book will be
-// queued for background processing.
-// [START update]
 
-
-
-// const ancestorKey = datastore.key(['TaskList', 'default']);
-
-// const query = datastore.createQuery('Task')
-//   .hasAncestor(ancestorKey);
 
 
 function update (id, data, cb) {
@@ -135,18 +81,6 @@ function update (id, data, cb) {
       );
     });
 
-  // const entity = {
-  //   key: key,
-  //   data: toDatastore(data, ['description'])
-  // };
-
-  // ds.save(
-  //   entity,
-  //   (err) => {
-  //     data.id = entity.key.id;
-  //     cb(err, err ? null : data);
-  //   }
-  // );
 }
 // [END update]
 
