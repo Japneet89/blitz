@@ -83,7 +83,12 @@ class TextSimilarityEngine(object):
         # Note that since we perform one query, we index into [0]
         # Note also that we cast to a list, since numpy.ndarray is not
         # serializable
-        return list(cosine_similarity(K, X)[0])
+        scores = list(cosine_similarity(K, X)[0])
+	for idx in range(0, len(documents)):
+		doc_tuple = documents[idx]
+		documents[idx] = doc_tuple + (scores[idx],)	
+
+	return documents
         
     def getTextSimilarityScores(self, query, documents):
         """
