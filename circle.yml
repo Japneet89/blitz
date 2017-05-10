@@ -1,0 +1,34 @@
+machine:
+  environment:
+    PROJECT_NAME: customer-4dat
+    CLUSTER_NAME: cluster-nodejs
+    CLOUDSDK_COMPUTE_ZONE: us-central1-a
+  services:
+    - docker 
+
+dependencies:
+  pre:
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install kubectl
+    - echo $GCLOUD_AUTH > ${HOME}/account-auth.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/account-auth.json
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set project $PROJECT_NAME
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet config set container/cluster $CLUSTER_NAME
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone ${CLOUDSDK_COMPUTE_ZONE}
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet container clusters get-credentials $CLUSTER_NAME
+    - docker build -t gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 .
+
+deployment:
+  feature:
+    branch: deployment
+    commands:
+      - sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
+      - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
+      - sudo chown -R $USER /home/ubuntu/.config
+      - kubectl set image deployment/${CLUSTER_NAME} ${CLUSTER_NAME}=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
+  prod:
+    branch: master
+    commands:
+      - sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
+      - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
+      - sudo chown -R $USER /home/ubuntu/.config
+      - kubectl set image deployment/${CLUSTER_NAME} ${CLUSTER_NAME}=gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
