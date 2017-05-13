@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Dashboard = () => (
+const Toolboxes = () => (
   <div>
-    <h1>Tools Dashboard</h1>
+    <h1>Toolboxes</h1>
   </div>
 )
 
-export default Dashboard;
+export default Toolboxes;
