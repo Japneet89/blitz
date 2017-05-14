@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: #3d4a5d;
+  background-color:#fafafa;
+}
+
+h1 {
+  font-weight: lighter;
+  color: #3d4a5d;
+  font-size: 1.5em;
+  text-align: left;
+  margin-left: 45px !important;
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: #3d4a5d;
+  margin: 0;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1em !important;
+  color: white !important;
+}
+
+.nav-item a {
+  font-size: 1em;
+  padding-top:15px;
+  color: white !important;
+}
+
+.bm-burger-bars {
+  height: 15% !important;
+}
+
+/*.navbar-brand {
+  color: white;
+}*/
+
+.button {
+  background-color: #3d4a5d !important;
+  color: white;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  padding: 10px 15px;
+  letter-spacing: 0.15em;
+  border-radius: 0;
+}

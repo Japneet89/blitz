@@ -7,7 +7,7 @@ import Toolboxes from './containers/Dashboard';
 import Tools from './containers/Tools';
 import Navigation from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
   render () {
