@@ -1,0 +1,10 @@
+.accountContianer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tab {
+    margin-top: 5px;
+    width: 400px;
+}

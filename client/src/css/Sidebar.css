@@ -1,0 +1,27 @@
+.menu-item {
+    font-size:0.7em;
+    text-align: left;
+    color: #3d4a5d !important;
+    padding: 10px;
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.menu-item:hover {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.icon {
+    margin-right: 25px;
+    margin-left: 15px;
+    font-size: 0.65em;
+}
+
+.bm-menu {
+    padding: 0px !important;
+}
+
+.bm-item-list {
+    padding: 0px !important;
+}
