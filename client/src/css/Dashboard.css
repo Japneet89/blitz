@@ -1,0 +1,4 @@
+.counts {
+  display: flex;
+  flex-direction: row;
+}

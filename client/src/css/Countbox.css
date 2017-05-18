@@ -1,0 +1,44 @@
+.box {
+  width : 30vw;
+  /*height: 10vh;*/
+  text-align: left;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 5vh;
+  box-shadow: 0 2px 10px 0 rgba(88, 88, 88, 0.3);
+}
+
+.blue {
+  /*background-color: #7FDBFF;*/
+  /*background-color: #1E90FF;*/
+  background-color: #00BFFF;
+}
+
+.red {
+  /*background-color: #FF4136;*/
+  background-color: #B22222;
+}
+
+.orange {
+  background-color: #FF851B;
+}
+
+.green {
+  background-color: #3D9970;
+}
+
+.title {
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.8em;
+  margin-left: 2vw;
+  padding-top: 2vh;
+  margin-bottom: 0;
+}
+
+.count {
+  color: white;
+  margin-left: 2vw;
+  font-size: 1.5em;
+  margin-top: 0;
+}
