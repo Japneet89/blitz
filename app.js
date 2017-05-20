@@ -11,6 +11,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('trust proxy', true);
 
+// handle cors
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Routes for API
 app.use('/api/groups', require('./groups/api'));
 app.use('/api/users', require('./users/api'));
@@ -22,7 +29,7 @@ app.use('/api/tools', require('./tools/api'));
 
 // Basic 404 handler
 app.use((req, res) => {
-  res.status(404).send('Not Found');
+  res.status(404).send('Error 404: Not Found');
 });
 
 // Basic error handler
