@@ -70,7 +70,6 @@ function update (id, data, cb) {
         key: key,
         data: toDatastore(data, ['description'])
       };
-      console.log('updateeee')
       ds.save(
         entity,
         (err) => {

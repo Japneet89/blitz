@@ -29,7 +29,7 @@ app.use('/api/tools', require('./tools/api'));
 
 // Basic 404 handler
 app.use((req, res) => {
-  res.status(404).send('Not Found');
+  res.status(404).send('Error 404: Not Found');
 });
 
 // Basic error handler

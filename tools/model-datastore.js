@@ -50,6 +50,28 @@ function list (limit, token, cb) {
 
 
 // [START update]
+// function update (id, data, cb) {
+//   let key;
+//   if (id) {
+//     key = ds.key([kind, parseInt(id, 10)]);
+//   } else {
+//     key = ds.key(kind);
+//   }
+
+//   const entity = {
+//     key: key,
+//     data: toDatastore(data, ['description'])
+//   };
+
+//   ds.save(
+//     entity,
+//     (err) => {
+//       data.id = entity.key.id;
+//       cb(err, err ? null : data);
+//     }
+//   );
+// }
+
 function update (id, data, cb) {
   let key;
   if (id) {
@@ -58,19 +80,48 @@ function update (id, data, cb) {
     key = ds.key(kind);
   }
 
-  const entity = {
-    key: key,
-    data: toDatastore(data, ['description'])
-  };
+  const query = ds.createQuery('Toolbox');
+  ds.runQuery(query)
+    .then(results => {
+      
+      const toolboxes = results[0];
+      var toolbox = toolboxes.filter(toolbox => toolbox[Datastore.KEY].id === data.toolbox)
+      data.toolbox = {id: toolbox[0][Datastore.KEY].id, name: toolbox[0].name }
+      
+      const query = ds.createQuery('Drawers');
+      ds.runQuery(query)
+        .then(results => {
+          
+          const drawers = results[0];
+          var drawer = drawers.filter(drawer => drawer[Datastore.KEY].id === data.drawer)
+          data.drawer = {id: drawer[0][Datastore.KEY].id, name: drawer[0].name }
 
-  ds.save(
-    entity,
-    (err) => {
-      data.id = entity.key.id;
-      cb(err, err ? null : data);
-    }
-  );
+          const query = ds.createQuery('Containers');
+          ds.runQuery(query)
+            .then(results => {
+              const containers = results[0];
+              var container = containers.filter(container => container[Datastore.KEY].id === data.container)
+              data.container = {id: container[0][Datastore.KEY].id, name: container[0].name }
+
+              const entity = {
+                key: key,
+                data: toDatastore(data, ['description'])
+              };
+              ds.save(
+                entity,
+                (err) => {
+                  data.id = entity.key.id;
+                  cb(err, err ? null : data);
+                }
+              );
+
+            });
+        }); 
+    });
+
 }
+
+
 // [END update]
 
 function create (data, cb) {
