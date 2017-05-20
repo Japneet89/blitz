@@ -1,12 +1,19 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import axios from 'axios';
 // import '../css/ToolModal.css';
 
-class DeleteToolboxModal extends React.Component {
+class DeleteModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
         };
+    }
+
+    delete = () => {
+        axios.delete('http://104.154.162.68:8080/api/toolboxes/' + this.props.id).then(response => {
+            console.log('deleted');
+        });
     }
 
     render () {  
@@ -16,8 +23,12 @@ class DeleteToolboxModal extends React.Component {
                     <Modal.Title>Are you sure?</Modal.Title>
                 </Modal.Header>
                 <Modal.Footer>
-                    <Button bsStyle='default' onClick={this.props.hide}>Cancel</Button>
-                    <Button bsStyle='success'>OK</Button>
+                    <Button 
+                        bsStyle='default' 
+                        onClick={this.props.hide}
+                    >Cancel
+                    </Button>
+                    <Button bsStyle='success' onClick={this.delete}>OK</Button>
                 </Modal.Footer>
             </Modal>
         )
@@ -25,4 +36,4 @@ class DeleteToolboxModal extends React.Component {
 }
 
 
-export default DeleteToolboxModal;
+export default DeleteModal;

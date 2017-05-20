@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Toolbox.css';
 import { Button } from 'react-bootstrap';
-import DeleteToolboxModal from '../containers/DeleteToolboxModal';
+import DeleteModal from '../containers/DeleteModal';
 
 
 class Toolbox extends React.Component {
@@ -31,9 +31,10 @@ class Toolbox extends React.Component {
         </Button>
         <p className="toolboxName">{this.props.name}</p>
         <p className="user">Created By: {this.props.owner}</p>
-        <DeleteToolboxModal 
+        <DeleteModal 
           show={this.state.showModal} 
           hide={this.close}
+          id={this.props.id}
         />
       </div>
     )
