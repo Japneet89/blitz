@@ -56,7 +56,7 @@ class Dashboard extends React.Component {
           {
             this.state.toolboxes
               .map(toolbox => (
-                <Toolbox name={toolbox.name} owner={toolbox.owner.name}/>
+                <Toolbox name={toolbox.name} owner={toolbox.owner.name} id={toolbox.id}/>
               ))
           }
         </div>
