@@ -35,6 +35,7 @@ class Toolbox extends React.Component {
           show={this.state.showModal} 
           hide={this.close}
           id={this.props.id}
+          url={"/toolboxes/"}
         />
       </div>
     )

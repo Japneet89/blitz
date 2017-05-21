@@ -48,7 +48,7 @@ class Tools extends React.Component {
           bsStyle="success">Create Tool
         </Button>
       </PageHeader>
-      <ToolTable tools={tools} data={this.state}/>
+      <ToolTable tools={tools} data={this.state} />
       <ToolModal 
         show={showModal} 
         hide={this.close} 
