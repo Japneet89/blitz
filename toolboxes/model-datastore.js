@@ -65,7 +65,7 @@ function update (id, data, cb) {
       
       const users = results[0];
       var user = users.filter(user => user[Datastore.KEY].id === data.owner)
-      data.owner = user[0][Datastore.KEY]
+      data.owner = {id: user[0][Datastore.KEY].id, name: user[0].name}
     
       const entity = {
         key: key,

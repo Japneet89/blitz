@@ -1,0 +1,8 @@
+.keyValueFormContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.formControl {
+    margin: 10px;
+}
