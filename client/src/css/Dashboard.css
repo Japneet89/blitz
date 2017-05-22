@@ -2,3 +2,35 @@
   display: flex;
   flex-direction: row;
 }
+
+.toolboxes {
+  /*margin-top: 5vh;*/
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+}
+
+.header {
+  height: 8vh;
+  width: 50vw;
+  text-align: left;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  border: 1px solid lightgrey;
+  border-bottom: none;
+}
+
+.headerTitle {
+  padding-left: 3vw;
+  margin-top: 2vh;
+  font-size: 1.5em;
+}
+
+.toolboxButton {
+  height: 5vh;
+  width: 8vw;
+  float: right;
+  position: relative;
+  top: 1vh;
+  right: 1vw;
+  /*margin-top: 1vh;*/
+}
