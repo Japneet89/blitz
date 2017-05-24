@@ -22,6 +22,7 @@ class Tools extends React.Component {
   open = () => this.setState({ showModal: true });
 
   componentDidMount() {
+    console.log('we rae in Tools.jsx');
     axios.get("http://104.154.162.68:8080/api/tools").then(response => {
       this.setState({ tools: response.data.items });
     });
