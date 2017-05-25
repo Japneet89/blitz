@@ -25,16 +25,25 @@ class ToolModal extends React.Component {
         };
     }
 
-    addMore = () => {
+    addMore = () => { 
         this.state.addMoreCounter.push('1');
         this.forceUpdate();
     }
 
     handleCreateTool = () => {
-        console.log("send a request here")
-        // axios.post("http://104.154.162.68:8080/api/tools",this.state.toolData).then(response => {
-        //     console.log(response)
-        // }).catch(error => console.log(error));
+        const { toolData } = this.state
+        axios.post('http://104.154.162.68:8080/api/tools/', {
+            name: toolData.name,
+            container: toolData.containerId,
+            drawer: toolData.drawerId,
+            toolbox: toolData.toolboxId
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
 
     onToolboxChange = (e) => {
