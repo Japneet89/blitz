@@ -11,7 +11,7 @@ import Sidebar from './components/Sidebar';
 
 export default (
   <Route path="/" component={App}>
-      <Route exact path='/' component={Login}/>
+  	  <IndexRoute component={Login}/>	
       <Route path='login' component={Login}/>
       <Route path='account' component={Account}/>
       <Route path='toolboxes' component={Toolboxes}/>

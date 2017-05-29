@@ -27,8 +27,7 @@ export default class App extends Component {
 }*/
 
 import React, { Component } from 'react';
-//import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+//import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Login';
 import Account from './Account';
 import Toolboxes from './Dashboard';
@@ -40,21 +39,11 @@ import '../css/App.css';
 class App extends Component {
   render () {
     return (
-      <Router>
-        <div className='App'>
-          <Navigation />
-          <Sidebar />
-          <Route exact path='/' component={Login} />
-          <Route path='/login' component={Login} />
-          <Route path='/account' component={Account} />
-          <Route path='/toolboxes' component={Toolboxes} />
-          <Route path='/tools' component={Tools} />
-        </div>
-      </Router>
-    )
+      <div>
+          <main className="application">{this.props.children}</main>
+      </div>
+      );
   }
 }
-
-
 
 export default App
