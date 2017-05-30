@@ -1,7 +1,7 @@
 /*import React, { Component } from 'react';
 import Navigation from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import './css/App.css';
+import '../css/App.css';
 
 
 export default class App extends Component {
@@ -39,7 +39,9 @@ import '../css/App.css';
 class App extends Component {
   render () {
     return (
-      <div>
+      <div className='App'>
+        <Navigation />
+        <Sidebar />
           <main className="application">{this.props.children}</main>
       </div>
       );

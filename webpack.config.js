@@ -21,15 +21,7 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loader: 'style-loader'
-    },
-    {
-      test: /\.css$/,
-      loader: 'css-loader',
-      query: {
-        modules: true,
-        localIdentName: '[name]__[local]___[hash:base64:5]'
-      }
+      loader: 'style!css'
     },
     { test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
     { test: /\.(ttf|eot)$/, loader: 'file' }
