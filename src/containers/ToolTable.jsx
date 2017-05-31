@@ -3,6 +3,8 @@ import React from 'react';
 import PencilIcon from 'react-icons/lib/md/create';
 import DeleteIcon from 'react-icons/lib/md/clear';
 import ToolEditModal from './ToolEditModal';
+import DeleteModal from '../containers/DeleteModal';
+
 
 import '../css/Tools.css';
 
@@ -11,12 +13,15 @@ class ToolTable extends React.Component {
         super(props);
         this.state = {
             showModal: false,
+            showDeleteModal: false,
+            deleteToolId: '',
         }
     }
 
     close = () => this.setState({ showModal: false });
     open = () => this.setState({ showModal: true });
-    delete = (i) => console.log(i);
+    delete = (id) => this.setState({ deleteToolId: id, showDeleteModal: true });
+    closeDelete = () => this.setState({ showDeleteModal: false });
     
     render () {
         const tooltipEdit = (<Tooltip id="tooltip">Edit</Tooltip>);
@@ -31,6 +36,12 @@ class ToolTable extends React.Component {
                     hide={this.close} 
                     title="Edit Tool" 
                     data={this.props.data}
+                />
+                <DeleteModal 
+                    show={this.state.showDeleteModal} 
+                    hide={this.closeDelete}
+                    id={this.state.deleteToolId}
+                    url={"/tools/"}
                 />
                 <thead>
                 <tr>
@@ -54,7 +65,7 @@ class ToolTable extends React.Component {
                                     </OverlayTrigger>
                                     <OverlayTrigger placement="top" overlay={tooltipDelete}>
                                         <DeleteIcon 
-                                            onClick={() => this.delete(i)}
+                                            onClick={() => this.delete(tool.id)}
                                             className="deleteIcon" 
                                         />
                                     </OverlayTrigger>
