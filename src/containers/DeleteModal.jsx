@@ -11,6 +11,7 @@ class DeleteModal extends React.Component {
     }
 
     delete = () => {
+        this.props.hide();
         axios.delete('http://104.154.162.68:8080/api'+ this.props.url + this.props.id).then(response => {
             console.log('deleted');
         });

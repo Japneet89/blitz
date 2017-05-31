@@ -15,11 +15,12 @@ class ToolTable extends React.Component {
             showModal: false,
             showDeleteModal: false,
             deleteToolId: '',
+            editToolId: ''
         }
     }
 
     close = () => this.setState({ showModal: false });
-    open = () => this.setState({ showModal: true });
+    open = (id) => this.setState({ showModal: true, editToolId: id });
     delete = (id) => this.setState({ deleteToolId: id, showDeleteModal: true });
     closeDelete = () => this.setState({ showDeleteModal: false });
     
@@ -28,7 +29,6 @@ class ToolTable extends React.Component {
         const tooltipDelete = (<Tooltip id="tooltip">Delete</Tooltip>);
         const { showModal } = this.state;
         const { tools } = this.props;
-
         return (
             <Table responsive striped bordered condensed hover>
                 <ToolEditModal 
@@ -36,6 +36,7 @@ class ToolTable extends React.Component {
                     hide={this.close} 
                     title="Edit Tool" 
                     data={this.props.data}
+                    id={this.state.editToolId}
                 />
                 <DeleteModal 
                     show={this.state.showDeleteModal} 
@@ -59,7 +60,7 @@ class ToolTable extends React.Component {
                                     {tool.name}
                                     <OverlayTrigger placement="top" overlay={tooltipEdit}>
                                         <PencilIcon 
-                                            onClick={this.open}
+                                            onClick={() => this.open(tool.id)}
                                             className="pencilIcon"
                                         />
                                     </OverlayTrigger>

@@ -31,6 +31,7 @@ class ToolModal extends React.Component {
     }
 
     handleCreateTool = () => {
+        this.props.hide()
         const { toolData } = this.state
         axios.post('http://104.154.162.68:8080/api/tools/', {
             name: toolData.name,
