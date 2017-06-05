@@ -5,6 +5,7 @@ import Countbox from '../components/Countbox';
 import Toolbox from '../components/Toolbox';
 import '../css/Dashboard.css';
 import { Button } from 'react-bootstrap';
+import ToolBoxModal from '../containers/ToolBoxModal';
 
 
 class Dashboard extends React.Component {
@@ -14,9 +15,15 @@ class Dashboard extends React.Component {
       toolboxes: [],
       drawers:'',
       containers:'',
-      tools:''
+      tools:'',
+      showToolBoxModal: false,
     };
   }
+
+
+  closeToolBoxModal = () => this.setState({ showToolBoxModal: false });
+  openToolBoxModal = () => this.setState({ showToolBoxModal: true });
+
 
   componentDidMount() {
     // API calls 
@@ -49,7 +56,8 @@ class Dashboard extends React.Component {
           <Button
             bsSize="small"
             className="toolboxButton"
-            bsStyle="success">Create
+            bsStyle="success"
+            onClick={this.openToolBoxModal}>Create
           </Button>
           <p className='headerTitle'>Toolboxes</p>
         </div>
@@ -57,10 +65,15 @@ class Dashboard extends React.Component {
           {
             this.state.toolboxes
               .map(toolbox => (
-                <Toolbox name={toolbox.name} owner={toolbox.owner.name} id={toolbox.id}/>
+                <Toolbox name={toolbox.name} owner={toolbox.owner.name} id={toolbox.id} userId={toolbox.owner.id} />
               ))
           }
         </div>
+        <ToolBoxModal 
+          show={this.state.showToolBoxModal}
+          hide={this.closeToolBoxModal}
+          title='Create a Toolbox'
+        />
       </div>
     );
   }

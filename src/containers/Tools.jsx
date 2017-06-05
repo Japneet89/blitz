@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import ToolTable from './ToolTable';
 import ToolModal from './ToolModal';
-import ToolEditModal from './ToolEditModal';
 import '../css/Tools.css';
 import { PageHeader, Button } from 'react-bootstrap';
 class Tools extends React.Component {

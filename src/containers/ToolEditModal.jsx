@@ -33,7 +33,6 @@ class ToolEditModal extends React.Component {
   }
 
   handleEditTool = () => {
-    console.log('EDIIIITTTTT')
     this.props.hide()
     const { toolData } = this.state
     axios.put('http://104.154.162.68:8080/api/tools/' + this.props.id, {
