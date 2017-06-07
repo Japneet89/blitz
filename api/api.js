@@ -20,12 +20,12 @@ app.use(function(req, res, next) {
 });
 
 // Routes for API
-app.use('./api/groups', require('./groups/api'));
-app.use('./api/users', require('./users/api'));
-app.use('./api/toolboxes', require('./toolboxes/api'));
-app.use('./api/drawers', require('./drawers/api'));
-app.use('./api/containers', require('./containers/api'));
-app.use('./api/tools', require('./tools/api'));
+app.use('/api/groups', require('./groups/api'));
+app.use('/api/users', require('./users/api'));
+app.use('/api/toolboxes', require('./toolboxes/api'));
+app.use('/api/drawers', require('./drawers/api'));
+app.use('/api/containers', require('./containers/api'));
+app.use('/api/tools', require('./tools/api'));
 
 
 // Basic 404 handler
