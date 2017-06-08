@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getAccessToken } from './AuthService';
 
-const BACKEND_API_URL = 'api.tool4dat.com/api';
+const BACKEND_API_URL = 'http://api.tool4dat.com/api';
 
 function getTools() {
 	return axios.get(`${BACKEND_API_URL}/tools`, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data);
