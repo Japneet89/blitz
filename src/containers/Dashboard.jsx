@@ -1,10 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 import Countbox from '../components/Countbox';
 
 import Toolbox from '../components/Toolbox';
 import '../css/Dashboard.css';
 import { Button } from 'react-bootstrap';
+import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
 
 
 class Dashboard extends React.Component {
@@ -19,20 +19,22 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    // API calls 
-    axios.get("http://104.154.162.68:8080/api/toolboxes").then(response => {
-      console.log('toolboxes', response.data.items)
-      this.setState({ toolboxes: response.data.items });
+    getToolboxes().then((toolboxes) => {
+      this.setState({ toolboxes} );
     });
-    axios.get("http://104.154.162.68:8080/api/drawers").then(response => {
-      this.setState({ drawers: response.data.items });
+
+    getDrawers().then((drawers) => {
+      this.setState( {drawers} );
     });
-    axios.get("http://104.154.162.68:8080/api/containers").then(response => {
-      this.setState({ containers: response.data.items });
+
+    getContainers().then((containers) => {
+      this.setState( {containers} );
     });
-    axios.get("http://104.154.162.68:8080/api/tools").then(response => {
-      this.setState({ tools: response.data.items });
+
+    getTools().then((tools) => {
+      this.setState( {tools} );
     });
+
   }
 
   render() {

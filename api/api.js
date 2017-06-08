@@ -2,9 +2,32 @@
 
 const path = require('path');
 const express = require('express');
-const config = require('./config');
-
 const app = express();
+const config = require('./config');
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+
+const authCheck = jwt({
+  secret: jwks.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        // YOUR-AUTH0-DOMAIN name e.g prosper.auth0.com
+        jwksUri: "https://4dat-auth.auth0.com/.well-known/jwks.json"
+    }),
+    // This is the identifier we set when we created the API
+    audience: 'api.tool4dat.com',
+    issuer: 'https://4dat-auth.auth0.com/',
+    algorithms: ['RS256']
+});
+
+
 
 app.disable('etag');
 app.set('views', path.join(__dirname, 'views'));
@@ -20,12 +43,10 @@ app.use(function(req, res, next) {
 });
 
 // Routes for API
-app.use('/api/groups', require('./groups/api'));
-app.use('/api/users', require('./users/api'));
-app.use('/api/toolboxes', require('./toolboxes/api'));
-app.use('/api/drawers', require('./drawers/api'));
-app.use('/api/containers', require('./containers/api'));
-app.use('/api/tools', require('./tools/api'));
+app.use('/api/toolboxes', authCheck, require('./toolboxes/api'));
+app.use('/api/drawers', authCheck, require('./drawers/api'));
+app.use('/api/containers', authCheck, require('./containers/api'));
+app.use('/api/tools', authCheck, require('./tools/api'));
 
 
 // Basic 404 handler
