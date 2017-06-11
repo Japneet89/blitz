@@ -8,10 +8,10 @@ RUN mkdir -p /app && cp -a /tmp/node_modules /app/
 
 # Copy application code.
 WORKDIR /app
-ADD . /app
+ADD ./api /app
 
 #port
-EXPOSE 8080
+EXPOSE 80
 
 # Run app
-CMD ["node", "app.js"]
+CMD ["node", "api.js"]
