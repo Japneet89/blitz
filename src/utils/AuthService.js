@@ -6,7 +6,7 @@ const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'DANqL2VonWecYF5OZYFrPcm8n99t6hOm';
 const CLIENT_DOMAIN = '4dat-auth.auth0.com';
-const REDIRECT = 'http://localhost/callback';
+const REDIRECT = 'http://www.tool4dat.com/callback';
 const SCOPE = 'full_api_access';
 const AUDIENCE = 'api.tool4dat.com';
 
