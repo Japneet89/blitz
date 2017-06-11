@@ -2,18 +2,23 @@ import React from 'react';
 import '../css/Toolbox.css';
 import { Button } from 'react-bootstrap';
 import DeleteModal from '../containers/DeleteModal';
+import EditToolBoxModal from '../containers/EditToolboxModal';
 
 
 class Toolbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      showEditModal: false,
     }
   }
 
   close = () => this.setState({ showModal: false });
   open = () => this.setState({ showModal: true });
+
+  closeEditModal = () => this.setState({ showEditModal: false });
+  openEditModal = () => this.setState({ showEditModal: true });
 
   render() {
     return (
@@ -27,7 +32,8 @@ class Toolbox extends React.Component {
         <Button
           bsSize="small"
           className="editButton"
-          bsStyle="default">Edit
+          bsStyle="default"
+          onClick={this.openEditModal}>Edit
         </Button>
         <p className="toolboxName">{this.props.name}</p>
         <p className="user">Created By: {this.props.owner}</p>
@@ -35,6 +41,15 @@ class Toolbox extends React.Component {
           show={this.state.showModal} 
           hide={this.close}
           id={this.props.id}
+          url={"/toolboxes/"}
+        />
+        <EditToolBoxModal 
+          show={this.state.showEditModal}
+          hide={this.closeEditModal}
+          id={this.props.id}
+          title='Edit a Toolbox'
+          name={this.props.name}
+          userId={this.props.userId}
         />
       </div>
     )

@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import ToolTable from './ToolTable';
 import ToolModal from './ToolModal';
-import ToolEditModal from './ToolEditModal';
 import '../css/Tools.css';
 import { PageHeader, Button } from 'react-bootstrap';
 class Tools extends React.Component {
@@ -22,7 +21,6 @@ class Tools extends React.Component {
   open = () => this.setState({ showModal: true });
 
   componentDidMount() {
-    console.log('we rae in Tools.jsx');
     axios.get("http://104.154.162.68:8080/api/tools").then(response => {
       this.setState({ tools: response.data.items });
     });
@@ -49,7 +47,7 @@ class Tools extends React.Component {
           bsStyle="success">Create Tool
         </Button>
       </PageHeader>
-      <ToolTable tools={tools} data={this.state}/>
+      <ToolTable tools={tools} data={this.state} />
       <ToolModal 
         show={showModal} 
         hide={this.close} 

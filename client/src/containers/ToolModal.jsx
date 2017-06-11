@@ -1,13 +1,11 @@
 import React from 'react';
-import { Modal, Button, Table } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import CreateDropdown from '../components/CreateDropdown';
 import KeyValueForm from '../components/KeyValueForm';
-import DeleteIcon from 'react-icons/lib/md/clear';
-import '../css/ToolModal.css';
-import '../css/Tools.css';
 import axios from 'axios';
+import '../css/ToolModal.css';
 
-class ToolEditModal extends React.Component {
+class ToolModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -27,29 +25,28 @@ class ToolEditModal extends React.Component {
         };
     }
 
-  addMore = () => {
-      this.state.addMoreCounter.push('1');
-      this.forceUpdate();
-  }
+    addMore = () => { 
+        this.state.addMoreCounter.push('1');
+        this.forceUpdate();
+    }
 
-  handleEditTool = () => {
-    this.props.hide()
-    const { toolData } = this.state
-    axios.put('http://104.154.162.68:8080/api/tools/' + this.props.id, {
-        name: toolData.name,
-        container: toolData.containerId,
-        drawer: toolData.drawerId,
-        toolbox: toolData.toolboxId
-    })
-    .then(function (response) {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-   }
+    handleCreateTool = () => {
+        const { toolData } = this.state
+        axios.post('http://104.154.162.68:8080/api/tools/', {
+            name: toolData.name,
+            container: toolData.containerId,
+            drawer: toolData.drawerId,
+            toolbox: toolData.toolboxId
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
 
-   onToolboxChange = (e) => {
+    onToolboxChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
         const specificToolbox = this.props.data.toolboxes.filter((val)=>val.name===value)
@@ -87,8 +84,7 @@ class ToolEditModal extends React.Component {
                     <Modal.Title>{title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    
-                  <CreateDropdown 
+                    <CreateDropdown 
                         title="Choose a Toolbox" 
                         data={toolboxes} 
                         handler={this.onToolboxChange}
@@ -109,33 +105,13 @@ class ToolEditModal extends React.Component {
                         data={toolsList}
                         handler={this.onToolChange}
                     />
-                    
-                    {/*hard coded for now */}
-                    <Table striped bordered condensed responsive>
-                        <thead>
-                        <tr>
-                            <th>Key</th>
-                            <th>Value</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Size</td>
-                                <td>Big<DeleteIcon className="deleteIcon"/></td>
-                            </tr>
-                            <tr>
-                                <td>Weight</td>
-                                <td>1lb<DeleteIcon className="deleteIcon"/></td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                    
+
                     {addMoreCounter.length > 1 ? addMoreCounter.map((keyvaluePair,i) => <KeyValueForm key={i} />) : <KeyValueForm />}
-                   
+
                     <Button className="addMoreButton" onClick={this.addMore}>Add More</Button>
                 </Modal.Body>
                 <Modal.Footer>  
-                    <Button bsStyle="success" onClick={this.handleEditTool}>Save changes</Button>
+                    <Button bsStyle="success" onClick={this.handleCreateTool}>Save changes</Button>
                 </Modal.Footer>
             </Modal>
         );
@@ -143,4 +119,4 @@ class ToolEditModal extends React.Component {
 }
 
 
-export default ToolEditModal;
+export default ToolModal;
