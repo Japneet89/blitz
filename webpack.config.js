@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   entry: [
     'babel-polyfill',
@@ -7,7 +5,7 @@ module.exports = {
   ],
   output: {
     path: __dirname,
-    publicPath: './',
+    publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -32,7 +30,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.css']
   },
-    devServer: {
+  devServer: {
     historyApiFallback: true,
     contentBase: './',
     hot: true

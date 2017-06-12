@@ -7,7 +7,7 @@ const Navigation = () => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">4-dat</a>
+        <a href="/">Tool4Dat</a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

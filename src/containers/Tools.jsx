@@ -38,6 +38,7 @@ class Tools extends React.Component {
     getTools().then((tools) => {
       this.setState( {tools} );
     });
+
   }
   
   render() {
