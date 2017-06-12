@@ -4,6 +4,8 @@ import ToolTable from './ToolTable';
 import ToolModal from './ToolModal';
 import '../css/Tools.css';
 import { PageHeader, Button } from 'react-bootstrap';
+import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
+
 class Tools extends React.Component {
 
   constructor() {
@@ -21,18 +23,22 @@ class Tools extends React.Component {
   open = () => this.setState({ showModal: true });
 
   componentDidMount() {
-    axios.get("http://104.154.162.68:8080/api/tools").then(response => {
-      this.setState({ tools: response.data.items });
+    getToolboxes().then((toolboxes) => {
+      this.setState({ toolboxes} );
     });
-    axios.get("http://104.154.162.68:8080/api/toolboxes").then(response => {
-      this.setState({ toolboxes: response.data.items });
+
+    getDrawers().then((drawers) => {
+      this.setState( {drawers} );
     });
-    axios.get("http://104.154.162.68:8080/api/drawers").then(response => {
-      this.setState({ drawers: response.data.items });
+
+    getContainers().then((containers) => {
+      this.setState( {containers} );
     });
-    axios.get("http://104.154.162.68:8080/api/containers").then(response => {
-      this.setState({ containers: response.data.items });
+
+    getTools().then((tools) => {
+      this.setState( {tools} );
     });
+
   }
   
   render() {
