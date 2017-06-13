@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import axios from 'axios';
 import '../css/ToolModal.css';
+import { putToolBox } from '../utils/backend-api';
 
 class EditToolBoxModal extends React.Component {
     constructor(props) {
@@ -16,17 +17,9 @@ class EditToolBoxModal extends React.Component {
    }
 
     handleEditToolbox = () => {
+      window.location.reload();
       this.props.hide();
-      axios.put('http://104.154.162.68:8080/api/toolboxes/'+this.props.id, {
-          name: this.state.toolBoxName,
-          owner: this.props.userId
-      })
-      .then(function (response) {
-          console.log(response);
-      })
-      .catch(function (error) {
-          console.log(error);
-      });
+      putToolBox(this.props.id, this.state.toolBoxName, this.props.userId);
     }
 
     render () {

@@ -22,7 +22,6 @@ class Tools extends React.Component {
   open = () => this.setState({ showModal: true });
 
   componentDidMount() {
-    console.log('!!!!!!!!!!!!!!!');
     getToolboxes().then((toolboxes) => {
       this.setState({ toolboxes} );
     });

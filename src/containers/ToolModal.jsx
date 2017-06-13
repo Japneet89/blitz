@@ -4,6 +4,7 @@ import CreateDropdown from '../components/CreateDropdown';
 import KeyValueForm from '../components/KeyValueForm';
 import axios from 'axios';
 import '../css/ToolModal.css';
+import { postTools } from '../utils/backend-api';
 
 class ToolModal extends React.Component {
     constructor(props) {
@@ -31,20 +32,10 @@ class ToolModal extends React.Component {
     }
 
     handleCreateTool = () => {
+        window.location.reload();
         this.props.hide()
         const { toolData } = this.state
-        axios.post('http://104.154.162.68:8080/api/tools/', {
-            name: toolData.name,
-            container: toolData.containerId,
-            drawer: toolData.drawerId,
-            toolbox: toolData.toolboxId
-        })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        postTools(toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
     }
 
     onToolboxChange = (e) => {

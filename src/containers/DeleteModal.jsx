@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
+import { deleteItem } from '../utils/backend-api';
 // import '../css/ToolModal.css';
 
 class DeleteModal extends React.Component {
@@ -11,10 +12,9 @@ class DeleteModal extends React.Component {
     }
 
     delete = () => {
+        window.location.reload();
         this.props.hide();
-        axios.delete('http://104.154.162.68:8080/api'+ this.props.url + this.props.id).then(response => {
-            console.log('deleted');
-        });
+        deleteItem(this.props.url, this.props.id);
     }
 
     render () {  

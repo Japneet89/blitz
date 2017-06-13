@@ -6,6 +6,7 @@ import DeleteIcon from 'react-icons/lib/md/clear';
 import '../css/ToolModal.css';
 import '../css/Tools.css';
 import axios from 'axios';
+import { putTools } from '../utils/backend-api';
 
 class ToolEditModal extends React.Component {
     constructor(props) {
@@ -33,20 +34,10 @@ class ToolEditModal extends React.Component {
   }
 
   handleEditTool = () => {
+    window.location.reload();
     this.props.hide()
     const { toolData } = this.state
-    axios.put('http://104.154.162.68:8080/api/tools/' + this.props.id, {
-        name: toolData.name,
-        container: toolData.containerId,
-        drawer: toolData.drawerId,
-        toolbox: toolData.toolboxId
-    })
-    .then(function (response) {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+    putTools(this.props.id, toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
    }
 
    onToolboxChange = (e) => {
