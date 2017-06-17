@@ -9,15 +9,6 @@ class Account extends React.Component {
       <div>
         <PageHeader>Account Management</PageHeader>
           <Tabs id="account" defaultActiveKey={2} className="accountContianer">
-            <Tab eventKey={1} title="Profile" className="tab">
-              <AccountForm placeholder='name'/>
-              <AccountForm placeholder='email'/>
-              <Button 
-                bsSize="large"
-                className='button'
-                bsStyle="primary"
-              > Update Profile </Button>
-            </Tab>
             <Tab eventKey={2} title="Group" className="tab">
               <AccountForm placeholder='email'/>
               <Button 

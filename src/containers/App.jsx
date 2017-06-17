@@ -28,7 +28,7 @@ export default class App extends Component {
 
 import React, { Component } from 'react';
 //import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Login from './Login';
+// import Login from './Login';
 import Account from './Account';
 import Toolboxes from './Dashboard';
 import Tools from './Tools';
