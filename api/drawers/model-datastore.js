@@ -63,7 +63,7 @@ function update (id, data, cb) {
       
       const toolboxes = results[0];
       var toolbox = toolboxes.filter(toolbox => toolbox[Datastore.KEY].id === data.toolbox)
-      data.toolbox = toolbox[0][Datastore.KEY]
+      data.toolbox = {id: toolbox[0][Datastore.KEY].id, name: toolbox[0].name }
       
       const query = ds.createQuery('Tools');
       ds.runQuery(query)

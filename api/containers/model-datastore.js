@@ -110,7 +110,7 @@ function update (id, data, cb) {
       
       const drawers = results[0];
       var drawer = drawers.filter(drawer => drawer[Datastore.KEY].id === data.drawer)
-      data.drawer = drawer[0][Datastore.KEY]
+      data.drawer = {id: drawer[0][Datastore.KEY].id, name: drawer[0].name }
       
       const query = ds.createQuery('Tools');
       ds.runQuery(query)

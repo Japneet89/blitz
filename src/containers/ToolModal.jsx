@@ -70,6 +70,9 @@ class ToolModal extends React.Component {
         const { addMoreCounter, toolsList } = this.state;
         const { show, hide, title } = this.props;
         const { drawers, containers, toolboxes } = this.props.data;
+        const filteredDrawers = drawers.filter(val => val.toolbox.id === this.state.toolData.toolboxId);
+        const filteredContainers = containers.filter(val => val.drawer.id === this.state.toolData.drawerId);
+
         return (
             <Modal show={show} onHide={hide}>
                 <Modal.Header closeButton>
@@ -82,13 +85,14 @@ class ToolModal extends React.Component {
                         handler={this.onToolboxChange}
                     />
                     <CreateDropdown 
+                        ref="drawer"
                         title="Choose a Drawer" 
-                        data={drawers}
+                        data={filteredDrawers}
                         handler={this.onDrawerChange}
                     />
                     <CreateDropdown 
                         title="Choose a Container" 
-                        data={containers}
+                        data={filteredContainers}
                         handler={this.onContainerChange}
                     />
                     {/*hard coded for now */}
