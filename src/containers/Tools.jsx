@@ -56,8 +56,7 @@ class Tools extends React.Component {
       <ToolModal 
         show={showModal} 
         hide={this.close} 
-        title="Create Tool" 
-        data={this.state}
+        title="Create Tool"
       />
     </div>
     )

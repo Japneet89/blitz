@@ -5,11 +5,17 @@ import KeyValueForm from '../components/KeyValueForm';
 import axios from 'axios';
 import '../css/ToolModal.css';
 import { postTools } from '../utils/backend-api';
+import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
+
 
 class ToolModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
+            tools: [],
+            toolboxes: [],
+            drawers: [],
+            containers: [],
             addMoreCounter: ['1'],
             toolsList: [
                 {name: "Thor's hammer"},
@@ -24,6 +30,24 @@ class ToolModal extends React.Component {
                 keyValuePairs: {}
             }
         };
+    }
+
+    componentDidMount() {
+      getToolboxes().then((toolboxes) => {
+        this.setState({ toolboxes} );
+      });
+
+      getDrawers().then((drawers) => {
+        this.setState( {drawers} );
+      });
+
+      getContainers().then((containers) => {
+        this.setState( {containers} );
+      });
+
+      getTools().then((tools) => {
+        this.setState( {tools} );
+      });
     }
 
     addMore = () => { 
@@ -41,22 +65,28 @@ class ToolModal extends React.Component {
     onToolboxChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificToolbox = this.props.data.toolboxes.filter((val)=>val.name===value)
+        const specificToolbox = this.state.toolboxes.filter((val)=>val.name===value)
+
+        const drawers = this.state.drawers.filter(val => val.toolbox.name === value);
+
         toolData.toolboxId = specificToolbox[0].id;
         this.setState({ toolData });
+
+        const obj = {target: {value: drawers[0].name}}
+        this.onDrawerChange(obj);
     }
     
     onDrawerChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificDrawer = this.props.data.drawers.filter((val)=>val.name===value)
+        const specificDrawer = this.state.drawers.filter((val)=>val.name===value)
         toolData.drawerId = specificDrawer[0].id;
         this.setState({ toolData });
     }
     onContainerChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificContainer= this.props.data.containers.filter((val)=>val.name===value)
+        const specificContainer= this.state.containers.filter((val)=>val.name===value)
         toolData.containerId = specificContainer[0].id;
         this.setState({ toolData });
     }
@@ -69,7 +99,7 @@ class ToolModal extends React.Component {
     render () {
         const { addMoreCounter, toolsList } = this.state;
         const { show, hide, title } = this.props;
-        const { drawers, containers, toolboxes } = this.props.data;
+        const { drawers, containers, toolboxes } = this.state;
         const filteredDrawers = drawers.filter(val => val.toolbox.id === this.state.toolData.toolboxId);
         const filteredContainers = containers.filter(val => val.drawer.id === this.state.toolData.drawerId);
 
@@ -85,7 +115,6 @@ class ToolModal extends React.Component {
                         handler={this.onToolboxChange}
                     />
                     <CreateDropdown 
-                        ref="drawer"
                         title="Choose a Drawer" 
                         data={filteredDrawers}
                         handler={this.onDrawerChange}
