@@ -6,6 +6,7 @@ import axios from 'axios';
 import '../css/ToolModal.css';
 import { postTools } from '../utils/backend-api';
 import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
+import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 
 class ToolModal extends React.Component {
@@ -56,10 +57,12 @@ class ToolModal extends React.Component {
     }
 
     handleCreateTool = () => {
-        window.location.reload();
         this.props.hide()
         const { toolData } = this.state
         postTools(toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
+        setTimeout(function() {
+            window.location.reload();
+        }, 1000);
     }
 
     onToolboxChange = (e) => {
@@ -125,11 +128,18 @@ class ToolModal extends React.Component {
                         handler={this.onContainerChange}
                     />
                     {/*hard coded for now */}
+
                     <CreateDropdown 
-                        title="Choose a Tool" 
+                        title="Choose an existing Tool" 
                         data={toolsList}
                         handler={this.onToolChange}
                     />
+
+                    <FormGroup onChange={this.onToolChange}>
+                      <ControlLabel>Or create a new tool</ControlLabel>
+                      {' '}
+                      <FormControl type="value" placeholder="tool name" />
+                    </FormGroup>
 
                     {addMoreCounter.length > 1 ? addMoreCounter.map((keyvaluePair,i) => <KeyValueForm key={i} />) : <KeyValueForm />}
 

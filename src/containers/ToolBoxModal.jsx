@@ -18,9 +18,11 @@ class ToolBoxModal extends React.Component {
    }
 
     handleCreateTool = () => {
-      window.location.reload();
       this.props.hide()
       postToolBox(this.state.toolBoxName, '5667908084563968');
+      setTimeout(function() {
+          window.location.reload();
+      }, 1000);
     }
 
     render () {

@@ -7,11 +7,18 @@ import '../css/ToolModal.css';
 import '../css/Tools.css';
 import axios from 'axios';
 import { putTools } from '../utils/backend-api';
+import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
+import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+
 
 class ToolEditModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
+            tools: [],
+            toolboxes: [],
+            drawers: [],
+            containers: [],
             addMoreCounter: ['1'],
             toolsList: [
                 {name: "Thor's hammer"},
@@ -24,9 +31,28 @@ class ToolEditModal extends React.Component {
                 containerId:"",
                 drawerId:"", 
                 keyValuePairs: {}
-            }
+            },
         };
     }
+
+
+  componentDidMount() {
+      getToolboxes().then((toolboxes) => {
+        this.setState({ toolboxes} );
+      });
+
+      getDrawers().then((drawers) => {
+        this.setState( {drawers} );
+      });
+
+      getContainers().then((containers) => {
+        this.setState( {containers} );
+      });
+
+      getTools().then((tools) => {
+        this.setState( {tools} );
+      });
+   }
 
   addMore = () => {
       this.state.addMoreCounter.push('1');
@@ -34,31 +60,39 @@ class ToolEditModal extends React.Component {
   }
 
   handleEditTool = () => {
-    window.location.reload();
     this.props.hide()
     const { toolData } = this.state
     putTools(this.props.id, toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
+    setTimeout(function() {
+        window.location.reload();
+    }, 1000);
    }
 
-   onToolboxChange = (e) => {
+    onToolboxChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificToolbox = this.props.data.toolboxes.filter((val)=>val.name===value)
+        const specificToolbox = this.state.toolboxes.filter((val)=>val.name===value)
+
+        const drawers = this.state.drawers.filter(val => val.toolbox.name === value);
+
         toolData.toolboxId = specificToolbox[0].id;
         this.setState({ toolData });
+
+        const obj = {target: {value: drawers[0].name}}
+        this.onDrawerChange(obj);
     }
     
     onDrawerChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificDrawer = this.props.data.drawers.filter((val)=>val.name===value)
+        const specificDrawer = this.state.drawers.filter((val)=>val.name===value)
         toolData.drawerId = specificDrawer[0].id;
         this.setState({ toolData });
     }
     onContainerChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificContainer= this.props.data.containers.filter((val)=>val.name===value)
+        const specificContainer= this.state.containers.filter((val)=>val.name===value)
         toolData.containerId = specificContainer[0].id;
         this.setState({ toolData });
     }
@@ -71,7 +105,10 @@ class ToolEditModal extends React.Component {
     render () {
         const { addMoreCounter, toolsList } = this.state;
         const { show, hide, title } = this.props;
-        const { drawers, containers, toolboxes } = this.props.data;
+        const { drawers, containers, toolboxes } = this.state;
+        const filteredDrawers = drawers.filter(val => val.toolbox.id === this.state.toolData.toolboxId);
+        const filteredContainers = containers.filter(val => val.drawer.id === this.state.toolData.drawerId);
+
         return (
             <Modal show={show} onHide={hide}>
                 <Modal.Header closeButton>
@@ -86,20 +123,25 @@ class ToolEditModal extends React.Component {
                     />
                     <CreateDropdown 
                         title="Choose a Drawer" 
-                        data={drawers}
+                        data={filteredDrawers}
                         handler={this.onDrawerChange}
                     />
                     <CreateDropdown 
                         title="Choose a Container" 
-                        data={containers}
+                        data={filteredContainers}
                         handler={this.onContainerChange}
                     />
                     {/*hard coded for now */}
                     <CreateDropdown 
-                        title="Choose a Tool" 
+                        title="Choose an existing Tool" 
                         data={toolsList}
                         handler={this.onToolChange}
                     />
+                    <FormGroup onChange={this.onToolChange}>
+                      <ControlLabel>Or choose a new tool name</ControlLabel>
+                      {' '}
+                      <FormControl type="value" placeholder="tool name" />
+                    </FormGroup>
                     
                     {/*hard coded for now */}
                     <Table striped bordered condensed responsive>

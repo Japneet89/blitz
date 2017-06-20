@@ -17,9 +17,11 @@ class EditToolBoxModal extends React.Component {
    }
 
     handleEditToolbox = () => {
-      window.location.reload();
       this.props.hide();
       putToolBox(this.props.id, this.state.toolBoxName, this.props.userId);
+      setTimeout(function() {
+        window.location.reload();
+      }, 1000);
     }
 
     render () {

@@ -12,9 +12,11 @@ class DeleteModal extends React.Component {
     }
 
     delete = () => {
-        window.location.reload();
         this.props.hide();
         deleteItem(this.props.url, this.props.id);
+        setTimeout(function() {
+            window.location.reload();
+        }, 1000);
     }
 
     render () {  
