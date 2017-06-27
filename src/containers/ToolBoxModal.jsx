@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import axios from 'axios';
 import '../css/ToolModal.css';
+import { postToolBox } from '../utils/backend-api';
 
 class ToolBoxModal extends React.Component {
     constructor(props) {
@@ -18,16 +19,10 @@ class ToolBoxModal extends React.Component {
 
     handleCreateTool = () => {
       this.props.hide()
-      axios.post('http://104.154.162.68:8080/api/toolboxes/', {
-          name: this.state.toolBoxName,
-          owner: '5667908084563968'
-      })
-      .then(function (response) {
-          console.log(response);
-      })
-      .catch(function (error) {
-          console.log(error);
-      });
+      postToolBox(this.state.toolBoxName, '5667908084563968');
+      setTimeout(function() {
+          window.location.reload();
+      }, 1000);
     }
 
     render () {

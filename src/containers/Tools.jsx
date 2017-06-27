@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import ToolTable from './ToolTable';
 import ToolModal from './ToolModal';
 import '../css/Tools.css';
@@ -57,8 +56,7 @@ class Tools extends React.Component {
       <ToolModal 
         show={showModal} 
         hide={this.close} 
-        title="Create Tool" 
-        data={this.state}
+        title="Create Tool"
       />
     </div>
     )
