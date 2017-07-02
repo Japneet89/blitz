@@ -2,24 +2,39 @@ import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import axios from 'axios';
 import '../css/ToolModal.css';
-import { postToolBox } from '../utils/backend-api';
+import { postToolBox, postDrawer, postContainer } from '../utils/backend-api';
 
 class ToolBoxModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-          toolBoxName: ''
+          toolBoxName: '',
+          drawerName: '',
+          containerName: ''
         }
     }
 
 
-   handleChange = (e) => {
-    this.setState({toolBoxName: e.target.value})
-   }
+    handleToolBoxChange = (e) => {
+      this.setState({toolBoxName: e.target.value})
+     }
+
+    handleDrawerChange = (e) => {
+      this.setState({drawerName: e.target.value})
+     }
+
+    handleContainerChange = (e) => {
+      this.setState({containerName: e.target.value})
+     }
 
     handleCreateTool = () => {
       this.props.hide()
-      postToolBox(this.state.toolBoxName, '5667908084563968');
+      postToolBox(this.state.toolBoxName, '5667908084563968')
+        .then(response => {
+          console.log(response.data.item.id)
+        })
+
+      //postDrawer(this.state.drawerName, '5647591547076608', ['5757715179634688', '5632763172487168'])
       setTimeout(function() {
           window.location.reload();
       }, 1000);
@@ -40,7 +55,21 @@ class ToolBoxModal extends React.Component {
                       type='text'
                       value={this.state.toolBoxName}
                       placeholder='toolbox name'
-                      onChange={this.handleChange}
+                      onChange={this.handleToolBoxChange}
+                    />
+                    <ControlLabel>Enter Drawer Name</ControlLabel>
+                    <FormControl 
+                      type='text'
+                      value={this.state.drawerName}
+                      placeholder='drawer name'
+                      onChange={this.handleDrawerChange}
+                    />
+                    <ControlLabel>Enter Container Name</ControlLabel>
+                    <FormControl 
+                      type='text'
+                      value={this.state.containerName}
+                      placeholder='container name'
+                      onChange={this.handleContainerChange}
                     />
                   </form>
                 </Modal.Body>
