@@ -52,8 +52,10 @@ class Tools extends React.Component {
   }
   
   render() {
-    const { tools, showModal } = this.state
-    console.log('tools state', tools)
+    const { showModal } = this.state
+    console.log('JJJJJJ ', this.state.tools)
+    const tools = this.state.tools.filter(tool => Object.keys(tool).indexOf('client') === -1)
+
     return(
     <div>
       <PageHeader>Tools
