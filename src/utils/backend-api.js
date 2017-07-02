@@ -53,7 +53,10 @@ function postTools(name, container, drawer, toolbox) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 

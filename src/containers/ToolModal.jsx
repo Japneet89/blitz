@@ -54,10 +54,10 @@ class ToolModal extends React.Component {
     handleCreateTool = () => {
         this.props.hide()
         const { toolData } = this.state
-        postTools(toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
-        setTimeout(function() {
-            window.location.reload();
-        }, 1000);
+        postTools(toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId)
+            .then(response => {
+                this.props.createTool(response.data.item)
+            })
     }
 
     onToolboxChange = (e) => {
@@ -89,7 +89,7 @@ class ToolModal extends React.Component {
         toolData.containerId = specificContainer[0].id;
         this.setState({ toolData });
     }
-    
+
     onToolChange = (e) => {
         const toolData = this.state.toolData;
         toolData.name = e.target.value;

@@ -49,7 +49,12 @@ class Dashboard extends React.Component {
     deleteItem(url, toolboxId);
   }
 
+  createToolBox = (toolbox) => {
+    this.setState(state => state.toolboxes.push(toolbox))
+  }
+
   render() {
+    console.log('toolboxes ', this.state.toolboxes)
     return (
       <div>
         <div className='counts'>
@@ -86,6 +91,7 @@ class Dashboard extends React.Component {
           show={this.state.showToolBoxModal}
           hide={this.closeToolBoxModal}
           title='Create a Toolbox'
+          createToolBox = {this.createToolBox}
         />
       </div>
     );

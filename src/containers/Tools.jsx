@@ -46,9 +46,14 @@ class Tools extends React.Component {
     }))
     deleteItem(url, toolId);
   }
+
+  createTool = (tool) => {
+    this.setState(state => state.tools.push(tool))
+  }
   
   render() {
     const { tools, showModal } = this.state
+    console.log('tools state', tools)
     return(
     <div>
       <PageHeader>Tools
@@ -64,6 +69,7 @@ class Tools extends React.Component {
         show={showModal} 
         hide={this.close} 
         title="Create Tool"
+        createTool={this.createTool}
       />
     </div>
     )

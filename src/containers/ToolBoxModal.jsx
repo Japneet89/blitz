@@ -31,13 +31,9 @@ class ToolBoxModal extends React.Component {
       this.props.hide()
       postToolBox(this.state.toolBoxName, '5667908084563968')
         .then(response => {
-          console.log(response.data.item.id)
+          const toolBox = response.data.item;
+          this.props.createToolBox(response.data.item)
         })
-
-      //postDrawer(this.state.drawerName, '5647591547076608', ['5757715179634688', '5632763172487168'])
-      setTimeout(function() {
-          window.location.reload();
-      }, 1000);
     }
 
     render () {
