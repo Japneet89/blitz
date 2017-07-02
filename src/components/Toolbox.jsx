@@ -42,6 +42,7 @@ class Toolbox extends React.Component {
           hide={this.close}
           id={this.props.id}
           url={"/toolboxes/"}
+          deleteToolBox={this.props.deleteToolBox}
         />
         <EditToolBoxModal 
           show={this.state.showEditModal}

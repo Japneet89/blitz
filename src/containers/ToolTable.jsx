@@ -43,6 +43,7 @@ class ToolTable extends React.Component {
                     hide={this.closeDelete}
                     id={this.state.deleteToolId}
                     url={"/tools/"}
+                    deleteTool={this.props.deleteTool}
                 />
                 <thead>
                 <tr>
