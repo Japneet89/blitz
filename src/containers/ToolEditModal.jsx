@@ -20,11 +20,6 @@ class ToolEditModal extends React.Component {
             drawers: [],
             containers: [],
             addMoreCounter: ['1'],
-            toolsList: [
-                {name: "Thor's hammer"},
-                {name: "WW's whip"},
-                {name: "Captain's Shield"}
-            ],
             toolData: {
                 name: "",
                 toolboxId:"",
