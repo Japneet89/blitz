@@ -62,10 +62,10 @@ class ToolEditModal extends React.Component {
   handleEditTool = () => {
     this.props.hide()
     const { toolData } = this.state
-    putTools(this.props.id, toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
-    setTimeout(function() {
-        window.location.reload();
-    }, 1000);
+    putTools(this.props.id, toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId)
+        .then(response => {
+            this.props.editTool(response.data.item)
+        })
    }
 
     onToolboxChange = (e) => {

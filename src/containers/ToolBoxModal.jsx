@@ -31,7 +31,6 @@ class ToolBoxModal extends React.Component {
       this.props.hide()
       postToolBox(this.state.toolBoxName, '5667908084563968')
         .then(response => {
-          const toolBox = response.data.item;
           this.props.createToolBox(response.data.item)
         })
     }

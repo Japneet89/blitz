@@ -37,6 +37,7 @@ class ToolTable extends React.Component {
                     title="Edit Tool" 
                     data={this.props.data}
                     id={this.state.editToolId}
+                    editTool={this.props.editTool}
                 />
                 <DeleteModal 
                     show={this.state.showDeleteModal} 

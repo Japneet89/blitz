@@ -53,8 +53,17 @@ class Dashboard extends React.Component {
     this.setState(state => state.toolboxes.push(toolbox))
   }
 
+  editToolBox = (toolbox) => {
+    this.setState(state => {
+      state.toolboxes.forEach((item, index) => {
+        if (Number(item.id) === Number(toolbox.id)) {
+          state.toolboxes[index] = toolbox
+        }
+      })
+    })
+  }
+
   render() {
-    console.log('toolboxes ', this.state.toolboxes)
     return (
       <div>
         <div className='counts'>
@@ -83,6 +92,7 @@ class Dashboard extends React.Component {
                   id={toolbox.id} 
                   userId={toolbox.owner.id} 
                   deleteToolBox={this.deleteToolBox}
+                  editToolBox = {this.editToolBox}
                 />
               ))
           }

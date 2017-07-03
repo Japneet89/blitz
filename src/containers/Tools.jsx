@@ -50,10 +50,19 @@ class Tools extends React.Component {
   createTool = (tool) => {
     this.setState(state => state.tools.push(tool))
   }
+
+  editTool = (tool) => {
+    this.setState(state => {
+      state.tools.forEach((item, index) => {
+        if (Number(item.id) === Number(tool.id)) {
+          state.tools[index] = tool
+        }
+      })
+    })
+  }
   
   render() {
     const { showModal } = this.state
-    console.log('JJJJJJ ', this.state.tools)
     const tools = this.state.tools.filter(tool => Object.keys(tool).indexOf('client') === -1)
 
     return(
@@ -66,7 +75,12 @@ class Tools extends React.Component {
           bsStyle="success">Create Tool
         </Button>
       </PageHeader>
-      <ToolTable tools={tools} data={this.state} deleteTool={this.deleteTool}/>
+      <ToolTable 
+        tools={tools} 
+        data={this.state} 
+        deleteTool={this.deleteTool}
+        editTool={this.editTool}
+      />
       <ToolModal 
         show={showModal} 
         hide={this.close} 

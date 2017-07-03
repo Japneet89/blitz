@@ -37,7 +37,10 @@ function putTools(url, name, container, drawer, toolbox) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 
@@ -74,7 +77,10 @@ function putToolBox(url, name, owner) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 

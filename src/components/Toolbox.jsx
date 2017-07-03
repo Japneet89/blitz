@@ -51,6 +51,7 @@ class Toolbox extends React.Component {
           title='Edit a Toolbox'
           name={this.props.name}
           userId={this.props.userId}
+          editToolBox={this.props.editToolBox}
         />
       </div>
     )
