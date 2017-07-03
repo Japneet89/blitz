@@ -103,11 +103,12 @@ class ToolEditModal extends React.Component {
     }
 
     render () {
-        const { addMoreCounter, toolsList } = this.state;
+        const { addMoreCounter, tools } = this.state;
         const { show, hide, title } = this.props;
         const { drawers, containers, toolboxes } = this.state;
         const filteredDrawers = drawers.filter(val => val.toolbox.id === this.state.toolData.toolboxId);
         const filteredContainers = containers.filter(val => val.drawer.id === this.state.toolData.drawerId);
+        const toolsList = tools.filter(tool => tool.client === true);
 
         return (
             <Modal show={show} onHide={hide}>
