@@ -39,7 +39,7 @@ class ToolBoxModal extends React.Component {
                     <FormControl 
                       type='text'
                       value={this.state.toolBoxName}
-                      placeholder='toolbox name'
+                      placeholder='Toolbox Name'
                       onChange={this.handleChange}
                     />
                   </form>
