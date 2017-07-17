@@ -20,11 +20,6 @@ class ToolEditModal extends React.Component {
             drawers: [],
             containers: [],
             addMoreCounter: ['1'],
-            toolsList: [
-                {name: "Thor's hammer"},
-                {name: "WW's whip"},
-                {name: "Captain's Shield"}
-            ],
             toolData: {
                 name: "",
                 toolboxId:"",
@@ -62,10 +57,10 @@ class ToolEditModal extends React.Component {
   handleEditTool = () => {
     this.props.hide()
     const { toolData } = this.state
-    putTools(this.props.id, toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
-    setTimeout(function() {
-        window.location.reload();
-    }, 1000);
+    putTools(this.props.id, toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId)
+        .then(response => {
+            this.props.editTool(response.data.item)
+        })
    }
 
     onToolboxChange = (e) => {
@@ -103,11 +98,12 @@ class ToolEditModal extends React.Component {
     }
 
     render () {
-        const { addMoreCounter, toolsList } = this.state;
+        const { addMoreCounter, tools } = this.state;
         const { show, hide, title } = this.props;
         const { drawers, containers, toolboxes } = this.state;
         const filteredDrawers = drawers.filter(val => val.toolbox.id === this.state.toolData.toolboxId);
         const filteredContainers = containers.filter(val => val.drawer.id === this.state.toolData.drawerId);
+        const toolsList = tools.filter(tool => tool.client === true);
 
         return (
             <Modal show={show} onHide={hide}>

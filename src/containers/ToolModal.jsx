@@ -18,11 +18,6 @@ class ToolModal extends React.Component {
             drawers: [],
             containers: [],
             addMoreCounter: ['1'],
-            toolsList: [
-                {name: "Thor's hammer"},
-                {name: "WW's whip"},
-                {name: "Captain's Shield"}
-            ],
             toolData: {
                 name: "",
                 toolboxId:"",
@@ -59,16 +54,16 @@ class ToolModal extends React.Component {
     handleCreateTool = () => {
         this.props.hide()
         const { toolData } = this.state
-        postTools(toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId);
-        setTimeout(function() {
-            window.location.reload();
-        }, 1000);
+        postTools(toolData.name, toolData.containerId, toolData.drawerId, toolData.toolboxId)
+            .then(response => {
+                this.props.createTool(response.data.item)
+            })
     }
 
     onToolboxChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificToolbox = this.state.toolboxes.filter((val)=>val.name===value)
+        const specificToolbox = this.state.toolboxes.filter(val => val.name===value)
 
         const drawers = this.state.drawers.filter(val => val.toolbox.name === value);
 
@@ -82,17 +77,19 @@ class ToolModal extends React.Component {
     onDrawerChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificDrawer = this.state.drawers.filter((val)=>val.name===value)
+        const specificDrawer = this.state.drawers.filter(val => val.name===value)
         toolData.drawerId = specificDrawer[0].id;
         this.setState({ toolData });
     }
+
     onContainerChange = (e) => {
         const value = e.target.value;
         const toolData = this.state.toolData;
-        const specificContainer= this.state.containers.filter((val)=>val.name===value)
+        const specificContainer= this.state.containers.filter(val => val.name===value)
         toolData.containerId = specificContainer[0].id;
         this.setState({ toolData });
     }
+
     onToolChange = (e) => {
         const toolData = this.state.toolData;
         toolData.name = e.target.value;
@@ -100,11 +97,12 @@ class ToolModal extends React.Component {
     }
 
     render () {
-        const { addMoreCounter, toolsList } = this.state;
+        const { addMoreCounter, tools } = this.state;
         const { show, hide, title } = this.props;
         const { drawers, containers, toolboxes } = this.state;
         const filteredDrawers = drawers.filter(val => val.toolbox.id === this.state.toolData.toolboxId);
         const filteredContainers = containers.filter(val => val.drawer.id === this.state.toolData.drawerId);
+        const toolsList = tools.filter(tool => tool.client === true);
 
         return (
             <Modal show={show} onHide={hide}>

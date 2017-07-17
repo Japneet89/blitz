@@ -37,12 +37,14 @@ class ToolTable extends React.Component {
                     title="Edit Tool" 
                     data={this.props.data}
                     id={this.state.editToolId}
+                    editTool={this.props.editTool}
                 />
                 <DeleteModal 
                     show={this.state.showDeleteModal} 
                     hide={this.closeDelete}
                     id={this.state.deleteToolId}
                     url={"/tools/"}
+                    deleteTool={this.props.deleteTool}
                 />
                 <thead>
                 <tr>

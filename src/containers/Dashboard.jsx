@@ -4,7 +4,7 @@ import Toolbox from '../components/Toolbox';
 import '../css/Dashboard.css';
 import { Button } from 'react-bootstrap';
 import ToolBoxModal from '../containers/ToolBoxModal';
-import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
+import {getTools, getToolboxes, getDrawers, getContainers, deleteItem} from '../utils/backend-api';
 
 
 class Dashboard extends React.Component {
@@ -40,7 +40,27 @@ class Dashboard extends React.Component {
     getTools().then((tools) => {
       this.setState( {tools} );
     });
+  }
 
+  deleteToolBox = (url, toolboxId) => {
+    this.setState(state => ({
+      toolboxes: state.toolboxes.filter(item => item.id !== toolboxId)
+    }))
+    deleteItem(url, toolboxId);
+  }
+
+  createToolBox = (toolbox) => {
+    this.setState(state => state.toolboxes.push(toolbox))
+  }
+
+  editToolBox = (toolbox) => {
+    this.setState(state => {
+      state.toolboxes.forEach((item, index) => {
+        if (Number(item.id) === Number(toolbox.id)) {
+          state.toolboxes[index] = toolbox
+        }
+      })
+    })
   }
 
   render() {
@@ -66,7 +86,14 @@ class Dashboard extends React.Component {
           {
             this.state.toolboxes
               .map(toolbox => (
-                <Toolbox name={toolbox.name} owner={toolbox.owner.name} id={toolbox.id} userId={toolbox.owner.id} />
+                <Toolbox 
+                  name={toolbox.name} 
+                  owner={toolbox.owner.name} 
+                  id={toolbox.id} 
+                  userId={toolbox.owner.id} 
+                  deleteToolBox={this.deleteToolBox}
+                  editToolBox = {this.editToolBox}
+                />
               ))
           }
         </div>
@@ -74,6 +101,7 @@ class Dashboard extends React.Component {
           show={this.state.showToolBoxModal}
           hide={this.closeToolBoxModal}
           title='Create a Toolbox'
+          createToolBox = {this.createToolBox}
         />
       </div>
     );

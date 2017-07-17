@@ -1,25 +1,32 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { deleteItem } from '../utils/backend-api';
-// import '../css/ToolModal.css';
 
 class DeleteModal extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
-        };
     }
 
-    delete = () => {
-        this.props.hide();
-        deleteItem(this.props.url, this.props.id);
-        setTimeout(function() {
-            window.location.reload();
-        }, 1000);
+    handleClick = () => {
+        let deleteItem;
+        if (this.props.url === '/tools/') {
+            deleteItem = this.props.deleteTool;
+        } else {
+            deleteItem = this.props.deleteToolBox;
+        }
+
+        deleteItem(this.props.url, this.props.id)
+        this.props.hide()
     }
 
     render () {  
+        let deleteItem;
+        if (this.props.url === '/tools/') {
+            deleteItem = this.props.deleteTool
+        } else {
+            deleteItem = this.props.deleteToolBox
+        }
+
         return (
             <Modal show={this.props.show} onHide={this.props.hide} >
                 <Modal.Header closeButton>
@@ -31,7 +38,7 @@ class DeleteModal extends React.Component {
                         onClick={this.props.hide}
                     >Cancel
                     </Button>
-                    <Button bsStyle='success' onClick={this.delete}>OK</Button>
+                    <Button bsStyle='success' onClick={this.handleClick}>OK</Button>
                 </Modal.Footer>
             </Modal>
         )

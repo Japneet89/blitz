@@ -37,7 +37,10 @@ function putTools(url, name, container, drawer, toolbox) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 
@@ -53,7 +56,10 @@ function postTools(name, container, drawer, toolbox) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 
@@ -71,7 +77,10 @@ function putToolBox(url, name, owner) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 
@@ -85,11 +94,47 @@ function postToolBox(name, owner) {
       Authorization: `Bearer ${getAccessToken()}` 
     }
   })
-  .then(response => console.log(response))
+  .then(response => {
+    console.log(response)
+    return response
+  })
   .catch(error => console.log(error));
 }
 
-export {getTools, getToolboxes, getDrawers, getContainers, putTools, postTools, deleteItem, putToolBox, postToolBox};
+function postDrawer(name, toolbox, tools) {
+  console.log('hellooo ', tools)
+  return axios.post(`${BACKEND_API_URL}/drawers/`, {
+    name,
+    toolbox,
+    tools
+  },
+  { 
+    headers: { 
+      Authorization: `Bearer ${getAccessToken()}` 
+    }
+  })
+  .then(response => {
+    console.log('drawer response ', response)
+    //return response
+  })
+  .catch(error => console.log(error));
+}
+
+function postContainer(name, drawer) {
+  return axios.post(`${BACKEND_API_URL}/containers/`, {
+    name,
+    drawer
+  },
+  { 
+    headers: { 
+      Authorization: `Bearer ${getAccessToken()}` 
+    }
+  })
+  .then(response => console.log('container response ', response))
+  .catch(error => console.log(error));
+}
+
+export {getTools, getToolboxes, getDrawers, getContainers, putTools, postTools, deleteItem, putToolBox, postToolBox, postDrawer, postContainer};
 
 
 
