@@ -60,9 +60,9 @@ app.use('/api/v1', authCheck, toolRouter);
 app.use('/api/v1/groups/*/ml', authCheck, mlRouter);
 
 //SPA route
-app.use(express.static(path.resolve(__dirname, '..')));
+app.use(express.static(path.resolve(__dirname)));
 app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
 // Basic 404 handler

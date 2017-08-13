@@ -32,4 +32,4 @@ RUN pip install bottlenose
 EXPOSE 80
 
 # Run app
-CMD ["./node_modules/.bin/babel-node", "app.js", "--presets es2015,stage-2"]
+CMD ["./node_modules/.bin/babel-node", "app.js"]
