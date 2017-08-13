@@ -1,6 +1,6 @@
 machine:
   environment:
-    PROJECT_NAME: 4dat-phase2
+    PROJECT_NAME: customer-4dat
     CLUSTER_NAME: data-backend
     CLOUDSDK_COMPUTE_ZONE: us-central1-a
   services:
@@ -19,7 +19,7 @@ dependencies:
 
 deployment:
   feature:
-    branch: deployment
+    branch: tree_changes
     commands:
       - sudo /opt/google-cloud-sdk/bin/gcloud docker -- push gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1
       - sudo chown -R ubuntu:ubuntu /home/ubuntu/.kube
