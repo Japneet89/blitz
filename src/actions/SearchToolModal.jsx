@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import '../css/Modal.css';
 import { getRecommendations } from '../utils/backend-api';
 
@@ -17,8 +17,11 @@ class SearchToolModal extends React.Component {
   }
 
   render () {
-  	const { show, hide, title, tool } = this.props;
-    const tools = this.state.tools;
+  	const { show, hide, title } = this.props;
+    const tools = this.state.tools.sort(function(a,b) {
+      return b.score - a.score;
+    });
+ 
     if(tools === undefined)
       return (<div/>);
     else {
@@ -31,7 +34,7 @@ class SearchToolModal extends React.Component {
             {
               this.state.tools
                 .map((tool) => 
-                  <a href={tool.url}>{tool.title}</a>
+                  <p key={tool.title}><a href={tool.url} key={tool.title}>{tool.title}</a></p>
                 )
             }
             </Modal.Body>

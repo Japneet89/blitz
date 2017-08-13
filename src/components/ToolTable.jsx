@@ -18,6 +18,9 @@ class ToolTable extends React.Component {
     
     render () {
         const { tools } = this.state;
+        if(tools === undefined || tools === null || !Array.isArray(tools))
+            return (<div/>);
+        else {
         return (
             <div>
                 <div className='header'>
@@ -45,6 +48,7 @@ class ToolTable extends React.Component {
                                     .map((tool) => (
                                         <Tool
                                             data={tool}
+                                            key={tool.id}
                                         />
                                     ))    
                             }
@@ -58,6 +62,7 @@ class ToolTable extends React.Component {
                 />
             </div>
         );
+        }
     }
 };
 

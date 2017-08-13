@@ -6,7 +6,7 @@ const KeyValuePairs = (props) => (
 	<Form inline>
 	{
 		props.data.map((kvp) => (
-				<div>
+				<div key={kvp.key}>
 					<FormGroup className="formControl">
 						<ControlLabel>Attribute</ControlLabel>
 						{' '}

@@ -53,9 +53,6 @@ function makeRequest(resource, method, options={}) {
 	let url = (options.id === undefined) ? `${BACKEND}/${resource}` : `${BACKEND}/${resource}/${options.id}`;
 	let data = (options.data === undefined) ? {} : JSON.stringify(options.data);
 	
-	if(method === 'post' || method === 'put')
-		console.log("in makeRequest: ", data);
-	
 	return axios({
 		method,
 		url,

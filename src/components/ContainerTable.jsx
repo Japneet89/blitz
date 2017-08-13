@@ -17,6 +17,9 @@ class ContainerTable extends React.Component {
 
 	render() {
 		const { containers } = this.state;
+		if(containers === undefined || containers === null || !Array.isArray(containers))
+			return (<div/>);
+		else {
 	    return (
 	    	<div>
 				<div className='header'>
@@ -37,6 +40,7 @@ class ContainerTable extends React.Component {
 		                	name={container.name}
 		                  	owner={container.owner}
 		                  	drawer={container.drawer}
+		                  	key={container.id}
 		                />
 		              ))
 		          }
@@ -48,6 +52,7 @@ class ContainerTable extends React.Component {
 		    	/>
 		    </div>
 	    );
+	    }
     }
 }
 

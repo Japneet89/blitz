@@ -17,6 +17,9 @@ class DrawerTable extends React.Component {
 
 	render() {
 		const { drawers } = this.state;
+		if(drawers === undefined || drawers === null || !Array.isArray(drawers))
+			return (<div/>);
+		else {
 	    return (
 	    	<div>
 				<div className='header'>
@@ -37,6 +40,7 @@ class DrawerTable extends React.Component {
 		                	name={drawer.name}
 		                  	owner={drawer.owner}
 		                  	toolbox={drawer.toolbox}
+		                  	key={drawer.id}
 		                />
 		              ))
 		          }
@@ -48,6 +52,7 @@ class DrawerTable extends React.Component {
 		    	/>
 		    </div>
 	    );
+	    }
     }
 }
 

@@ -39,6 +39,7 @@ class ToolboxTable extends React.Component {
 		                	id={toolbox.id}
 		                	name={toolbox.name}
 		                  	owner={toolbox.owner}
+		                  	key={toolbox.id}
 		                />
 		              ))
 		          }

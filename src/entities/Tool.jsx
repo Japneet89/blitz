@@ -83,7 +83,8 @@ class Tool extends React.Component {
 			/>
 			<SearchToolModal
 				show={this.state.showSearchModal}
-				hide={this.closeSearchModal}	
+				hide={this.closeSearchModal}
+				title='Replacement Recommendations'	
 				tool={data}
 			/>
 		</tr>	
