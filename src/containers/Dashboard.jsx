@@ -1,85 +1,67 @@
 import React from 'react';
 import Countbox from '../components/Countbox';
-import Toolbox from '../components/Toolbox';
+import ToolboxTable from '../components/ToolboxTable';
+import DrawerTable from '../components/DrawerTable';
+import ContainerTable from '../components/ContainerTable';
+import ToolTable from '../components/ToolTable';
 import '../css/Dashboard.css';
-import { Button } from 'react-bootstrap';
-import ToolBoxModal from '../containers/ToolBoxModal';
-import {getTools, getToolboxes, getDrawers, getContainers} from '../utils/backend-api';
+import { listAll } from '../utils/backend-api';
+import Entities from '../entities/Entities';
+
 
 
 class Dashboard extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = { 
       toolboxes: [],
-      drawers:'',
-      containers:'',
-      tools:'',
-      showToolBoxModal: false,
+      drawers: [],
+      containers: [],
+      tools: [],
+      showEntity: Entities.TOOLBOX
     };
   }
 
-
-  closeToolBoxModal = () => this.setState({ showToolBoxModal: false });
-  openToolBoxModal = () => this.setState({ showToolBoxModal: true });
-
-
   componentDidMount() {
-    getToolboxes().then((toolboxes) => {
-      this.setState({ toolboxes} );
+    Object.keys(Entities).forEach((entity) => {
+      listAll(Entities[entity])
+        .then((items) => {
+          this.setState({ [Entities[entity]]: items });
+          this.setState({showEntity: Entities.TOOLBOX});
+        });
     });
-
-    getDrawers().then((drawers) => {
-      this.setState( {drawers} );
-    });
-
-    getContainers().then((containers) => {
-      this.setState( {containers} );
-    });
-
-    getTools().then((tools) => {
-      this.setState( {tools} );
-    });
-
   }
 
+  handleClick = (entityToShow) => {
+    if(this.state.showEntity !== entityToShow)
+      this.setState({showEntity: entityToShow});
+  }
+
+
   render() {
+    let componentToShow = null;
+    if (this.state.showEntity === Entities.TOOLBOX)
+      componentToShow = <ToolboxTable data={this.state.toolboxes} />;
+    else if (this.state.showEntity === Entities.DRAWER)
+      componentToShow = <DrawerTable data={this.state.drawers} />;
+    else if (this.state.showEntity === Entities.CONTAINER)
+      componentToShow = <ContainerTable data={this.state.containers} />;
+    else if (this.state.showEntity === Entities.TOOL)
+      componentToShow = <ToolTable data={this.state.tools} />;
+
     return (
       <div>
         <div className='counts'>
-          <Countbox itemColor='blue' itemName={'Toolboxes'} itemCount={this.state.toolboxes.length} />
-          <Countbox itemColor='red' itemName={'Drawers'} itemCount={this.state.drawers.length} />
-          <Countbox itemColor='orange' itemName={'Containers'} itemCount={this.state.containers.length} />
-          <Countbox itemColor='green' itemName={'Tools'} itemCount={this.state.tools.length} />
+          <Countbox itemColor='blue'   itemName={'Toolboxes'}  itemCount={this.state.toolboxes.length}  onClick={() => this.handleClick(Entities.TOOLBOX)} />
+          <Countbox itemColor='red'    itemName={'Drawers'}    itemCount={this.state.drawers.length}    onClick={() => this.handleClick(Entities.DRAWER)} />
+          <Countbox itemColor='orange' itemName={'Containers'} itemCount={this.state.containers.length} onClick={() => this.handleClick(Entities.CONTAINER)} />
+          <Countbox itemColor='green'  itemName={'Tools'}      itemCount={this.state.tools.length}      onClick={() => this.handleClick(Entities.TOOL)} />
         </div>
-
-        <div className='header'>
-          <Button
-            bsSize="small"
-            className="toolboxButton"
-            bsStyle="success"
-            onClick={this.openToolBoxModal}>Create
-          </Button>
-          <p className='headerTitle'>Toolboxes</p>
-        </div>
-        <div className='toolboxes'>
-          {
-            this.state.toolboxes
-              .map(toolbox => (
-                <Toolbox name={toolbox.name} owner={toolbox.owner.name} id={toolbox.id} userId={toolbox.owner.id} />
-              ))
-          }
-        </div>
-        <ToolBoxModal 
-          show={this.state.showToolBoxModal}
-          hide={this.closeToolBoxModal}
-          title='Create a Toolbox'
-        />
+        {componentToShow}
       </div>
     );
   }
 }
 
 export default Dashboard;
-
-

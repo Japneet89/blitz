@@ -1,0 +1,62 @@
+.ListContainer {
+    display:flex;
+    flex-direction: row;
+}
+
+.ListContainer * {
+    margin-right: 1vw;
+    margin-left: 1vw;
+    flex-grow: 4;
+    z-index:0;
+
+}
+
+.toolButton {
+    float: right;
+    margin: 0vw 5vw;
+}
+.blue {
+  background-color: #00BFFF !important;
+  border: 1px solid #00BFFF !important;
+}
+
+.red {
+  background-color: #B22222 !important;
+  border: 1px solid #B22222 !important;
+}
+
+.orange {
+  background-color: #FF851B !important;
+  border: 1px solid #FF851B !important;
+}
+
+.green {
+  background-color: #3D9970 !important;
+  border: 1px solid #3D9970 !important;
+}
+
+.pencilIcon {
+  float: right;
+  margin-top:4px;
+  cursor: pointer;
+  color: lightseagreen;
+}
+
+.deleteIcon {
+  float: right;
+  cursor: pointer;
+  margin-top:4px;
+  color: lightcoral;
+}
+
+.searchIcon {
+  float: right;
+  margin-left: 10px;
+  margin-top:4px;
+  cursor: pointer;
+  color: lightseagreen;
+}
+
+.table {
+  width: 70vw;
+}

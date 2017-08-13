@@ -1,6 +1,6 @@
 .toolbox {
-  height: 10vh;
-  width: 50vw;
+  height: 11vh;
+  width: 70vw;
   text-align: left;
   /*box-shadow: 0 2px 10px 0 rgba(88, 88, 88, 0.3);*/
   border: 1px solid lightgrey;
@@ -21,6 +21,7 @@
 .user {
   padding-left: 3vw;
   color: grey;
+  margin-bottom: 0;
 }
 
 .deleteButton {
@@ -32,8 +33,6 @@
   right: 1vw;
   margin-left: 0.5vw;
 }
-
-
 
 .editButton {
   height: 5vh;

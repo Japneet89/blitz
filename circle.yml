@@ -1,7 +1,7 @@
 machine:
   environment:
-    PROJECT_NAME: customer-4dat
-    CLUSTER_NAME: backend
+    PROJECT_NAME: 4dat-phase2
+    CLUSTER_NAME: data-backend
     CLOUDSDK_COMPUTE_ZONE: us-central1-a
   services:
     - docker 

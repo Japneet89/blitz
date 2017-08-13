@@ -1,23 +1,16 @@
 import React from 'react';
-import AccountForm from '../components/AccountForm';
-import  { Button, Tabs, Tab, PageHeader }  from 'react-bootstrap';
+import  { PageHeader }  from 'react-bootstrap';
 import '../css/Account.css';
+import { getGroupId } from '../utils/AuthService';
 
 class Account extends React.Component {
+//TODO: Change all this
   render() {
+  	//let group = getGroupId();
     return (
       <div>
         <PageHeader>Account Management</PageHeader>
-          <Tabs id="account" defaultActiveKey={2} className="accountContianer">
-            <Tab eventKey={2} title="Group" className="tab">
-              <AccountForm placeholder='email'/>
-              <Button 
-                bsSize="large"
-                className='button'
-                bsStyle="primary"
-              > Invite </Button>
-            </Tab>
-          </Tabs>
+        <p></p>
       </div>
     );
   };

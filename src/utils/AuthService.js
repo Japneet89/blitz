@@ -1,13 +1,15 @@
 import decode from 'jwt-decode';
 import { browserHistory } from 'react-router';
 import auth0 from 'auth0-js';
+import axios from 'axios';
+
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'DANqL2VonWecYF5OZYFrPcm8n99t6hOm';
 const CLIENT_DOMAIN = '4dat-auth.auth0.com';
-const REDIRECT = 'http://localhost:8080/callback';
-const SCOPE = 'full_api_access';
+const REDIRECT = 'http://localhost:3000/callback';
+const SCOPE = 'full_api_access openid profile';
 const AUDIENCE = 'api.tool4dat.com';
 
 var auth = new auth0.WebAuth({
@@ -44,6 +46,11 @@ export function getAccessToken() {
   return localStorage.getItem(ACCESS_TOKEN_KEY);
 }
 
+export function getGroupId() {
+  if(isLoggedIn())
+    return decode(getAccessToken())['http://api.tool4dat.com/group'];
+}
+
 function clearIdToken() {
   localStorage.removeItem(ID_TOKEN_KEY);
 }
@@ -73,6 +80,19 @@ export function setIdToken() {
 export function isLoggedIn() {
   const idToken = getIdToken();
   return !!idToken && !isTokenExpired(idToken);
+}
+
+export function getOwner() {
+  return axios({
+    method: 'get',
+    url: 'https://4dat-auth.auth0.com/userinfo',
+    headers: {
+      'Authorization': `Bearer ${getAccessToken()}`,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.data.name)
+  .catch(error => error );
 }
 
 function getTokenExpirationDate(encodedToken) {

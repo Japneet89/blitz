@@ -1,96 +1,80 @@
 import axios from 'axios';
-import { getAccessToken } from './AuthService';
+import { getAccessToken, getGroupId } from './AuthService';
 
-const BACKEND_API_URL = 'http://api.tool4dat.com/api';
+const BACKEND=`http://localhost/api/v1/groups/${getGroupId()}`;
 
-function getTools() {
-	return axios.get(`${BACKEND_API_URL}/tools`, { 
-    headers: { 
-      Authorization: `Bearer ${getAccessToken()}` 
-    }
-  })
-	.then(response => response.data.items)
-	.catch(error => console.log(error));
+/////////////////////////////////
+//// GROUPS ////////////////////
+///////////////////////////////
+
+//TODO: not sure if these are needed
+function getGroupName(id) {
+	return makeRequest('group', 'get', {id: id});
 }
 
-function getToolboxes() {
-	return axios.get(`${BACKEND_API_URL}/toolboxes`, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data.items);
+function updateGroupName(group) {
+	return makeRequest('group', 'put', {data: group});
 }
 
-function getDrawers() {
-	return axios.get(`${BACKEND_API_URL}/drawers`, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data.items);
+/////////////////////////////////
+//// PUBLIC FUNCS ////////////////////
+///////////////////////////////
+
+function listAll(resource) {
+	return makeRequest(resource, 'get');
 }
 
-function getContainers() {
-	return axios.get(`${BACKEND_API_URL}/containers`, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => response.data.items);
+function getById(resource, id) {
+	return makeRequest(resource, 'get', {id:id});	
 }
 
-function putTools(url, name, container, drawer, toolbox) {
-  return axios.put(`${BACKEND_API_URL}/tools/` + url, {
-    name,
-    container,
-    drawer,
-    toolbox
-  },
-  { 
-    headers: { 
-      Authorization: `Bearer ${getAccessToken()}` 
-    }
-  })
-  .then(response => console.log(response))
-  .catch(error => console.log(error));
+function create(resource, entity) {
+	console.log("in create: ", entity);
+	return makeRequest(resource, 'post', {data:entity});
 }
 
-function postTools(name, container, drawer, toolbox) {
-  return axios.post(`${BACKEND_API_URL}/tools/`, {
-    name,
-    container,
-    drawer,
-    toolbox
-  },
-  { 
-    headers: { 
-      Authorization: `Bearer ${getAccessToken()}` 
-    }
-  })
-  .then(response => console.log(response))
-  .catch(error => console.log(error));
+function update(resource, entity, id) {
+	return makeRequest(resource, 'put', {id:id, data:entity});
 }
 
-function deleteItem(url, id) {
-  return axios.delete(`${BACKEND_API_URL}` + url + id, { headers: { Authorization: `Bearer ${getAccessToken()}` }}).then(response => console.log('deleted'));
+function deleteById(resource, id) {
+	return makeRequest(resource, 'delete', {id:id});	
 }
 
-function putToolBox(url, name, owner) {
-  return axios.put(`${BACKEND_API_URL}/toolboxes/` + url, {
-    name,
-    owner
-  },
-  { 
-    headers: { 
-      Authorization: `Bearer ${getAccessToken()}` 
-    }
-  })
-  .then(response => console.log(response))
-  .catch(error => console.log(error));
+function getRecommendations(query) {
+	return makeRequest('ml', 'post', {data: {query: query}});
 }
 
-function postToolBox(name, owner) {
-  return axios.post(`${BACKEND_API_URL}/toolboxes/`, {
-    name,
-    owner
-  },
-  { 
-    headers: { 
-      Authorization: `Bearer ${getAccessToken()}` 
-    }
-  })
-  .then(response => console.log(response))
-  .catch(error => console.log(error));
+/////////////////////////////////
+//// UTILS ////////////////////
+///////////////////////////////
+
+function makeRequest(resource, method, options={}) {
+	let url = (options.id === undefined) ? `${BACKEND}/${resource}` : `${BACKEND}/${resource}/${options.id}`;
+	let data = (options.data === undefined) ? {} : JSON.stringify(options.data);
+	
+	if(method === 'post' || method === 'put')
+		console.log("in makeRequest: ", data);
+	
+	return axios({
+		method,
+		url,
+		headers: {
+			'Authorization': `Bearer ${getAccessToken()}`,
+			'Content-Type': 'application/json'
+		},
+		data: data
+	})
+	.then(response => response.data)
+	.catch(error => error );
 }
 
-export {getTools, getToolboxes, getDrawers, getContainers, putTools, postTools, deleteItem, putToolBox, postToolBox};
 
-
-
-
+export { getGroupName, 
+		updateGroupName,
+		listAll,
+		getById,
+		create,
+		update,
+		deleteById
+};

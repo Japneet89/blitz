@@ -9,14 +9,39 @@
   margin-bottom: 5vh;
 }
 
+.drawers {
+  /*margin-top: 5vh;*/
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+}
+
+.containers {
+  /*margin-top: 5vh;*/
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+}
+
+.tools {
+  /*margin-top: 5vh;*/
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+  width: 70vw;
+}
+
 .header {
   height: 8vh;
-  width: 50vw;
+  width: 70vw;
   text-align: left;
   margin-top: 5vh;
   margin-left: 5vw;
   border: 1px solid lightgrey;
-  border-bottom: none;
+}
+
+.entityList {
+  position: absolute;
+  margin: auto;
+  right: 0;
+  left: 0;
 }
 
 .headerTitle {
@@ -25,7 +50,7 @@
   font-size: 1.5em;
 }
 
-.toolboxButton {
+.createButton {
   height: 5vh;
   width: 8vw;
   float: right;

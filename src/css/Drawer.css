@@ -1,0 +1,45 @@
+.drawer {
+  height: 11vh;
+  width: 70vw;
+  text-align: left;
+  /*box-shadow: 0 2px 10px 0 rgba(88, 88, 88, 0.3);*/
+  border: 1px solid lightgrey;
+  border-bottom: none;
+  background-color: white;
+}
+
+.drawer:last-child {
+  border: 1px solid lightgrey;
+}
+
+.drawerName {
+  padding-top: 3vh;
+  padding-left: 3vw;
+  margin-bottom: 0;
+}
+
+.user {
+  padding-left: 3vw;
+  color: grey;
+}
+
+.deleteButton {
+  height: 5vh;
+  width: 6vw;
+  float: right;
+  position: relative;
+  top: 1vh;
+  right: 1vw;
+  margin-left: 0.5vw;
+}
+
+.editButton {
+  height: 5vh;
+  width: 4vw;
+  float: right;
+  position: relative;
+  top: 1vh;
+  right: 1vw;
+}
+
+
