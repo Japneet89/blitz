@@ -33,12 +33,12 @@ class AmazonClient(object):
         Specifying Parser means that amazon.ItemSearch returns the parsed
         response, rather than raw bytestring.
         """
-        print("Defining a new Amazon session")
+        #print("Defining a new Amazon session")
         return bottlenose.Amazon(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY,
             AWS_ASSOCIATE_TAG, MaxQPS = MaxQPS, Parser=Parser)
 
 
-    def __getResponse(self, keywords, SearchIndex="All", ResponseGroup="ItemAttributes, Offers"):
+    def __getResponse(self, keywords, SearchIndex="All", ResponseGroup="ItemAttributes, Offers, Images"):
         """
         Submit a keywords query, and return the response.
         """
@@ -64,8 +64,9 @@ class AmazonClient(object):
                 features.append(feature.text.encode('utf_8'))
             title = item.find("Title").text.encode('utf_8')
             formatted_price = item.find("FormattedPrice").text.encode('utf_8')
-            ASIN = item.find("ASIN").text.encode('utf_8')
-            documents.append((title, features, formatted_price, ASIN))
+            #ASIN = item.find("ASIN").text.encode('utf_8')
+            URL = item.find("DetailPageURL").text.encode('utf-8')
+            documents.append((title, features, formatted_price, URL))
         return documents
 
     def getDocuments(self, keywords):

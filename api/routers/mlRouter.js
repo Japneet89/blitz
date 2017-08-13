@@ -6,17 +6,20 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 const PYTHON_EXE='python';
-const PYTHON_SCRIPT='../ml/main.py';
+const PYTHON_SCRIPT='./api/ml/main.py';
 
 router.post('/', (req, res, next) => {
 	let executionResult = getScores(req.body.query);
-	console.log(executionResult.error);
-	console.log(executionResult.stderr.toString('utf-8'));
+	//console.log(executionResult);
+	//console.log(executionResult.stdout.toString('utf-8'));
 
 	if(executionResult.error) {
 		res.status(500).json(executionResult);
 	} else {
-		res.json(executionResult.stdout);
+		let resultsStr = executionResult.stdout.toString('utf-8');
+		let re=/\0/g;
+		let resultsJSON = JSON.parse(resultsStr.replace(re, ""));
+		res.json(resultsJSON);
 	}
 });
 

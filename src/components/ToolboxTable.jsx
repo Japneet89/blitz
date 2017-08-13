@@ -17,9 +17,9 @@ class ToolboxTable extends React.Component {
 
 	render() {
 		const toolboxes = this.props.data;
-		if(toolboxes === undefined)
+		if(toolboxes === undefined || toolboxes === null || !Array.isArray(toolboxes))
 			return (<div/>);
-
+		else {
 	    return (
 	    	<div className="entityList">
 				<div className='header'>
@@ -50,6 +50,7 @@ class ToolboxTable extends React.Component {
 		    	/>
 		    </div>
 	    );
+	    }
     }
 }
 

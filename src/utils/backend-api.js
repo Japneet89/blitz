@@ -76,5 +76,6 @@ export { getGroupName,
 		getById,
 		create,
 		update,
-		deleteById
+		deleteById,
+		getRecommendations
 };

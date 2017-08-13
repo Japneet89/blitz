@@ -56,7 +56,8 @@ app.use('/api/v1', authCheck, containerRouter);
 app.use('/api/v1', authCheck, toolRouter);
 
 //ML prediction route
-app.use('/api/v1/ml', authCheck, mlRouter);
+//TODO: switch back
+app.use('/api/v1/groups/*/ml', authCheck, mlRouter);
 
 //SPA route
 app.use(express.static(path.resolve(__dirname, '..', 'build')));

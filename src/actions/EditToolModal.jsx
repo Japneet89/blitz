@@ -148,9 +148,6 @@ class EditToolModal extends React.Component {
       let currentContainer = this.state.chosenContainer.id === "select" ? null : this.state.chosenContainer;
       let currentDrawer = this.state.chosenDrawer.id === "select" ? null : this.state.chosenDrawer;
 
-      console.log(currentContainer);
-      console.log(currentDrawer);
-
       if(currentContainer === null && currentDrawer === null) {
           //Do nothing
       } else if (currentContainer !== null) {
@@ -170,7 +167,6 @@ class EditToolModal extends React.Component {
 
     render () {
         const { show, hide, title, tool } = this.props;
-        console.log("in render state: ", this.state);
         return (
             <Modal show={show} onHide={hide}>
                 <Modal.Header closeButton>
