@@ -32,4 +32,4 @@ RUN pip install bottlenose
 EXPOSE 80
 
 # Run app
-CMD ["node", "api.js"]
+CMD ["node", "app.js"]
