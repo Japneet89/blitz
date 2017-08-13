@@ -17,6 +17,7 @@ dependencies:
     - sudo /opt/google-cloud-sdk/bin/gcloud --quiet container clusters get-credentials $CLUSTER_NAME
     - npm install
     - npm install -g react-scripts
+    - npm install -g babel-cli
     - npm run build
     - docker build -t gcr.io/${PROJECT_NAME}/nodejs:$CIRCLE_SHA1 .
 
