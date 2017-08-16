@@ -8,7 +8,7 @@ const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = 'DANqL2VonWecYF5OZYFrPcm8n99t6hOm';
 const CLIENT_DOMAIN = '4dat-auth.auth0.com';
-const REDIRECT = 'http://localhost:3000/callback';
+const REDIRECT = 'http://35.202.38.68/callback';
 const SCOPE = 'full_api_access openid profile';
 const AUDIENCE = 'api.tool4dat.com';
 
