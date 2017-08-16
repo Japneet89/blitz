@@ -18,9 +18,9 @@ class AmazonClient(object):
         self.session = self.__startSession()
 
     def __startSession(self):
-	AWS_ACCESS_KEY_ID = "AKIAILMBKWFE4D6QDNWA"
-        AWS_SECRET_ACCESS_KEY = "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"
-        AWS_ASSOCIATE_TAG = "benderapps-20"
+	AWS_ACCESS_KEY_ID = "AKIAJNLS2W7FLRBD7KDQ"
+        AWS_SECRET_ACCESS_KEY = "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"
+        AWS_ASSOCIATE_TAG = "tankfrank41-20"
         MaxQPS = 0.9
         Parser=lambda text: BeautifulSoup(text,'xml')
         """
