@@ -6,7 +6,7 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 const PYTHON_EXE='python';
-const PYTHON_SCRIPT='./api/ml/main.py';
+const PYTHON_SCRIPT='./server/ml/main.py';
 
 router.post('/', (req, res, next) => {
 	let executionResult = getScores(req.body.query);
