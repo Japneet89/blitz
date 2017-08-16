@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getAccessToken, getGroupId } from './AuthService';
 
-const BACKEND=`http://localhost/api/v1/groups/${getGroupId()}`;
+const BACKEND=`api/v1/groups/${getGroupId()}`;
 
 /////////////////////////////////
 //// GROUPS ////////////////////
