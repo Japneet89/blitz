@@ -18,13 +18,25 @@ class SearchToolModal extends React.Component {
 
   render () {
   	const { show, hide, title } = this.props;
-    const tools = this.state.tools.sort(function(a,b) {
+    let tools = this.state.tools;
+ 
+    if(tools === undefined) {
+      return (
+        <Modal show={show} onHide={hide}>
+            <Modal.Header closeButton>
+                <Modal.Title>{title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            </Modal.Body>
+            <Modal.Footer>  
+            </Modal.Footer>
+        </Modal>
+      );
+    }
+    else {
+    tools = tools.sort(function(a,b) {
       return b.score - a.score;
     });
- 
-    if(tools === undefined)
-      return (<div/>);
-    else {
 	  return (
 		  <Modal show={show} onHide={hide}>
             <Modal.Header closeButton>
@@ -32,7 +44,7 @@ class SearchToolModal extends React.Component {
             </Modal.Header>
             <Modal.Body>
             {
-              this.state.tools
+              tools
                 .map((tool) => 
                   <p key={tool.title}><a href={tool.url} key={tool.title}>{tool.title}</a></p>
                 )
