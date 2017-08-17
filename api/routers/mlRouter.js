@@ -17,9 +17,12 @@ router.post('/', (req, res, next) => {
 		res.status(500).json(executionResult);
 	} else {
 		let resultsStr = executionResult.stdout.toString('utf-8');
-		let re=/\0/g;
-		let resultsJSON = JSON.parse(resultsStr.replace(re, ""));
-		res.json(resultsJSON);
+		if(resultsStr !== "") {
+			let re=/\0/g;
+			let resultsJSON = JSON.parse(resultsStr.replace(re, ""));
+			res.json(resultsJSON);
+		} else
+			res.json("{}");
 	}
 });
 
