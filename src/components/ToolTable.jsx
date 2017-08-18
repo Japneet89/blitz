@@ -8,16 +8,28 @@ class ToolTable extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tools: props.data
+            tools: props.data,
+            drawers: props.drawers,
+            containers: props.containers,
+            toolboxes: props.toolboxes,
         }
     }
 
     openCreateModal = () => this.setState({ showCreateModal: true });
 
-    closeCreateModal = () => this.setState({ showCreateModal: false });
+    closeCreateModal = (newTool=null) => {
+        if(newTool.hasOwnProperty('name')) {
+            console.log("newtool: ", newTool);
+            let newTools = this.state.tools;
+            newTools.push(newTool)
+            this.props.stateUpdateCallback({tools: newTools});
+        }
+        this.setState({ showCreateModal: false });
+    }
     
     render () {
         const { tools } = this.state;
+        console.log(tools);
         if(tools === undefined || tools === null || !Array.isArray(tools))
             return (<div/>);
         else {
@@ -48,7 +60,12 @@ class ToolTable extends React.Component {
                                     .map((tool) => (
                                         <Tool
                                             data={tool}
+                                            toolboxes={this.state.toolboxes}
+                                            drawers={this.state.drawers}
+                                            containers={this.state.containers}
+                                            tools={this.state.tools}
                                             key={tool.id}
+                                            stateUpdateCallback={this.props.stateUpdateCallback}
                                         />
                                     ))    
                             }
@@ -59,6 +76,10 @@ class ToolTable extends React.Component {
                   show={this.state.showCreateModal}
                   hide={this.closeCreateModal}
                   title='Create Tool'
+                  toolboxes={this.state.toolboxes}
+                  drawers={this.state.drawers}
+                  containers={this.state.containers}
+                  tools={this.state.tools}
                 />
             </div>
         );

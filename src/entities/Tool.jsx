@@ -15,15 +15,29 @@ class Tool extends React.Component {
     this.state = {
       showModal: false,
       showEditModal: false,
-      showSearchModal: false
+      showSearchModal: false,
+      toolboxes: props.toolboxes,
+      drawers: props.drawers,
+      containers: props.containers,
+      tools: props.tools
     }
   }
 
-  closeDeleteModal = () => this.setState({ showDeleteModal: false });
   openDeleteModal = () => this.setState({ showDeleteModal: true });
+  closeDeleteModal = () => this.setState({ showDeleteModal: false });
+  
 
-  closeEditModal = () => this.setState({ showEditModal: false });
   openEditModal = () => this.setState({ showEditModal: true });
+  closeEditModal = (updatedTool=null) => {
+  	if(updatedTool.hasOwnProperty('id')) {
+  		let updateIndex = this.state.tools.findIndex(x => x.id === updatedTool.id);
+  		let newTools = this.state.tools;
+  		newTools[updateIndex] = updatedTool;
+  		this.props.stateUpdateCallback({tools: newTools});
+  	}
+  	this.setState({ showEditModal: false });
+  }
+
 
   closeSearchModal = () => this.setState({ showSearchModal: false });
   openSearchModal = () => this.setState({ showSearchModal: true });
@@ -35,7 +49,7 @@ class Tool extends React.Component {
 	const tooltipSearch = (<Tooltip id="tooltip">Search for Recommendations</Tooltip>);
 	let name = data.name;
 	let toolbox, container, drawer = "";
-	if(data.container !== null) {
+	if(data.container !== null && data.container !== undefined) {
 		toolbox = data.container.drawer.toolbox.name;
 		drawer = data.container.drawer.name;
 		container = data.container.name;
@@ -73,6 +87,9 @@ class Tool extends React.Component {
 			    show={this.state.showEditModal}
 	         	hide={this.closeEditModal} 
 			    title="Edit Tool"
+			    toolboxes={this.state.toolboxes}
+			    drawers={this.state.drawers}
+			    containers={this.state.containers}
 			    tool={data}
 			/>
 			<DeleteModal 

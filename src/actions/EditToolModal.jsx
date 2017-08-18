@@ -11,7 +11,7 @@ class EditToolModal extends React.Component {
       super(props);
       let tool = this.props.tool;
       let toolbox, container, drawer = {};
-        if(tool.container !== null) {
+        if(tool.container !== null && tool.container !== undefined) {
           toolbox = tool.container.drawer.toolbox;
           drawer = tool.container.drawer;
           container = tool.container;
@@ -28,22 +28,16 @@ class EditToolModal extends React.Component {
         chosenToolbox: toolbox,
         chosenDrawer: drawer,
         chosenContainer: container,  
-        toolboxes: [],
-        drawers: [],
+        toolboxes: props.toolboxes,
+        drawers: props.drawers.filter(drawer => drawer.toolbox.id === toolbox.id),
         filteredDrawers: [],
-        containers: [],
+        containers: props.containers.filter(container => container.drawer.toolbox.id === toolbox.id),
         filteredContainers: [],
         tools: [],
       }
   }
 
   componentDidMount() {
-    listAll(Entities.TOOLBOX)
-      .then(items => this.setState({ toolboxes: items}));
-    listAll(Entities.DRAWER)
-      .then(items => this.setState({drawers: items.filter(drawer => drawer.toolbox.id === this.state.chosenToolbox.id)}));
-    listAll(Entities.CONTAINER)
-      .then(items => this.setState({containers: items.filter(container => container.drawer.toolbox.id === this.state.chosenToolbox.id)}));
   }
 
    handleNameChange = (e) => {
@@ -160,8 +154,7 @@ class EditToolModal extends React.Component {
 
       update(Entities.TOOL, toolObj, toolObj.id)
         .then(() => {
-          this.props.hide();
-          window.location.reload();
+          this.props.hide(toolObj);
         });
     }
 

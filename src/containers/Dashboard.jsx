@@ -38,17 +38,25 @@ class Dashboard extends React.Component {
       this.setState({showEntity: entityToShow});
   }
 
+  handleUpdateState = (data) => {
+    Object.keys(data).forEach((key) => {
+      console.log("received new: ", key);
+      this.setState({ [key]: data[key] });
+    });
+    console.log(this.state.tools);
+  }
 
   render() {
+    console.log("in dashboard render:", this.state.tools);
     let componentToShow = null;
     if (this.state.showEntity === Entities.TOOLBOX)
-      componentToShow = <ToolboxTable data={this.state.toolboxes} />;
+      componentToShow = <ToolboxTable data={this.state.toolboxes} stateUpdateCallback={this.handleUpdateState} />;
     else if (this.state.showEntity === Entities.DRAWER)
-      componentToShow = <DrawerTable data={this.state.drawers} />;
+      componentToShow = <DrawerTable toolboxes={this.state.toolboxes} data={this.state.drawers} stateUpdateCallback={this.handleUpdateState} />;
     else if (this.state.showEntity === Entities.CONTAINER)
-      componentToShow = <ContainerTable data={this.state.containers} />;
+      componentToShow = <ContainerTable drawers={this.state.drawers} data={this.state.containers} stateUpdateCallback={this.handleUpdateState} />;
     else if (this.state.showEntity === Entities.TOOL)
-      componentToShow = <ToolTable data={this.state.tools} />;
+      componentToShow = <ToolTable toolboxes={this.state.toolboxes} drawers={this.state.drawers} containers={this.state.containers} data={this.state.tools} stateUpdateCallback={this.handleUpdateState} />;
 
     return (
       <div>

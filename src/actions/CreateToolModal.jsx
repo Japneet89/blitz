@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import '../css/Modal.css';
-import { listAll, create } from '../utils/backend-api';
+import { create } from '../utils/backend-api';
 import { getOwner } from '../utils/AuthService';
 import Entities from '../entities/Entities';
 import Dropdown from '../components/Dropdown';
@@ -18,23 +18,16 @@ class CreateToolModal extends React.Component {
         chosenToolbox: {},
         chosenDrawer: {},
         chosenContainer: {},  
-        toolboxes: [],
-        drawers: [],
+        toolboxes: props.toolboxes,
+        drawers: props.drawers,
         filteredDrawers: [],
-        containers: [],
+        containers: props.containers,
         filteredContainers: [],
-        tools: []
+        tools: props.tools
       }
   }
 
   componentDidMount() {
-    //Here, we need all the data because user can pick any toolbox,container,drawer and client provided tools
-    Object.keys(Entities).forEach((entity) => {
-      listAll(Entities[entity])
-        .then((items) => {
-          this.setState({ [Entities[entity]]: items });
-        });
-    });
   }
 
    handleNameChange = (e) => {
@@ -149,8 +142,7 @@ class CreateToolModal extends React.Component {
           create(Entities.TOOL, toolObj);
         })
       	.then(() => {
-          this.props.hide();
-          window.location.reload();
+          this.props.hide(toolObj);
         });
     }
 
