@@ -55,7 +55,7 @@ app.use('/api/v1', authCheck, toolboxRouter);
 app.use('/api/v1', authCheck, drawerContainer);
 app.use('/api/v1', authCheck, containerRouter);
 app.use('/api/v1', authCheck, toolRouter);
-app.use('/api/v1/tools/csv', authCheck, csvRouter)
+app.use('/api/v1/groups/*/tools/csv', authCheck, csvRouter)
 
 //ML prediction route
 //TODO: switch back
