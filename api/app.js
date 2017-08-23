@@ -8,8 +8,9 @@ import { nconf } from './config';
 import { api as toolboxRouter } from './routers/toolbox';
 import { api as drawerContainer } from './routers/drawer';
 import { api as containerRouter }from './routers/container';
-import {api as toolRouter } from './routers/tool';
-import {router as mlRouter } from './routers/mlRouter';
+import { api as toolRouter } from './routers/tool';
+import { router as mlRouter } from './routers/mlRouter';
+import { router as csvRouter } from './routers/csv';
 
 //Configure google cloud datastore
 const ds = datastore({
@@ -54,6 +55,7 @@ app.use('/api/v1', authCheck, toolboxRouter);
 app.use('/api/v1', authCheck, drawerContainer);
 app.use('/api/v1', authCheck, containerRouter);
 app.use('/api/v1', authCheck, toolRouter);
+app.use('/api/v1/tools/csv', authCheck, csvRouter)
 
 //ML prediction route
 //TODO: switch back
