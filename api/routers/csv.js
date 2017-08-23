@@ -14,11 +14,9 @@ router.get('/export', (req, res, next) => {
 	return model.list()
 		.then((response) => {
 			let tools = response.entities.map((item) => {
-				console.log("in map, item: ", item);
 				let name = item.name;
 				let quantity = item.quantity;
 				let toolbox, drawer, container, part_no;
-				console.log("weird");
 				if(item.container !== null && item.container !== undefined) {
 					toolbox = item.container.drawer.toolbox.name;
 					drawer = item.container.drawer.name;
@@ -32,7 +30,6 @@ router.get('/export', (req, res, next) => {
 				if(part_no_index !== -1)
 					part_no = item.attributes[part_no_index].value;
 
-				console.log(`${toolbox}, ${drawer}, ${container}, ${name}, ${part_no}, ${quantity}`);
 				return {
 					'Toolbox': toolbox,
 					'Drawer': drawer,
@@ -43,7 +40,7 @@ router.get('/export', (req, res, next) => {
 				};
 
 			});
-			
+
 			res.csv(tools, true, headers, 200)
 		})
 		.catch((err) => {
