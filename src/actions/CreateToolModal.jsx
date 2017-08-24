@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import '../css/Modal.css';
 import { create } from '../utils/backend-api';
-import { getOwner } from '../utils/AuthService';
 import Entities from '../entities/Entities';
 import Dropdown from '../components/Dropdown';
 import KeyValuePairs from '../components/KeyValuePairs';
@@ -136,11 +135,8 @@ class CreateToolModal extends React.Component {
           toolObj.drawer = this.state.chosenDrawer;
       else
           toolObj.container = this.state.chosenContainer;
-      getOwner()
-        .then(owner => {
-          toolObj['owner'] = owner;
-          create(Entities.TOOL, toolObj);
-        })
+
+      create(Entities.TOOL, toolObj)
       	.then(() => {
           this.props.hide(toolObj);
         });

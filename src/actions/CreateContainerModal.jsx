@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import '../css/Modal.css';
 import { listAll, create } from '../utils/backend-api';
-import { getOwner } from '../utils/AuthService';
 import Entities from '../entities/Entities';
 import Dropdown from '../components/Dropdown';
 
@@ -33,10 +32,7 @@ class CreateContainerModal extends React.Component {
    }
 
     handleCreateContainer = () => {
-      getOwner()
-        .then(owner => {
-          create(Entities.CONTAINER, {name: this.state.name, owner: owner, drawer: this.state.chosenDrawer});
-        })
+      create(Entities.CONTAINER, {name: this.state.name, drawer: this.state.chosenDrawer})
       	.then(() => {
           this.props.hide();
           window.location.reload();

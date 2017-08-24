@@ -2,7 +2,6 @@ import React from 'react';
 import { Modal, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import '../css/Modal.css';
 import { create } from '../utils/backend-api';
-import { getOwner } from '../utils/AuthService';
 import Entities from '../entities/Entities';
 
 class CreateToolboxModal extends React.Component {
@@ -18,10 +17,7 @@ class CreateToolboxModal extends React.Component {
    }
 
     handleCreateToolbox = () => {
-      getOwner()
-        .then(owner => {
-          create(Entities.TOOLBOX, {name: this.state.name, owner: owner});
-        })
+      create(Entities.TOOLBOX, {name: this.state.name})
       	.then(() => {
                 this.props.hide();
                 window.location.reload();

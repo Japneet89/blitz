@@ -12,13 +12,11 @@ class SearchToolModal extends React.Component {
   }
 
   componentDidMount() {
-    getRecommendations(this.props.tool.name)
-      .then(output => this.setState({tools: output.items}));
+    
   }
 
   render () {
-  	const { show, hide, title } = this.props;
-    let tools = this.state.tools;
+    const { show, hide, title, tools } = this.props;
  
     if(tools === undefined) {
       return (
@@ -34,7 +32,7 @@ class SearchToolModal extends React.Component {
       );
     }
     else {
-    tools = tools.sort(function(a,b) {
+    let recommendations = tools.sort(function(a,b) {
       return b.score - a.score;
     });
 	  return (
@@ -44,7 +42,7 @@ class SearchToolModal extends React.Component {
             </Modal.Header>
             <Modal.Body>
             {
-              tools
+              recommendations
                 .map((tool) => 
                   <p key={tool.title}><a href={tool.url} key={tool.title}>{tool.title}</a></p>
                 )
