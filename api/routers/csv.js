@@ -26,9 +26,10 @@ router.get('/export', (req, res, next) => {
 					drawer = item.drawer.name;
 					container = '';
 				}
-				let part_no_index = item.attributes.indexOf('Part Number');
-				if(part_no_index !== -1)
-					part_no = item.attributes[part_no_index].value;
+				item.attributes.forEach((attr) => {
+					if(attr.key === 'Part Number')
+						part_no = attr.value;
+				});
 
 				return {
 					'Toolbox': toolbox,
