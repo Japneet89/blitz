@@ -8,8 +8,6 @@ import '../css/Dashboard.css';
 import { listAll } from '../utils/backend-api';
 import Entities from '../entities/Entities';
 
-
-
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -40,14 +38,11 @@ class Dashboard extends React.Component {
 
   handleUpdateState = (data) => {
     Object.keys(data).forEach((key) => {
-      console.log("received new: ", key);
       this.setState({ [key]: data[key] });
     });
-    console.log(this.state.tools);
   }
 
   render() {
-    console.log("in dashboard render:", this.state.tools);
     let componentToShow = null;
     if (this.state.showEntity === Entities.TOOLBOX)
       componentToShow = <ToolboxTable data={this.state.toolboxes} stateUpdateCallback={this.handleUpdateState} />;
