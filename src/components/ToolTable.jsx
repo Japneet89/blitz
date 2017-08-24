@@ -16,7 +16,7 @@ class ToolTable extends React.Component {
             tools: props.data,
             drawers: props.drawers,
             containers: props.containers,
-            toolboxes: props.toolboxes,
+            toolboxes: props.toolboxes
         }
 
         this.toolboxExists = this.toolboxExists.bind(this);
@@ -31,6 +31,9 @@ class ToolTable extends React.Component {
         this.getExistingToolbox = this.getExistingToolbox.bind(this);
         this.getExistingDrawer = this.getExistingDrawer.bind(this);
         this.getExistingContainer = this.getExistingContainer.bind(this);
+        this.getToolbox = this.getToolbox.bind(this);
+        this.getDrawer = this.getDrawer.bind(this);
+        this.getContainer = this.getContainer.bind(this);
     }
 
     openCreateModal = () => this.setState({ showCreateModal: true });
@@ -49,6 +52,52 @@ class ToolTable extends React.Component {
             .then((data) => {
                 FileDownload(data, 'tools.csv');
             });
+    }
+
+    handleSort(entityType) {
+        let sortedEntities = this.state.tools;
+        sortedEntities = sortedEntities.sort(function(a,b) {
+            if(entityType === 'toolboxes') {
+                let toolboxA = this.getToolbox(a);
+                let toolboxB = this.getToolbox(b);
+                return toolboxA.localeCompare(toolboxB);
+            } else if (entityType === 'drawers') {
+                let drawerA = this.getDrawer(a);
+                let drawerB = this.getDrawer(b);
+                return drawerA.localeCompare(drawerB);
+            } else if (entityType === 'containers') {
+                let containerA = this.getContainer(a);
+                let containerB = this.getContainer(b);
+                return containerA.localeCompare(containerB);
+            } else {
+                let toolA = a.name;
+                let toolB = b.name;
+                return toolA.localeCompare(toolB);
+            }
+        }.bind(this));
+
+        this.setState({[entityType]: sortedEntities});
+    }
+
+    getToolbox = (tool) => {
+        if(tool.container !== null && tool.container !== undefined)
+            return tool.container.drawer.toolbox.name;
+        else
+            return tool.drawer.toolbox.name;
+    }
+
+    getDrawer = (tool) => {
+        if(tool.container !== null && tool.container !== undefined)
+            return tool.container.drawer.name;
+        else
+            return tool.drawer.name;
+    }
+
+    getContainer = (tool) => {
+        if(tool.container !== null && tool.container !== undefined)
+            return tool.container.name;
+        else
+            return '';
     }
 
     handleFiles = (files) => {
@@ -242,10 +291,10 @@ class ToolTable extends React.Component {
                     <Table responsive striped bordered condensed>
                         <thead>
                             <tr>
-                                <th>Toolbox</th>
-                                <th>Drawer</th>
-                                <th>Container</th>
-                                <th>Tool</th>
+                                <th><a onClick={() => this.handleSort('toolboxes')}>Toolbox</a></th>
+                                <th><a onClick={() => this.handleSort('drawers')}>Drawer</a></th>
+                                <th><a onClick={() => this.handleSort('containers')}>Container</a></th>
+                                <th><a onClick={() => this.handleSort('tools')}>Tool</a></th>
                             </tr>
                         </thead>
                         <tbody>
