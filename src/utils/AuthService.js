@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
+const OWNER_KEY = 'owner';
 
 const CLIENT_ID = 'DANqL2VonWecYF5OZYFrPcm8n99t6hOm';
 const CLIENT_DOMAIN = '4dat-auth.auth0.com';
@@ -83,6 +84,10 @@ export function isLoggedIn() {
 }
 
 export function getOwner() {
+  return localStorage.getItem(OWNER_KEY);
+}
+
+export function setOwner() {
   return axios({
     method: 'get',
     url: 'https://4dat-auth.auth0.com/userinfo',
@@ -91,7 +96,9 @@ export function getOwner() {
       'Content-Type': 'application/json'
     }
   })
-  .then(response => response.data.name)
+  .then(response => {
+    localStorage.setItem(OWNER_KEY, response.data.name);
+  })
   .catch(error => error );
 }
 

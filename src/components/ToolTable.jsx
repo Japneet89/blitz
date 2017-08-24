@@ -1,4 +1,4 @@
-import  { Table, Button }  from 'react-bootstrap';
+import  { Table, Button, Collapse, ProgressBar }  from 'react-bootstrap';
 import React from 'react';
 import ReactFileReader from 'react-file-reader';
 import CreateToolModal from '../actions/CreateToolModal';
@@ -16,7 +16,10 @@ class ToolTable extends React.Component {
             tools: props.data,
             drawers: props.drawers,
             containers: props.containers,
-            toolboxes: props.toolboxes
+            toolboxes: props.toolboxes,
+            now: 0,
+            label: 'Importing Tools...',
+            ProgressBar: false
         }
 
         this.toolboxExists = this.toolboxExists.bind(this);
@@ -102,13 +105,17 @@ class ToolTable extends React.Component {
 
     handleFiles = (files) => {
 
+        this.setState({now: 0});
+        this.setState({ProgressBar: true});
         Papa.parse(files[0], {
             header: true,
             skipEmptyLines: true,
-            step: function(rowObj) {
+            step: function(rowObj, parser) {
                 let row = rowObj.data[0];
                 if(this.blankRow(row))
                     return;
+
+                parser.pause();
 
                 let promiseChain;
                 let newToolbox = !this.toolboxExists(row);
@@ -141,11 +148,16 @@ class ToolTable extends React.Component {
                                     .then(container => this.createTool(row, {container:container}));
                 }
 
-                promiseChain.then(() => { return Promise.resolve(true)});
+                promiseChain.then(() => {
+                    let progressUpdate = this.state.now + 1;
+                    this.setState({now: progressUpdate}); 
+                    parser.resume(); 
+                });
 
             }.bind(this),
             complete: function() {
-                console.log("done");
+                this.setState({now: 100});
+                this.setState({ProgressBar: false});
                 this.props.stateUpdateCallback({
                     toolboxes: this.state.toolboxes,
                     drawers: this.state.drawers,
@@ -214,7 +226,7 @@ class ToolTable extends React.Component {
         return this.state.containers
                 .filter(container => container.drawer.name === data['Drawer'] 
                                     && container.name === data['Container']
-                                    && container.drawer.toolbox === data['Toolbox'])
+                                    && container.drawer.toolbox.name === data['Toolbox'])
                 .length > 0
                 ? true
                 : false;
@@ -224,7 +236,7 @@ class ToolTable extends React.Component {
         return this.state.containers
                 .filter(container => container.drawer.name === data['Drawer'] 
                                     && container.name === data['Container']
-                                    && container.drawer.toolbox === data['Toolbox'])[0];
+                                    && container.drawer.toolbox.name === data['Toolbox'])[0];
     }
 
     createContainer = (data, drawer) => {
@@ -243,7 +255,6 @@ class ToolTable extends React.Component {
     }
 
     createTool = (data, options) => {
-        console.log(data['Part Number']);
         let partNoAttribute = (data['Part Number'] === '') ? {} : {key: 'Part Number', value:data['Part Number']};
         let attributes = [];
         attributes.push(partNoAttribute);
@@ -253,6 +264,9 @@ class ToolTable extends React.Component {
 
         return create(Entities.TOOL, tool)
             .then((data) => {
+                let newTools = this.state.tools;
+                newTools.push(data);
+                this.setState({tools: newTools});
                 return Promise.resolve(data);
             });
     }
@@ -287,6 +301,11 @@ class ToolTable extends React.Component {
                     </ReactFileReader>
                     <p className='headerTitle'>Tools</p>
                 </div>
+                <Collapse in={this.state.ProgressBar}>
+                    <div>
+                        <ProgressBar active now={this.state.now} label={this.state.label} />
+                    </div>
+                </Collapse>
                 <div className='tools'>
                     <Table responsive striped bordered condensed>
                         <thead>

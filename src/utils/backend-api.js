@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getAccessToken, getGroupId } from './AuthService';
+import { getAccessToken, getGroupId, getOwner } from './AuthService';
 
 const BACKEND=`api/v1/groups/${getGroupId()}`;
 
@@ -29,7 +29,7 @@ function getById(resource, id) {
 }
 
 function create(resource, entity) {
-	console.log("in create: ", entity);
+	entity.owner = getOwner();
 	return makeRequest(resource, 'post', {data:entity});
 }
 
@@ -50,7 +50,7 @@ function getRecommendations(query) {
 ///////////////////////////////
 
 function makeRequest(resource, method, options={}) {
-	let url = (options.id === undefined) ? `${BACKEND}/${resource}` : `${BACKEND}/${resource}/${options.id}`;
+	let url = makeUrl(resource, options);
 	let data = (options.data === undefined) ? {} : JSON.stringify(options.data);
 	
 	return axios({
@@ -64,6 +64,11 @@ function makeRequest(resource, method, options={}) {
 	})
 	.then(response => response.data)
 	.catch(error => error );
+}
+
+function makeUrl(resource, options={}) {
+	let url = (options.id === undefined) ? `${BACKEND}/${resource}` : `${BACKEND}/${resource}/${options.id}`;
+	return url
 }
 
 

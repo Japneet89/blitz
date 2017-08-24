@@ -1,7 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import '../css/Modal.css';
-import { getRecommendations } from '../utils/backend-api';
 
 class SearchToolModal extends React.Component {
   constructor(props) {

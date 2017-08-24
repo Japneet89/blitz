@@ -20,7 +20,7 @@ nconf
   .defaults({
     DATA_BACKEND: 'datastore',
     GCLOUD_PROJECT: 'customer-4dat',
-    PORT: 8080
+    PORT: 80
   });
 
 // Check for required settings
