@@ -8,6 +8,7 @@ import DeleteModal from '../actions/DeleteModal';
 import EditToolModal from '../actions/EditToolModal';
 import SearchToolModal from '../actions/SearchToolModal';
 import Entities from './Entities';
+import { getRecommendations } from '../utils/backend-api';
 
 class Tool extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class Tool extends React.Component {
       toolboxes: props.toolboxes,
       drawers: props.drawers,
       containers: props.containers,
-      tools: props.tools
+      tools: props.tools,
+      recommendations: []
     }
   }
 
@@ -39,8 +41,14 @@ class Tool extends React.Component {
   }
 
 
-  closeSearchModal = () => this.setState({ showSearchModal: false });
-  openSearchModal = () => this.setState({ showSearchModal: true });
+  closeSearchModal = () => this.setState({ showSearchModal: false, recommendations: [] });
+  openSearchModal = () => {
+  		getRecommendations(this.props.data.name)
+  			.then(output =>  {
+  				this.setState({recommendations: output.items});
+				this.setState({ showSearchModal: true });
+			});
+	}
 
   render() {
   	const { data } = this.props;
@@ -102,7 +110,7 @@ class Tool extends React.Component {
 				show={this.state.showSearchModal}
 				hide={this.closeSearchModal}
 				title='Replacement Recommendations'	
-				tool={data}
+				tools={this.state.recommendations}
 			/>
 		</tr>	
   	);
