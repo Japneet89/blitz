@@ -11,8 +11,11 @@ class CreateContainerModal extends React.Component {
       this.state = { 
         name: '',
         chosenDrawer: {},
-        drawers: []
+        drawers: [],
+        createButtonDisabled: true
       }
+
+      this.handleCreateButtonState = this.handleCreateButtonState.bind(this);
   }
 
   componentDidMount() {
@@ -23,12 +26,15 @@ class CreateContainerModal extends React.Component {
 
    handleNameChange = (e) => {
     this.setState({name: e.target.value})
+    this.handleCreateButtonState(e.target.value, this.state.chosenDrawer);
    }
 
    handleDrawerSelect = (e) => {
+    let chosenDrawer = this.state.drawers.filter(drawer => drawer.id===e.target.value)[0];
     this.setState(
-      {chosenDrawer: this.state.drawers.filter(drawer => drawer.id===e.target.value)[0]}
+      {chosenDrawer}
     );
+    this.handleCreateButtonState(this.state.name, chosenDrawer);
    }
 
     handleCreateContainer = () => {
@@ -37,6 +43,14 @@ class CreateContainerModal extends React.Component {
           this.props.hide();
           window.location.reload();
         });
+    }
+
+    handleCreateButtonState = (name, chosenDrawer) => {
+      console.log(chosenDrawer);
+      if(name.length > 0 && chosenDrawer !== null && chosenDrawer !== undefined && chosenDrawer.hasOwnProperty("id"))
+        this.setState({createButtonDisabled: false});
+      else
+        this.setState({createButtonDisabled: true});
     }
 
     render () {
@@ -65,7 +79,13 @@ class CreateContainerModal extends React.Component {
                   </form>
                 </Modal.Body>
                 <Modal.Footer>  
-                    <Button bsStyle="success" onClick={this.handleCreateContainer}>Create</Button>
+                    <Button 
+                      bsStyle="success" 
+                      onClick={this.handleCreateContainer}
+                      disabled={this.state.createButtonDisabled}
+                      >
+                        Create
+                      </Button>
                 </Modal.Footer>
             </Modal>
         );

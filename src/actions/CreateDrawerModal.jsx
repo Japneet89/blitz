@@ -11,8 +11,11 @@ class CreateDrawerModal extends React.Component {
       this.state = { 
         name: '',
         chosenToolbox: {},
-        toolboxes: []
+        toolboxes: [],
+        createButtonDisabled: true
       }
+
+      this.handleCreateButtonState = this.handleCreateButtonState.bind(this);
   }
 
   componentDidMount() {
@@ -23,12 +26,15 @@ class CreateDrawerModal extends React.Component {
 
    handleNameChange = (e) => {
     this.setState({name: e.target.value})
+    this.handleCreateButtonState(e.target.value, this.state.chosenToolbox);
    }
 
    handleToolboxSelect = (e) => {
+    let chosenToolbox = this.state.toolboxes.filter(toolbox => toolbox.id===e.target.value)[0];
     this.setState(
-      {chosenToolbox: this.state.toolboxes.filter(toolbox => toolbox.id===e.target.value)[0]}
+      {chosenToolbox}
     );
+    this.handleCreateButtonState(this.state.name, chosenToolbox);
    }
 
     handleCreateDrawer = () => {
@@ -37,6 +43,14 @@ class CreateDrawerModal extends React.Component {
           this.props.hide();
           window.location.reload();
         });
+    }
+
+    handleCreateButtonState = (name, chosenToolbox) => {
+      console.log(chosenToolbox);
+      if(name.length > 0 && chosenToolbox !== null && chosenToolbox !== undefined && chosenToolbox.hasOwnProperty("id"))
+        this.setState({createButtonDisabled: false});
+      else
+        this.setState({createButtonDisabled: true});
     }
 
     render () {
@@ -65,7 +79,13 @@ class CreateDrawerModal extends React.Component {
                   </form>
                 </Modal.Body>
                 <Modal.Footer>  
-                    <Button bsStyle="success" onClick={this.handleCreateDrawer}>Create</Button>
+                    <Button 
+                      bsStyle="success" 
+                      onClick={this.handleCreateDrawer}
+                      disabled={this.state.createButtonDisabled}
+                      >
+                        Create
+                      </Button>
                 </Modal.Footer>
             </Modal>
         );

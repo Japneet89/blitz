@@ -22,7 +22,8 @@ class CreateToolModal extends React.Component {
         filteredDrawers: [],
         containers: props.containers,
         filteredContainers: [],
-        tools: props.tools
+        tools: props.tools,
+        createButtonDisabled: true
       }
   }
 
@@ -30,7 +31,12 @@ class CreateToolModal extends React.Component {
   }
 
    handleNameChange = (e) => {
-    this.setState({name: e.target.value})
+    let { chosenToolbox, chosenDrawer, chosenContainer } = this.state;
+    console.log(this.state);
+    if(chosenToolbox.hasOwnProperty("id") && (chosenDrawer !== null || chosenContainer !== null) && e.target.value.length > 0) {
+      this.setState({createButtonDisabled: false, name: e.target.value})
+    } else 
+      this.setState({name: e.target.value})
    }
 
    handleQuantityChange = (e) => {
@@ -202,7 +208,13 @@ class CreateToolModal extends React.Component {
                     </Button>
                 </Modal.Body>
                 <Modal.Footer>  
-                    <Button bsStyle="success" onClick={this.handleCreateTool}>Create</Button>
+                    <Button 
+                      bsStyle="success" 
+                      onClick={this.handleCreateTool}
+                      disabled={this.state.createButtonDisabled}
+                      >
+                        Create
+                      </Button>
                 </Modal.Footer>
             </Modal>
         );

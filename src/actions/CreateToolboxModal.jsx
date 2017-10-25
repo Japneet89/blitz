@@ -8,12 +8,17 @@ class CreateToolboxModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-          name: ''
+          name: '',
+          createButtonDisabled: true
         }
     }
 
    handleChange = (e) => {
-    this.setState({name: e.target.value})
+    let newVal = e.target.value;
+    if(newVal.length > 0)
+      this.setState({name: newVal, createButtonDisabled: false});
+    else
+      this.setState({name: newVal});
    }
 
     handleCreateToolbox = () => {
@@ -45,7 +50,13 @@ class CreateToolboxModal extends React.Component {
                   </form>
                 </Modal.Body>
                 <Modal.Footer>  
-                    <Button bsStyle="success" onClick={this.handleCreateToolbox}>Create</Button>
+                    <Button 
+                      bsStyle="success" 
+                      onClick={this.handleCreateToolbox}
+                      disabled={this.state.createButtonDisabled}
+                      >
+                        Create
+                      </Button>
                 </Modal.Footer>
             </Modal>
         );
