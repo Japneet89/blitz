@@ -70,7 +70,7 @@ function updateGroup(userId, inviteCodeId, newGroup, res) {
 				else if (body.app_metadata.group === newGroup) {
 					//Delete the invite code but don't need to wait for it
 					model.delete(inviteCodeId);
-					res.json({message: "Succesfully added", newGroup: newGroup});
+					res.json({message: "Succesfully added. Please logout and log back in to refresh group data.", newGroup: newGroup});
 				}
 				else
 					res.json('Unknown Error');

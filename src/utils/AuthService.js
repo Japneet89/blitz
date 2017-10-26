@@ -54,7 +54,7 @@ export function getAccessToken() {
 export function getGroupId() {
   if(isLoggedIn()) {
     let groupId = localStorage.getItem(GROUP_KEY);
-    if(groupId !== null)
+    if(groupId === null)
       return decode(getAccessToken())['http://api.tool4dat.com/group'];
     else
       return groupId;
