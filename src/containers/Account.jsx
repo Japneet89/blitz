@@ -1,7 +1,7 @@
 import React from 'react';
 import  { PageHeader, Button, FormGroup, FormControl, ControlLabel }  from 'react-bootstrap';
 import '../css/Account.css';
-import { getSub } from '../utils/AuthService';
+import { getSub, setGroupId } from '../utils/AuthService';
 import { getGroup, create, updateGroupName } from '../utils/backend-api';
 var voucher_codes = require('voucher-code-generator');
 
@@ -43,7 +43,11 @@ class Account extends React.Component {
   handleGroupJoin() {
   	updateGroupName(this.state.enteredInviteCode)
   		.then((response) => {
-  			this.setState({newGroup: response});
+        if(response.hasOwnProperty("newGroup")) {
+          setGroupId(response.newGroup);
+          this.setState({newGroup: response.message});
+        } else
+  			 this.setState({newGroup: response});
   		})
   		.catch((error) => {
   			console.log(error);
@@ -52,7 +56,6 @@ class Account extends React.Component {
   }
 
   render() {
-  	console.log(this.state);
   	let { group, subId } = this.state;
   	//Group owner view for multiple member group
   	if(group !== null && group.hasOwnProperty("owner") && group.owner === subId) {
@@ -102,7 +105,7 @@ class Account extends React.Component {
   		return (
   		<div>
         	<PageHeader>Account Management</PageHeader>
-        	<p>You are part of {subId}'s group.</p>
+        	<p>You are part of {group.owner}'s group.</p>
       	</div>
   		);
   	//No group/member which is either an error or a slow response

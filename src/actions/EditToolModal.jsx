@@ -110,7 +110,6 @@ class EditToolModal extends React.Component {
   handleAttributeKeyChange = (e) => {
     let originalKey = e.target.id;
     let newKey = e.target.value;
-    console.log(`old key: ${originalKey} changed to: ${newKey}`);
     let newAttributes = this.state.attributes
     newAttributes.forEach((attr) => {
       if(attr.key === originalKey) {
@@ -124,7 +123,6 @@ class EditToolModal extends React.Component {
   handleAttributeValChange = (e) => {
     let key = e.target.id;
     let val = e.target.value;
-    console.log(`changin key ${key} value to: ${val}`);
     let newAttributes = this.state.attributes;
     newAttributes.forEach((attr) => {
       if(attr.key === key)

@@ -56,7 +56,6 @@ class AmazonClient(object):
         where, e.g., tool1 = (title, [features], formatted_price, ASIN).
         
         """
-	#TODO: find better way to convert to strings
         documents = []
         for item in response.find_all("Item"):
             features = []

@@ -46,7 +46,6 @@ class CreateContainerModal extends React.Component {
     }
 
     handleCreateButtonState = (name, chosenDrawer) => {
-      console.log(chosenDrawer);
       if(name.length > 0 && chosenDrawer !== null && chosenDrawer !== undefined && chosenDrawer.hasOwnProperty("id"))
         this.setState({createButtonDisabled: false});
       else

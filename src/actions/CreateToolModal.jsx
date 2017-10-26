@@ -32,7 +32,6 @@ class CreateToolModal extends React.Component {
 
    handleNameChange = (e) => {
     let { chosenToolbox, chosenDrawer, chosenContainer } = this.state;
-    console.log(this.state);
     if(chosenToolbox.hasOwnProperty("id") && (chosenDrawer !== null || chosenContainer !== null) && e.target.value.length > 0) {
       this.setState({createButtonDisabled: false, name: e.target.value})
     } else 
@@ -106,7 +105,6 @@ class CreateToolModal extends React.Component {
   handleAttributeKeyChange = (e) => {
     let originalKey = e.target.id;
     let newKey = e.target.value;
-    console.log(`old key: ${originalKey} changed to: ${newKey}`);
     let newAttributes = this.state.attributes
     newAttributes.forEach((attr) => {
       if(attr.key === originalKey) {
@@ -120,7 +118,6 @@ class CreateToolModal extends React.Component {
   handleAttributeValChange = (e) => {
     let key = e.target.id;
     let val = e.target.value;
-    console.log(`changin key ${key} value to: ${val}`);
     let newAttributes = this.state.attributes;
     newAttributes.forEach((attr) => {
       if(attr.key === key)

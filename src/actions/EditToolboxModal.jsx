@@ -34,7 +34,6 @@ class EditToolboxModal extends React.Component {
           return listAll(Entities.CONTAINER);
       })
       .then((containers) => {
-          console.log("in this loop: ", containers);
           containers.filter(container => container.drawer.toolbox.id === id)
               .forEach((c) => {
                   c.drawer.toolbox = newToolbox;

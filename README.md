@@ -1,5 +1,3 @@
-# Repo Strutucture
-
 # Branching Strategy
 This project uses the [gitflow](https://github.com/nvie/gitflow) branching model.
 
@@ -29,12 +27,3 @@ Use the following process to cut a new release.
   1. run `git push --follow-tags`
   
 You'll find a great [tutorial on gitflow here](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/) if you want to learn more about the details of how it works.
-
-
-## Deployment
-
-TODO: CI
-
-# Resources
-Google Cloud Project: 
-Auth0 Project:

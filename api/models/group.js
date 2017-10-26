@@ -5,6 +5,10 @@ const groupSchema = new Schema({
 	owner: {
 		type: 'string',
 		required: true
+	},
+	members: {
+		type: 'int',
+		required: true
 	}
 });
 

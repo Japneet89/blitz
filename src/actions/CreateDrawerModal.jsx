@@ -46,7 +46,6 @@ class CreateDrawerModal extends React.Component {
     }
 
     handleCreateButtonState = (name, chosenToolbox) => {
-      console.log(chosenToolbox);
       if(name.length > 0 && chosenToolbox !== null && chosenToolbox !== undefined && chosenToolbox.hasOwnProperty("id"))
         this.setState({createButtonDisabled: false});
       else

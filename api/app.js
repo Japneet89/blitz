@@ -45,13 +45,6 @@ const authCheck = jwt({
     algorithms: ['RS256']
 });
 
-/*Configure Routes - temp DEV
-app.use('/api/v1', toolboxRouter);
-app.use('/api/v1', drawerContainer);
-app.use('/api/v1', containerRouter);
-app.use('/api/v1', toolRouter);
-*/
-
 //Automatic routes for CRUD API against google datastore
 app.use('/api/v1', authCheck, toolboxRouter);
 app.use('/api/v1', authCheck, drawerContainer);
@@ -63,13 +56,12 @@ app.use('/api/internal/invite', inviteRouter);
 app.use('/api/v1/groups/*/tools/csv', authCheck, csvRouter)
 
 //ML prediction route
-//TODO: switch back
 app.use('/api/v1/groups/*/ml', authCheck, mlRouter);
 
 //SPA route
-app.use(express.static(path.resolve(__dirname)));
+app.use(express.static(path.resolve(__dirname, '..')));
 app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'index.html'));
+  res.sendFile(path.resolve(__dirname, '..', 'index.html'));
 });
 
 // Basic 404 handler
