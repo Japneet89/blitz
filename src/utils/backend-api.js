@@ -1,19 +1,19 @@
 import axios from 'axios';
-import { getAccessToken, getGroupId, getOwner } from './AuthService';
+import { getAccessToken, getGroupId, getOwner, getSub } from './AuthService';
 
-const BACKEND=`api/v1/groups/${getGroupId()}`;
+const BASE = 'api/';
+const BACKEND=`${BASE}v1/groups/${getGroupId()}`;
 
 /////////////////////////////////
 //// GROUPS ////////////////////
 ///////////////////////////////
 
-//TODO: not sure if these are needed
-function getGroupName(id) {
-	return makeRequest('group', 'get', {id: id});
+function getGroup() {
+	return makeRequest('groups', 'get', {id: getGroupId()}, `${BASE}internal/groups/${getGroupId()}`);
 }
 
-function updateGroupName(group) {
-	return makeRequest('group', 'put', {data: group});
+function updateGroupName(inviteCode) {
+	return makeRequest('invite', 'post', {data: {code: inviteCode, userId: getSub()}}, `${BASE}internal/invite`);
 }
 
 /////////////////////////////////
@@ -49,8 +49,8 @@ function getRecommendations(query) {
 //// UTILS ////////////////////
 ///////////////////////////////
 
-function makeRequest(resource, method, options={}) {
-	let url = makeUrl(resource, options);
+function makeRequest(resource, method, options={}, urlOverride='') {
+	let url = urlOverride === '' ? makeUrl(resource, options) : urlOverride;
 	let data = (options.data === undefined) ? {} : JSON.stringify(options.data);
 	
 	return axios({
@@ -72,7 +72,7 @@ function makeUrl(resource, options={}) {
 }
 
 
-export { getGroupName, 
+export { getGroup, 
 		updateGroupName,
 		listAll,
 		getById,

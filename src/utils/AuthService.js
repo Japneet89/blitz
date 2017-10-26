@@ -8,8 +8,9 @@ const ACCESS_TOKEN_KEY = 'access_token';
 const OWNER_KEY = 'owner';
 
 const CLIENT_ID = 'DANqL2VonWecYF5OZYFrPcm8n99t6hOm';
-const CLIENT_DOMAIN = '4dat-auth.auth0.com';
+//const CLIENT_DOMAIN = '4dat-auth.auth0.com';
 const REDIRECT = 'http://35.202.38.68/callback';
+const REDIRECT = 'http://localhost:3000/callback';
 const SCOPE = 'full_api_access openid profile';
 const AUDIENCE = 'api.tool4dat.com';
 
@@ -30,6 +31,7 @@ export function login() {
 export function logout() {
   clearIdToken();
   clearAccessToken();
+  clearOwner();
   browserHistory.push('/');
 }
 
@@ -60,8 +62,12 @@ function clearAccessToken() {
   localStorage.removeItem(ACCESS_TOKEN_KEY);
 }
 
+function clearOwner() {
+  localStorage.removeItem(OWNER_KEY);
+}
 // Helper function that will allow us to extract the access_token and id_token
 function getParameterByName(name) {
+  console.log(window.location.hash);
   let match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
@@ -100,6 +106,11 @@ export function setOwner() {
     localStorage.setItem(OWNER_KEY, response.data.name);
   })
   .catch(error => error );
+}
+
+export function getSub() {
+  let token = getAccessToken();
+  return decode(token).sub;
 }
 
 function getTokenExpirationDate(encodedToken) {

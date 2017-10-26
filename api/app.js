@@ -10,13 +10,14 @@ import { api as drawerContainer } from './routers/drawer';
 import { api as containerRouter }from './routers/container';
 import { api as toolRouter } from './routers/tool';
 import { api as groupRouter } from './routers/group';
+import { api as codeRouter } from './routers/code';
 import { router as mlRouter } from './routers/mlRouter';
-import { router as csvRouter } from './routers/csv';1
+import { router as csvRouter } from './routers/csv';
+import { router as inviteRouter } from './routers/invite';
 
 //Configure google cloud datastore
 const ds = datastore({
   projectId: nconf.get('GCLOUD_PROJECT'),
-  //TODO: check if this is respected while on GKE
   keyFilename: nconf.get('GOOGLE_APPLICATION_CREDENTIALS')
 });
 gstore.connect(ds);
@@ -57,6 +58,8 @@ app.use('/api/v1', authCheck, drawerContainer);
 app.use('/api/v1', authCheck, containerRouter);
 app.use('/api/v1', authCheck, toolRouter);
 app.use('/api/internal/', groupRouter);
+app.use('/api/v1/', codeRouter);
+app.use('/api/internal/invite', inviteRouter);
 app.use('/api/v1/groups/*/tools/csv', authCheck, csvRouter)
 
 //ML prediction route
@@ -64,9 +67,9 @@ app.use('/api/v1/groups/*/tools/csv', authCheck, csvRouter)
 app.use('/api/v1/groups/*/ml', authCheck, mlRouter);
 
 //SPA route
-app.use(express.static(path.resolve(__dirname, '..')));
+app.use(express.static(path.resolve(__dirname)));
 app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
 // Basic 404 handler

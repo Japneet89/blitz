@@ -10,9 +10,6 @@ const PYTHON_SCRIPT='./server/ml/main.py';
 
 router.post('/', (req, res, next) => {
 	let executionResult = getScores(req.body.query);
-	//console.log(executionResult);
-	//console.log(executionResult.stdout.toString('utf-8'));
-
 	if(executionResult.error) {
 		res.status(500).json(executionResult);
 	} else {

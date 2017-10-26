@@ -7,7 +7,6 @@ class Callback extends Component {
     setAccessToken();
     setIdToken();
     setOwner().then(() => window.location.href = "/dashboard")
-    //TODO: wait until group creation/join process is okay from server
   }
 
   render() {

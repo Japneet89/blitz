@@ -8,7 +8,7 @@ const apiBuilder = gStoreApi().express(router);
 const api = apiBuilder.create(model, {
 	operations: {
 		list: { exec: false },
-		get : { middleware: checkGroupId },
+		get : { exec: true, middleware: checkGroupId },
 		create: { exec: true },
 		updatePatch : { exec: false },
 		updateReplace: { exec: false, middleware: checkGroupId },
